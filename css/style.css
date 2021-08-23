@@ -36,20 +36,40 @@ img {
    display: block;
    width: 100%;
 }
-h1, h2, h3, h4, h5, h6 {
-   font-family: 'Playfair Display';
-   font-weight: normal;
-   letter-spacing: 1px;
-}
 body {
   /* font-family: "Montserrat", 'Open Sans', arial, sans-serif; */
-  font-family: "Montserrat";
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1;
+  font: 400 14px Montserrat;
+  line-height: 24px;
   letter-spacing: 1px;
-  color: var(--color100);
-  background: var(--color5);
+  color: var(--color75);
+  /* background: var(--color5); */
+  background: url("/images/image 3.png");
+  background-size: cover;
+  min-height: 600px;
+}
+h1, h2, h3, h4, h5, h6 {
+   font-weight: 700;
+   letter-spacing: 0;
+   line-height: 1;
+   color: var(--color100);
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 19px;
+}
+h3 {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+button {
+  font: 700 12px Montserrat;
+}
+select {
+  font: 400 14px Montserrat;
+  letter-spacing: 1px;
+  color: var(--color75);
 }
 /* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
 header:after, .container:after, footer:after, .widget-posts-list li:after, #subscribe:after {
@@ -64,19 +84,12 @@ header:after, .container:after, footer:after, .widget-posts-list li:after, #subs
    max-width: 960px;
    padding: 0 15px;
 }
-button {
-  border-top-color: white;
-  border-right-color: white;
-  border-bottom-color: white;
-  border-left-color: white;
-}
 
 header {
   width: 100%;
   background: white;
-  box-shadow: 0px 5px 3px rgba(0, 0, 0, .1);
+  box-shadow: 0px 10px 20px var(--color5);
   padding: 20px 10%;
-  margin-bottom: 30px;
   position: relative;
 }
 
@@ -131,6 +144,7 @@ header div:last-child {
   font-weight: bold;
   text-transform: uppercase;
   align-items: center;
+  justify-content: center;
 }
 
 #logIn {
@@ -144,4 +158,73 @@ header div:last-child {
 
 .log {
   float: right;
+}
+
+section {
+  /* background: url("/images/image 3.png"); */
+  background-size: cover;
+  width: 100%;
+  /* min-height: 700px; */
+  /* height: auto; */
+}
+
+.container {
+  position: relative;
+  float: left;
+  top: 70px;
+  left: 140px;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  width: 388px;
+  height: 374px;
+  padding: 40px 30px 30px 30px;
+}
+
+.container h1 {
+
+}
+
+.container div {
+  display: inline-block;
+  /* width: 150px; */
+  /* height: 64px; */
+  margin-top: 20px;
+}
+
+.departure {
+  margin-left: 20px;
+}
+
+select {
+  border: 1px solid var(--color25);
+  border-radius: 4px;
+}
+
+.arrive select, .departure select {
+  width: 150px;
+  height: 44px;
+  margin-top: 5px;
+}
+
+.guests select {
+  width: 320px;
+  height: 44px;
+  margin-top: 5px;
+}
+
+.container .btn {
+  width: 320px;
+  height: 44px;
+  margin-top: 20px;
+}
+
+.caption {
+  position: absolute;
+  width: 300px;
+  right: 134px;
+  bottom: 20px;
+  text-align: right;
+  text-shadow: 1px 1px 3px var(--color75);
 }
