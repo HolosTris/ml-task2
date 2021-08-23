@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  /* Браузер сначала попробует найти шрифт локально */
+  src: url("/fonts/Montserrat-Regular.ttf");
+  /* local("Montserrat"), */
+       /* Если не получилось, загрузит woff2 */
+
+       /* Если браузер не поддерживает woff2, загрузит woff */
+       /* url("/fonts/roboto.woff") format("woff"); */
+}
+
+:root {
+  --color1: #6fcf97;
+  --color2: #bc9cff;
+  --color100: #1f2041;
+  --color75: rgba(31, 32, 65, .75);
+  --color50: rgba(31, 32, 65, .5);
+  --color25: rgba(31, 32, 65, .25);
+  --color5: rgba(31, 32, 65, .05);
+  --gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+
+*, *:after, *:before {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   transition: .2s ease-in-out;
+   /* добавим плавность переходов для всех элементов страницы*/
+}
+a {
+   text-decoration: none;
+   outline: none;
+}
+img {
+   display: block;
+   width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+   font-family: 'Playfair Display';
+   font-weight: normal;
+   letter-spacing: 1px;
+}
+body {
+  /* font-family: "Montserrat", 'Open Sans', arial, sans-serif; */
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--color100);
+  background: var(--color5);
+}
+/* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
+header:after, .container:after, footer:after, .widget-posts-list li:after, #subscribe:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+/* стилевой класс, который управляет шириной контейнера сетки*/
+.container {
+   margin: 0 auto;
+   width: 100%;
+   max-width: 960px;
+   padding: 0 15px;
+}
+button {
+  border-top-color: white;
+  border-right-color: white;
+  border-bottom-color: white;
+  border-left-color: white;
+}
+
+header {
+  width: 100%;
+  background: white;
+  box-shadow: 0px 5px 3px rgba(0, 0, 0, .1);
+  padding: 20px 10%;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+header a {
+  color: var(--color50);
+}
+
+header a:hover {
+  color: var(--color75);
+  text-decoration: underline;
+}
+
+nav {
+  /* width: 80%; */
+  /* position: relative; */
+  float: right;
+  justify-content: center;
+}
+
+header div {
+  /* position: absolute; */
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  margin-right: 20px;
+  /* width: 10%; */
+  /* padding: 10px; */
+}
+
+header div:last-child {
+  margin-right: 0;
+}
+
+.logo {
+  float: left;
+}
+
+.logo a {
+  display: inline-flex;
+}
+
+.btn {
+  display: inline-flex;
+  color: white;
+  background: var(--gradient);
+  /* background-color: var(--color2); */
+  height: 34px;
+  padding: 10px 20px;
+  border-width: 0;
+  border-radius: 22px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+#logIn {
+  border: 2px solid;
+  /* Временно */
+  /* border-image-source: var(--gradient); */
+  color: var(--color2);
+  background: white;
+  margin-right: 20px;
+}
+
+.log {
+  float: right;
+}
