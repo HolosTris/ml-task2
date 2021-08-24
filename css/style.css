@@ -40,7 +40,7 @@ body {
   /* font-family: "Montserrat", 'Open Sans', arial, sans-serif; */
   font: 400 14px Montserrat;
   line-height: 24px;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   color: var(--color75);
   background: var(--color5);
   min-height: 600px;
@@ -67,12 +67,12 @@ button {
 
 select, input {
   font: 400 14px Montserrat;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   color: var(--color75);
   border: 1px solid var(--color25);
   border-radius: 4px;
-  height: 44px;
-  padding: 0 15px;
+  /* min-height: 44px; */
+  padding: 13px 15px;
 }
 
 input::placeholder {
@@ -175,49 +175,82 @@ section {
   height: 830px;
 }
 
-.search {
+.container {
   position: relative;
-  float: left;
-  top: 70px;
-  left: 140px;
   background: white;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  width: 388px;
-  height: 374px;
+  width: 380px;
   padding: 40px 30px 30px 30px;
 }
 
-.search h1 {
-
+.container * {
+  flex: 0 0 100%;
 }
 
-.search div {
-  display: inline-block;
+.container h1 {
+  /* margin-top: 20px; */
+}
+
+.container div {
+  /* display: inline-block;
+  margin-top: 20px; */
   /* width: 150px; */
   /* height: 64px; */
-  margin-top: 20px;
 }
 
-.departure {
-  margin-left: 20px;
-}
-
-.arrive select, .departure select {
-  width: 150px;
-  margin-top: 5px;
-}
-
-.guests select {
-  width: 320px;
-  margin-top: 5px;
-}
-
-.search .btn {
+.container .btn {
   width: 320px;
   height: 44px;
   margin-top: 20px;
+}
+
+.search {
+  float: left;
+  top: 70px;
+  left: 140px;
+  /* height: 374px; */
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  /*grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  grid-row: 100px; */
+  top: 70px;
+  margin: 0 auto;
+
+  height: auto;
+}
+
+.registration * {
+  flex: 0 0 100%;
+}
+
+.registration input {
+  /* display: flex block; */
+  width: auto;
+}
+
+.arrive-departure {
+  display: flex;
+  flex-direction: column;
+}
+
+.arrive-departure * {
+  flex: 0 0 50%;
+}
+
+.arrive select, .departure select {
+  /* width: 150px;
+  margin-top: 5px; */
+}
+
+.guests select {
+  /* width: 320px;
+  margin-top: 5px; */
 }
 
 .caption {
@@ -230,8 +263,11 @@ section {
 }
 
 footer {
-  display: inline-flex;
-  justify-content: space-between;
+  display: inline-grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 40px;
+  grid-auto-rows: minmax(100px, auto);
+  /* justify-content: space-between; */
   height: 442px;
   width: 100%;
   background: white;
@@ -246,22 +282,14 @@ footer ::after {
 .col {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  padding: 0 20px;
+  /* width: 200px; */
+  /* padding: 0 20px; */
   text-align: left;
 }
 
 .col img {
   display: inline;
   width: 106px;
-}
-
-.col:first-child {
-  padding: 0 20px 0 0;
-}
-
-.col:last-child {
-  padding: 0 0 0 20px;
 }
 
 .col-lg {
