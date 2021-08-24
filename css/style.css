@@ -21,12 +21,15 @@
   --gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
 
-*, *:after, *:before {
+*, *::after, *::before {
    box-sizing: border-box;
    padding: 0;
    margin: 0;
    transition: .2s ease-in-out;
    /* добавим плавность переходов для всех элементов страницы*/
+}
+*::after, *::before {
+   position: absolute;
 }
 a {
    text-decoration: none;
@@ -40,7 +43,7 @@ body {
   /* font-family: "Montserrat", 'Open Sans', arial, sans-serif; */
   font: 400 14px Montserrat;
   line-height: 24px;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   color: var(--color75);
   background: var(--color5);
   min-height: 600px;
@@ -91,6 +94,7 @@ input[type="radio" i]+label {
 }
 
 input[type="radio" i]+label::before {
+  position: static;
   content: "";
   display: inline-block;
   width: 20px;
@@ -124,6 +128,7 @@ input[type="checkbox" i]+label {
 }
 
 input[type="checkbox" i]+label::before {
+  position: static;
   content: "";
   display: inline-block;
   width: 40px;
@@ -161,11 +166,14 @@ header:after, .search:after, footer:after, .widget-posts-list li:after, #subscri
 }
 
 header {
+  /* display: grid;
+  grid-auto-flow: column; */
   width: 100%;
   background: white;
   box-shadow: 0px 10px 20px var(--color5);
   padding: 20px 10%;
   position: relative;
+  height: 70px;
 }
 
 header a, footer a {
@@ -180,6 +188,8 @@ header a:hover {
 nav {
   /* width: 80%; */
   /* position: relative; */
+  display: flex;
+  grid-gap: 20px;
   float: right;
   justify-content: center;
 }
@@ -189,7 +199,7 @@ header div {
   display: inline-flex;
   align-items: center;
   height: 30px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
   /* width: 10%; */
   /* padding: 10px; */
 }
@@ -211,15 +221,19 @@ header div:last-child {
   color: white;
   background: var(--gradient);
   /* background-color: var(--color2); */
-  height: 34px;
+  /* height: 34px; */
   padding: 10px 20px;
   border-width: 0;
-  border-radius: 22px;
+  border-radius: 25px;
   font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   align-items: center;
   justify-content: center;
+}
+
+header .btn {
+  height: 34px;
 }
 
 #logIn {
@@ -228,10 +242,12 @@ header div:last-child {
   /* border-image-source: var(--gradient); */
   color: var(--color2);
   background: white;
-  margin-right: 20px;
 }
 
 .log {
+  /* display: grid;
+  grid-auto-flow: column;
+  height: 30px; */
   float: right;
 }
 
@@ -244,6 +260,8 @@ section {
 }
 
 .container {
+  display: grid;
+  grid-gap: 20px;
   position: relative;
   top: 70px;
   background: white;
@@ -258,14 +276,31 @@ section {
 .search {
   float: left;
   left: 140px;
+  grid-column: 50% 50%;
 }
 
 .registration {
   margin: 0 auto;
 }
 
-.registration div {
-  margin-top: 20px;
+.registration span {
+  color: black;
+}
+
+.container div {
+  display: grid;
+  grid-gap: 10px;
+}
+
+div .arrive-departure {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.else-login {
+  grid-auto-flow: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .search h1 {
@@ -273,30 +308,29 @@ section {
 }
 
 .search div {
-  display: inline-block;
+  /* display: grid; */
   /* width: 150px; */
   /* height: 64px; */
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .departure {
-  margin-left: 12px;
+  /* margin-left: 12px; */
 }
 
 .arrive select, .departure select {
-  width: 150px;
-  margin-top: 5px;
+  /* width: 150px;
+  margin-top: 5px; */
 }
 
 .guests select {
-  width: 320px;
-  margin-top: 5px;
+  /* width: 320px;
+  margin-top: 5px; */
 }
 
 .container .btn {
-  width: 320px;
+  /* width: 320px; */
   height: 44px;
-  margin-top: 20px;
 }
 
 .caption {
