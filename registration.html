@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/css/style.css">
-  <title>Task 2</title>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Registration</title>
 </head>
 <body>
 <header>
   <div class="logo">
     <a href="#">
-      <img src="/svg/logo.svg"  width="106" height="40">
+      <img src="svg/logo.svg"  width="106" height="40">
       <!-- <object data="/svg/logo.svg" type="image/svg+xml" width="106" height="40"></object> -->
       <!-- <iframe src="/svg/logo.svg" width="106" height="40" frameborder="0" allowtransparency seamless></iframe> -->
     </a>
@@ -29,33 +29,37 @@
   </nav>
 </header>
 <section class="main">
-  <div class="container search">
-    <h1>Найдём номера под ваши пожелания</h1>
-    <div class="arrive">
-      <h3>Прибытие</h3>
-      <select name="">
-        <option value="placeholder">ДД.ММ.ГГГГ</option>
-      </select>
+  <div class="container registration">
+    <h1>Регистрация аккаунта</h1>
+    <div class="personal-data">
+      <input type="text" name="" value="" placeholder="">
+      <input type="text" name="" value="" placeholder="">
+      <p class="radio-sex">
+        <input type="radio" name="sex" value="male" id="sex1" checked>
+        <label for="sex1">Мужчина</label>
+        <input type="radio" name="sex" value="female" id="sex2">
+        <label for="sex2">Женщина</label>
+      </p>
     </div>
-    <div class="departure">
-      <h3>Выезд</h3>
-      <select name="">
-        <option value="placeholder">ДД.ММ.ГГГГ</option>
-      </select>
-    </div>
-    <div class="guests">
+    <div class="birth-date">
       <h3>Гости</h3>
-      <select name="">
-        <option value="placeholder">Сколько гостей</option>
-      </select>
+      <input type="text" name="" value="" placeholder="">
+    </div>
+    <div class="log-data">
+      <h3>Гости</h3>
+      <input type="text" name="" value="" placeholder="">
+      <input type="text" name="" value="" placeholder="">
+      <p>
+        <input type="checkbox" name="sendMails" value="" id="sendMails">
+        <label for="sendMails">Получать спецпредложения</label>
+      </p>
     </div>
     <button type="button" name="chooseRoom" class="btn">Подобрать номер</button>
   </div>
-  <p class="caption">Лучшие номера для вашей работы,<br> отдыха и просто вдохновения</p>
 </section>
 <footer>
   <div class="col col-lg">
-    <img src="/svg/logo.svg">
+    <img src="svg/logo.svg">
     <p>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
   </div>
   <div class="col">
