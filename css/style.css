@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Montserrat";
-  font-style: normal;
+  font-style: normal, bold;
   /* Браузер сначала попробует найти шрифт локально */
-  src: url("/fonts/Montserrat-Regular.ttf");
+  src: url("/fonts/Montserrat-Regular.ttf"), url("/fonts/Montserrat-Bold.ttf");
   /* local("Montserrat"), */
        /* Если не получилось, загрузит woff2 */
 
@@ -11,8 +11,8 @@
 }
 
 :root {
-  --color1: #6fcf97;
-  --color2: #bc9cff;
+  --green: #6fcf97;
+  --purple: #bc9cff;
   --color100: #1f2041;
   --color75: rgba(31, 32, 65, .75);
   --color50: rgba(31, 32, 65, .5);
@@ -49,7 +49,7 @@ body {
   min-height: 600px;
 }
 h1, h2, h3, h4, h5, h6 {
-   font-weight: 700;
+   font-weight: bold;
    letter-spacing: 0;
    line-height: 1;
    color: var(--color100);
@@ -91,6 +91,7 @@ input[type="radio" i] {
 input[type="radio" i]+label {
   display: inline-flex;
   align-items: center;
+  color: var(--color50);
 }
 
 input[type="radio" i]+label::before {
@@ -111,9 +112,14 @@ input[type="radio" i]+label::before {
   overflow: hidden;
 }
 
+input[type="radio" i]:checked+label {
+  color: var(--color75);
+}
+
 input[type="radio" i]:checked+label::before {
-  box-shadow: 0 0 0 1px var(--color2);
+  box-shadow: 0 0 0 1px var(--purple);
   background-image: var(--gradient);
+  color: var(--color75);
 }
 
 input[type="checkbox" i] {
@@ -147,7 +153,7 @@ input[type="checkbox" i]+label::before {
 }
 
 input[type="checkbox" i]:checked+label::before {
-  box-shadow: inset 0 0 0 1px var(--color2), inset 20px 0 0 4px #FFF, inset 0px 0 0 4px #FFF;
+  box-shadow: inset 0 0 0 1px var(--purple), inset 20px 0 0 4px #FFF, inset 0px 0 0 4px #FFF;
   background-image: var(--gradient);
 }
 
@@ -220,7 +226,7 @@ header div:last-child {
   display: inline-flex;
   color: white;
   background: var(--gradient);
-  /* background-color: var(--color2); */
+  /* background-color: var(--purple); */
   /* height: 34px; */
   padding: 10px 20px;
   border-width: 0;
@@ -236,11 +242,11 @@ header .btn {
   height: 34px;
 }
 
-#logIn {
+.alt-btn {
   border: 2px solid;
   /* Временно */
   /* border-image-source: var(--gradient); */
-  color: var(--color2);
+  color: var(--purple);
   background: white;
 }
 
@@ -345,7 +351,7 @@ div .arrive-departure {
 footer {
   display: inline-flex;
   justify-content: space-between;
-  height: 442px;
+  /* height: 442px; */
   width: 100%;
   background: white;
   box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
