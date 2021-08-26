@@ -1,13 +1,21 @@
 @font-face {
   font-family: "Montserrat";
-  font-style: normal, bold;
+  font-style: normal;
+  font-weight: normal;
   /* Браузер сначала попробует найти шрифт локально */
-  src: url("/fonts/Montserrat-Regular.ttf"), url("/fonts/Montserrat-Bold.ttf");
+  src: url("/fonts/Montserrat-Regular.ttf");
   /* local("Montserrat"), */
        /* Если не получилось, загрузит woff2 */
 
        /* Если браузер не поддерживает woff2, загрузит woff */
        /* url("/fonts/roboto.woff") format("woff"); */
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/Montserrat-Bold.ttf");
 }
 
 :root {
@@ -42,17 +50,17 @@ img {
 body {
   /* font-family: "Montserrat", 'Open Sans', arial, sans-serif; */
   font: 400 14px Montserrat;
-  line-height: 24px;
+  line-height: 1.22;
   /* letter-spacing: 1px; */
   color: var(--color75);
-  background: var(--color5);
+  background: white;
   min-height: 600px;
 }
 h1, h2, h3, h4, h5, h6 {
-   font-weight: bold;
-   letter-spacing: 0;
-   line-height: 1;
-   color: var(--color100);
+  font-style: bold;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: var(--color100);
 }
 h1 {
   font-size: 24px;
@@ -64,8 +72,14 @@ h3 {
   font-size: 12px;
   text-transform: uppercase;
 }
+p {
+  line-height: 24px;
+}
+a {
+  color: var(--color75);
+}
 button {
-  font: 700 12px Montserrat;
+  font: bold 12px Montserrat;
 }
 
 select, input {
@@ -88,13 +102,13 @@ input[type="radio" i] {
   opacity: 0;
 }
 
-input[type="radio" i]+label {
+input[type="radio" i] + label {
   display: inline-flex;
   align-items: center;
   color: var(--color50);
 }
 
-input[type="radio" i]+label::before {
+input[type="radio" i] + label::before {
   position: static;
   content: "";
   display: inline-block;
@@ -112,28 +126,68 @@ input[type="radio" i]+label::before {
   overflow: hidden;
 }
 
-input[type="radio" i]:checked+label {
+input[type="radio" i]:checked + label {
   color: var(--color75);
 }
 
-input[type="radio" i]:checked+label::before {
+input[type="radio" i]:checked + label::before {
   box-shadow: 0 0 0 1px var(--purple);
   background-image: var(--gradient);
   color: var(--color75);
 }
 
-input[type="checkbox" i] {
+.checkbox {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-input[type="checkbox" i]+label {
+.checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color50);
+}
+
+.checkbox + label::before {
+  position: static;
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 4px solid #FFF;
+  box-shadow: 0 0 0 1px var(--color25);
+  border-radius: 20%;
+  margin-right: 0.5em;
+  background-color: #FFF;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.checkbox:checked + label {
+  color: var(--color75);
+}
+
+.checkbox:checked + label::before {
+  box-shadow: 0 0 0 1px var(--purple);
+  background-image: url("/images/svg/check.svg");
+  color: var(--color75);
+}
+
+.toggle {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.toggle + label {
   display: inline-flex;
   align-items: center;
 }
 
-input[type="checkbox" i]+label::before {
+.toggle + label::before {
   position: static;
   content: "";
   display: inline-block;
@@ -152,7 +206,7 @@ input[type="checkbox" i]+label::before {
   transition: .3s ease-in-out;
 }
 
-input[type="checkbox" i]:checked+label::before {
+.toggle:checked + label::before {
   box-shadow: inset 0 0 0 1px var(--purple), inset 20px 0 0 4px #FFF, inset 0px 0 0 4px #FFF;
   background-image: var(--gradient);
 }
@@ -177,7 +231,7 @@ header {
   width: 100%;
   background: white;
   box-shadow: 0px 10px 20px var(--color5);
-  padding: 20px 10%;
+  padding: 20px calc((100% - 1160px) / 2);
   position: relative;
   height: 70px;
 }
@@ -200,6 +254,15 @@ nav {
   justify-content: center;
 }
 
+.services::after, .agreements::after {
+  position: relative;
+  content: "expand_more";
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-size: 24px;
+  text-transform: none;
+}
+
 header div {
   /* position: absolute; */
   display: inline-flex;
@@ -211,7 +274,7 @@ header div {
 }
 
 header div:last-child {
-  margin-right: 0;
+  /* margin-right: 0; */
 }
 
 .logo {
@@ -258,11 +321,112 @@ header .btn {
 }
 
 section {
+  background: #FFF;
+  width: 100%;
+  min-height: 830px;
+}
+
+.bg-image {
   background: url("/images/image 3.png");
   background-size: cover;
-  background-position: 0 -100px;
+  background-position: 0 -69px;
+}
+
+.main {
+  padding: 30px calc((100% - 1160px) / 2) 70px calc((100% - 1160px) / 2);
+  display: grid;
+  grid-template-columns: 266px 1fr;
+  grid-gap: 60px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  /* justify-content: space-around; */
+  /* align-items: stretch; */
+}
+
+.filters div {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+}
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 270px);
+  justify-content: space-around;
+  grid-row-gap: 40px;
+  grid-column-gap: 12px;
+  overflow-y: auto;
+}
+
+article {
+  box-shadow: 0px 10px 20px var(--color5);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-link {
+  display: block;
+}
+
+.card-link:hover {
+  opacity: 0.9;
+}
+
+article img {
+  /* border-radius: 4px; */
+}
+
+.catalog article .info {
+  display: grid;
+  /* grid-gap: 20px; */
+  padding: 20px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  grid-row-gap: 10px;
+}
+
+.catalog article .info .room-number {
+  display: flex;
+  align-items: flex-end;
+  grid-gap: 8px;
+  /* justify-content: flex-end; */
+}
+
+.catalog article .info .room-number span {
+  font-size: 12px;
+}
+
+.catalog article .info .room-number h3 {
+  color: var(--purple);
+}
+
+.catalog article .info .room-rating {
+  color: var(--purple);
+}
+
+.catalog article .info .room-rating span {
+  display: inline-block;
+  margin-right: -1px;
+}
+
+.catalog article .info .room-price, .catalog article .info .room-comments {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  white-space: pre;
+}
+
+.line {
+  content: "";
   width: 100%;
-  height: 830px;
+  grid-row: 2;
+  grid-column: 1 / 3;
+  height: 1px;
+  background: rgba(31, 32, 65, 0.1);
 }
 
 .container {
@@ -282,7 +446,7 @@ section {
 .search {
   float: left;
   left: 140px;
-  grid-column: 50% 50%;
+  /* grid-column: 50% 50%; */
 }
 
 .registration {
@@ -334,15 +498,24 @@ div .arrive-departure {
   margin-top: 5px; */
 }
 
-.container .btn {
+.container .main-btn {
   /* width: 320px; */
   height: 44px;
+}
+
+.main-btn::after {
+  content: "arrow_forward";
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-size: 24px;
+  text-transform: none;
+  right: 60px;
 }
 
 .caption {
   position: relative;
   right: 134px;
-  top: 764px;
+  top: 761px;
   float: right;
   text-align: right;
   /* text-shadow: 1px 1px 3px var(--color75); */
@@ -351,43 +524,45 @@ div .arrive-departure {
 footer {
   display: inline-flex;
   justify-content: space-between;
+  align-items: flex-start;
   /* height: 442px; */
   width: 100%;
   background: white;
-  box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
-  padding: 100px 140px;
-}
-
-footer ::after {
-  display: none;
+  box-shadow: 0px 0px 0px 1px rgba(31, 32, 65, 0.1);
+  padding: 100px calc((100% - 1160px) / 2);
 }
 
 .col {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  padding: 0 20px;
+  width: 160px;
+  /* padding: 0 20px; */
   text-align: left;
 }
 
 .col img {
   display: inline;
   width: 106px;
+  margin: 0;
 }
 
 .col:first-child {
-  padding: 0 20px 0 0;
+  /* padding: 0 20px 0 0; */
 }
 
 .col:last-child {
-  padding: 0 0 0 20px;
+  /* padding: 0 0 0 20px; */
 }
 
 .col-lg {
   width: 260px;
 }
 
-.col * {
+.col h3 {
+  margin-top: 5px;
+}
+
+.col span, .col p, .col input {
   margin-top: 20px;
 }
 
