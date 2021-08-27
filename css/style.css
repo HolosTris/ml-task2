@@ -57,6 +57,7 @@ body {
   min-height: 600px;
 }
 h1, h2, h3, h4, h5, h6 {
+  display: inline-block;
   font-style: bold;
   font-weight: bold;
   letter-spacing: 0;
@@ -77,6 +78,10 @@ p {
 }
 a {
   color: var(--color75);
+}
+i {
+  font-style: normal;
+  font-size: 12px;
 }
 button {
   font: bold 12px Montserrat;
@@ -144,14 +149,13 @@ input[type="radio" i]:checked + label::before {
 
 .checkbox + label {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   color: var(--color50);
 }
 
 .checkbox + label::before {
   position: static;
   content: "";
-  display: inline-block;
   width: 20px;
   height: 20px;
   flex-shrink: 0;
@@ -159,7 +163,8 @@ input[type="radio" i]:checked + label::before {
   border: 4px solid #FFF;
   box-shadow: 0 0 0 1px var(--color25);
   border-radius: 20%;
-  margin-right: 0.5em;
+  margin-right: 10px;
+  margin-top: -0.2em;
   background-color: #FFF;
   background-repeat: no-repeat;
   background-position: center;
@@ -347,10 +352,28 @@ section {
   /* align-items: stretch; */
 }
 
-.filters div {
+.filters > div {
   display: flex;
   flex-direction: column;
   grid-gap: 10px;
+}
+
+.cost h3 {
+  /* display: inline-block; */
+}
+
+.cost i {
+  float: right;
+}
+
+.accessibility label {
+  color: var(--color75);
+  font-weight: bold;
+}
+
+.accessibility i {
+  display: inline-block;
+  margin: 0px 0 0 30px;
 }
 
 .catalog {
