@@ -41,7 +41,7 @@
 [slider] > div > [thumb] {
   position: absolute;
   top: -4px;
-  z-index: 2;
+  z-index: 0.5;
   height: 14px;
   width: 14px;
   text-align: left;
@@ -58,7 +58,7 @@
   position: absolute;
   pointer-events: none;
   -webkit-appearance: none;
-  z-index: 3;
+  z-index: 1;
   height: 14px;
   top: -5px;
   width: 100%;
@@ -138,7 +138,7 @@ div[slider] > input[type=range]::-ms-tooltip {
   position: absolute;
   margin-left: -14px;
   top: -39px;
-  z-index:3;
+  z-index:1;
   background-color: #1ABC9C;
   color: #fff;
   width: 28px;

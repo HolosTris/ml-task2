@@ -358,6 +358,16 @@ section {
   grid-gap: 10px;
 }
 
+/* datepicker */
+
+.ui-datepicker-prev {
+  background-image: url(/images/svg/arrow_back.svg);
+}
+
+.ui-datepicker-next {
+  background-image: url(/images/svg/arrow_forward.svg);
+}
+
 .cost h3 {
   /* display: inline-block; */
 }
@@ -511,9 +521,9 @@ div .arrive-departure {
   /* margin-left: 12px; */
 }
 
-.arrive select, .departure select {
-  /* width: 150px;
-  margin-top: 5px; */
+.arrive input, .departure input {
+  width: 150px;
+  /* margin-top: 5px; */
 }
 
 .guests select {
