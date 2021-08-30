@@ -1,0 +1,175 @@
+[slider] {
+  position: relative;
+  height: 6px;
+  border-radius: 5px;
+  text-align: left;
+  margin: 0 0 0 0;
+}
+
+[slider] > div {
+  position: absolute;
+  left: 13px;
+  right: 15px;
+  height: 14px;
+}
+
+[slider] > div > [inverse-left], [slider] > div > [inverse-right] {
+  position: absolute;
+  height: 6px;
+  border: 1px solid var(--color25);
+  border-radius: 5px;
+  background-color: #FFF;
+  margin: 0 7px;
+}
+
+[slider] > div > [inverse-left] {
+  left: 0;
+}
+
+[slider] > div > [inverse-right] {
+  right: 0;
+}
+
+[slider] > div > [range] {
+  position: absolute;
+  left: 0;
+  height: 6px;
+  border-radius: 5px;
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+[slider] > div > [thumb] {
+  position: absolute;
+  top: -4px;
+  z-index: 0.5;
+  height: 14px;
+  width: 14px;
+  text-align: left;
+  margin-left: -7px;
+  cursor: pointer;
+  /* box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4); */
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border: 2px solid #FFF;
+  border-radius: 50%;
+  outline: none;
+}
+
+[slider] > input[type=range] {
+  position: absolute;
+  pointer-events: none;
+  -webkit-appearance: none;
+  z-index: 1;
+  height: 14px;
+  top: -5px;
+  width: 100%;
+  padding: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+}
+
+div[slider] > input[type=range]::-ms-track {
+  -webkit-appearance: none;
+  background: transparent;
+  color: transparent;
+}
+
+div[slider] > input[type=range]::-moz-range-track {
+  -moz-appearance: none;
+  background: transparent;
+  color: transparent;
+}
+
+div[slider] > input[type=range]:focus::-webkit-slider-runnable-track {
+  background: transparent;
+  border: transparent;
+}
+
+div[slider] > input[type=range]:focus {
+  outline: none;
+}
+
+div[slider] > input[type=range]::-ms-thumb {
+  pointer-events: all;
+  width: 28px;
+  height: 28px;
+  border-radius: 0px;
+  border: 0 none;
+  background: red;
+}
+
+div[slider] > input[type=range]::-moz-range-thumb {
+  pointer-events: all;
+  width: 28px;
+  height: 28px;
+  border-radius: 0px;
+  border: 0 none;
+  background: red;
+}
+
+div[slider] > input[type=range]::-webkit-slider-thumb {
+  pointer-events: all;
+  width: 28px;
+  height: 28px;
+  border-radius: 0px;
+  border: 0 none;
+  background: red;
+  -webkit-appearance: none;
+}
+
+div[slider] > input[type=range]::-ms-fill-lower {
+  background: transparent;
+  border: 0 none;
+}
+
+div[slider] > input[type=range]::-ms-fill-upper {
+  background: transparent;
+  border: 0 none;
+}
+
+div[slider] > input[type=range]::-ms-tooltip {
+  display: none;
+}
+
+[slider] > div > [sign] {
+  opacity: 0;
+  position: absolute;
+  margin-left: -14px;
+  top: -39px;
+  z-index:1;
+  background-color: #1ABC9C;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 28px;
+  -webkit-border-radius: 28px;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+[slider] > div > [sign]:after {
+  position: absolute;
+  content: '';
+  left: 0;
+  border-radius: 16px;
+  top: 19px;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top-width: 16px;
+  border-top-style: solid;
+  border-top-color: #1ABC9C;
+}
+
+[slider] > div > [sign] > span {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+[slider]:hover > div > [sign] {
+  opacity: 1;
+}

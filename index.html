@@ -4,14 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
   <link rel="stylesheet" href="css/style.css">
   <title>Landing</title>
+=======
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/slider.css">
+  <title>Task 2</title>
+>>>>>>> master
 </head>
 <body>
 <header>
   <div class="logo">
+<<<<<<< HEAD
     <a href="#">
       <img src="svg/logo.svg"  width="106" height="40">
+=======
+    <a href="index.html">
+      <img src="/svg/logo.svg"  width="106" height="40">
+>>>>>>> master
       <!-- <object data="/svg/logo.svg" type="image/svg+xml" width="106" height="40"></object> -->
       <!-- <iframe src="/svg/logo.svg" width="106" height="40" frameborder="0" allowtransparency seamless></iframe> -->
     </a>
@@ -22,6 +34,7 @@
     <div class="vacancies"><a href="#">Вакансии</a></div>
     <div class="news"><a href="#">Новости</a></div>
     <div class="agreements"><a href="#">Соглашения</a></div>
+<<<<<<< HEAD
     <div class="log">
       <a href="#" class="btn" id="logIn">Войти</a>
       <a href="registration.html" class="btn">Зарегистрироваться</a>
@@ -43,6 +56,31 @@
         <select name="departure">
           <option value="placeholder">ДД.ММ.ГГГГ</option>
         </select>
+=======
+    <a href="login.html" class="btn alt-btn">Войти</a>
+    <a href="registration.html" class="btn">Зарегистрироваться</a>
+  </nav>
+</header>
+<section class="bg-image">
+  <div class="container search">
+    <h1>Найдём номера под ваши пожелания</h1>
+    <div class="arrive-departure">
+      <input type="text" id="input1_1" class="rangepicker search-dp" style="">
+      <div class="arrive">
+        <h3>Прибытие</h3>
+        <!-- <select name="" id="input1" onclick="$('.rangepicker').datepicker('show');">
+          <option value="placeholder">ДД.ММ.ГГГГ</option>
+        </select> -->
+        <input type="text" id="input1" onclick="$('.rangepicker').datepicker('show');">
+        <!-- <input type="text" id="datepicker"> -->
+      </div>
+      <div class="departure">
+        <h3>Выезд</h3>
+        <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');">
+        <!-- <select name="" id="input2" onclick="$('.rangepicker').datepicker('show');">
+          <option value="placeholder">ДД.ММ.ГГГГ</option>
+        </select> -->
+>>>>>>> master
       </div>
     </div>
     <div class="guests">
@@ -51,8 +89,12 @@
         <option value="placeholder">Сколько гостей</option>
       </select>
     </div>
+<<<<<<< HEAD
     <button type="button" name="chooseRoom" class="btn">Подобрать номер</button>
     <p class="caption">Лучшие номера для вашей работы,<br> отдыха и просто вдохновения</p>
+=======
+    <button type="button" name="chooseRoom" class="btn main-btn">Подобрать номер</button>
+>>>>>>> master
   </div>
 </section>
 <footer>
@@ -62,23 +104,23 @@
   </div>
   <div class="col">
     <h3>Навигация</h3>
-    <a href="#">О нас</a>
-    <a href="#">Новости</a>
-    <a href="#">Служба поддержки</a>
-    <a href="#">Услуги</a>
+    <span><a href="#">О нас</a></span>
+    <span><a href="#">Новости</a></span>
+    <span><a href="#">Служба поддержки</a></span>
+    <span><a href="#">Услуги</a></span>
   </div>
   <div class="col">
     <h3>О нас</h3>
-    <a href="#">О сервисе</a>
-    <a href="#">Наша команда</a>
-    <a href="#">Вакансии</a>
-    <a href="#">Инвесторы</a>
+    <span><a href="#">О сервисе</a></span>
+    <span><a href="#">Наша команда</a></span>
+    <span><a href="#">Вакансии</a></span>
+    <span><a href="#">Инвесторы</a></span>
   </div>
   <div class="col">
     <h3>Служба поддержки</h3>
-    <a href="#">Соглашения</a>
-    <a href="#">Сообщества</a>
-    <a href="#">Связь с нами</a>
+    <span><a href="#">Соглашения</a></span>
+    <span><a href="#">Сообщества</a></span>
+    <span><a href="#">Связь с нами</a></span>
   </div>
   <div class="col col-lg">
     <h3>Подписка</h3>
@@ -86,6 +128,14 @@
     <input type="text" name="" value="" placeholder="Email">
   </div>
 </footer>
-<div class="copyright"><p>Copyright © 2018 Toxin отель. Все права защищены.</p></div>
+<div class="copyright"><span>Copyright © 2018 Toxin отель. Все права защищены.</span></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 </body>
 </html>
