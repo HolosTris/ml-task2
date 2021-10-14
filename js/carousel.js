@@ -1,118 +1,93 @@
+// catalog.onreadystatechange = () => {
 loadedCatalog.finally(() => {
-	const allCarousels = $('.carousel-wrap');
+	const allCarousels = catalog.querySelectorAll(".carousel-wrap");
 
-		$(document).ready(function(){
+		// $(document).ready(function(){
 	for (let carousel of allCarousels) {
 		//number of slides
-		const totalSlides = $('ul li', carousel).length;
+		const totalSlides = carousel.querySelectorAll("ul li").length;
 		//get the slide width
-		const sliderWidth = $(carousel).width();
+		const sliderWidth = carousel.clientWidth;
 		//current position
 		let pos = 0;
 
 		// Carousel
+		//set width to be "x" times the number of slides
+		carousel.querySelector("ul.carousel").style.width = sliderWidth * totalSlides + "px";
+		// console.log(carousel.querySelector("ul.carousel").clientWidth);
 
+		//next slide
+		carousel.querySelector("#next").onclick = () => {
+			slideRight();
+		};
 
-
-			/*****************
-			 BUILD THE SLIDER
-			*****************/
-			//set width to be 'x' times the number of slides
-			$('ul.carousel', carousel).width(sliderWidth*totalSlides);
-
-				//next slide
-			$('#next', carousel).click(function(){
-				slideRight();
-			});
-
-			//previous slide
-			$('#previous', carousel).click(function(){
-				slideLeft();
-			});
-
-
-
-			/*************************
-			 //*> OPTIONAL SETTINGS
-			************************/
-			//automatic slider
-			// var autoSlider = setInterval(slideRight, 3000);
-
-			//for each slide
-			$.each($('ul li', carousel), function() {
-				//set its color
-				// var c = $(this).attr("data-color");
-				// $(this).css("background",c);
-
-				//create a pagination
-				var li = document.createElement('li');
-				$('#pagination-wrap ul', carousel).append(li);
-			});
-
-			//counter
-			// countSlides();
-
-			//pagination
-			pagination();
-
-			//hide/show controls/btns when hover
-			//pause automatic slide when hover
-			// $(carousel).hover(
-			//   function(){ $(this).addClass('active'); clearInterval(autoSlider); },
-			//   function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
-			// );
-
-			$(carousel).hover(
-				function(){ $(this).addClass('active'); },
-				function(){ $(this).removeClass('active'); }
-			);
+		//previous slide
+		carousel.querySelector("#previous").onclick = () => {
+			slideLeft();
+		};
 
 
 
 
+		//for each slide
+		carousel.querySelectorAll("ul li").forEach(() => {
+			//create a pagination
+			const li = document.createElement("li");
+			carousel.querySelector("#pagination-wrap ul").append(li);
+		});
 
+		//counter
+		// countSlides();
 
-		/***********
-		 SLIDE LEFT
-		************/
+		//pagination
+		pagination();
+
+		//hide/show controls/btns when hover
+
+		carousel.onmouseover = function() { this.classList.add("active"); }
+		carousel.onmouseout = function() { this.classList.remove("active"); }
+
+		//pause automatic slide when hover
+		// let autoSlider = setInterval(slideRight, 3000);
+
+		// carousel.addEventListener("mouseover", function() {
+		// 	clearInterval(autoSlider);
+		// })
+		// carousel.addEventListener("mouseout", function() {
+		// 	autoSlider = setInterval(slideRight, 3000);
+		// })
+		
+		//SLIDE LEFT
 		function slideLeft(){
 			pos--;
 			if(pos==-1){ pos = totalSlides-1; }
-			$('ul.carousel', carousel).css('left', -(sliderWidth*pos));
+			carousel.querySelector("ul.carousel").style.left = -(sliderWidth*pos) + "px";
 
 			//*> optional
 			// countSlides();
 			pagination();
 		}
-
-
-		/************
-		 SLIDE RIGHT
-		*************/
+		
+		//SLIDE RIGHT
 		function slideRight(){
 			pos++;
 			if(pos==totalSlides){ pos = 0; }
-			$('ul.carousel', carousel).css('left', -(sliderWidth*pos));
+			carousel.querySelector("ul.carousel").style.left = -(sliderWidth*pos) + "px";
 
 			//*> optional
 			// countSlides();
 			pagination();
 		}
 
-
-
-
-		/************************
 		 //*> OPTIONAL SETTINGS
-		************************/
 		// function countSlides(){
-		// 	$('#counter').html(pos+1 + ' / ' + totalSlides);
+		// 	carousel.querySelector("#counter").innerHTML = pos+1 + " / " + totalSlides;
 		// }
 
 		function pagination(){
-			$('#pagination-wrap ul li', carousel).removeClass('active');
-			$('#pagination-wrap ul li:eq('+pos+')', carousel).addClass('active');
+			carousel.querySelectorAll("#pagination-wrap ul li").forEach(li => li.classList.remove("active"));
+			carousel.querySelectorAll("#pagination-wrap ul li")[pos].classList.add("active");
 		}
 	}
-	});//DOCUMENT READY
 });
+// }

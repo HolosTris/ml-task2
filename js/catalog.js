@@ -1,5 +1,8 @@
 const catalog = document.querySelector(".catalog");
 
+// document.onmousemove = () => false;
+// document.onkeydown = () => false;
+
 const loadedCatalog = fetch("/json/hotel_rooms.json")
   .then(response => response.json())
   .catch(error => alert(error))
@@ -9,13 +12,22 @@ const loadedCatalog = fetch("/json/hotel_rooms.json")
     }
     
     createRandomCatalog(6);
+
+    catalog.dataset.loaded = true;
+
+    // let ev = new MouseEvent("click", {
+    //   clientX: 800,
+    //   clientY: 400
+    // })
+  
+    // document.dispatchEvent(ev);
   });
 
 function createCard(info) {
   catalog.insertAdjacentHTML("beforeend", `
     <article>
       <div class="carousel-wrap">
-        <a href="" class="card-link">
+        <a href="/rooms/${info.number}.html" class="card-link">
           <ul class="carousel">
           <--images-->
           </ul>
@@ -29,7 +41,7 @@ function createCard(info) {
           </ul>
         </div>
       </div>
-      <a href="" class="card-link">
+      <a href="/rooms/${info.number}.html" class="card-link">
         <div class="info">
           <span class="room-number"><h2><span>№</span> ${info.number}</h2><h3>${(info.isSuite)? "люкс" : ""}</h3></span>
           <span class="room-price"><b>${beutifyNumber(info.price)}₽</b> в сутки</span>
