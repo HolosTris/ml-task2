@@ -1,0 +1,84 @@
+[
+  {
+    "number": 888,
+    "price": 9990,
+    "rating": 5,
+    "comments": 145,
+    "isSuite": true,
+    "images": [
+      "images/catalog/catalog1.png",
+      "images/catalog/catalog2.png",
+      "images/catalog/catalog3.png",
+      "images/catalog/catalog4.png"
+    ]
+  },
+  {
+    "number": 777,
+    "price": 8990,
+    "rating": 4,
+    "comments": 128,
+    "isSuite": true,
+    "images": [
+      "images/catalog/catalog2.png",
+      "images/catalog/catalog3.png",
+      "images/catalog/catalog4.png"
+    ]
+  },
+  {
+    "number": 333,
+    "price": 3330,
+    "rating": 3,
+    "comments": 101,
+    "isSuite": false,
+    "images": [
+      "images/catalog/catalog3.png",
+      "images/catalog/catalog6.png",
+      "images/catalog/catalog9.png",
+      "images/catalog/catalog12.png"
+    ]
+  },
+  {
+    "number": 1,
+    "price": 2090,
+    "rating": 4,
+    "comments": 315,
+    "isSuite": false,
+    "images": [
+      "images/catalog/catalog4.png",
+      "images/catalog/catalog5.png",
+      "images/catalog/catalog6.png",
+      "images/catalog/catalog7.png",
+      "images/catalog/catalog8.png",
+      "images/catalog/catalog9.png",
+      "images/catalog/catalog10.png",
+      "images/catalog/catalog11.png"
+    ]
+  },
+  {
+    "number": 204,
+    "price": 5590,
+    "rating": 4,
+    "comments": 211,
+    "isSuite": true,
+    "images": [
+      "images/catalog/catalog5.png",
+      "images/catalog/catalog9.png",
+      "images/catalog/catalog6.png",
+      "images/catalog/catalog7.png"
+    ]
+  },
+  {
+    "number": 404,
+    "price": 4090,
+    "rating": 3,
+    "comments": 196,
+    "isSuite": false,
+    "images": [
+      "images/catalog/catalog6.png",
+      "images/catalog/catalog5.png",
+      "images/catalog/catalog1.png",
+      "images/catalog/catalog3.png",
+      "images/catalog/catalog8.png"
+    ]
+  }
+]
