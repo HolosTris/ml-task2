@@ -1,0 +1,121 @@
+.carousel-wrap{
+  display: block;
+	/* height:100%; */
+	position:relative;
+	overflow:hidden;
+}
+
+.carousel-wrap ul.carousel{
+	/* width:100%; */
+	/* height:100%; */
+
+	position: relative;
+	/* top:0; */
+	/* left:0; */
+  list-style-type: none;
+}
+
+.carousel-wrap ul.carousel li{
+	float:left;
+	position:relative;
+	/* width:600px; */
+	/* height:400px; */
+}
+
+.carousel-wrap ul.carousel li img {
+  width: 270px;
+}
+
+/*btns*/
+.btns{
+	position:absolute;
+	width:44px;
+	height:44px;
+	top:50%;
+	margin-top:-25px;
+	text-align:center;
+  vertical-align: middle;
+	cursor:pointer;
+	/* background:rgba(0,0,0,0.1); */
+	z-index:100;
+  color: white;
+
+  user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-ms-user-select: none;
+
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}
+
+.btns:hover{
+	background:rgba(0,0,0,0.3);
+}
+
+#next{right:-50px; border-radius:7px 0px 0px 7px;}
+#previous{left:-50px; border-radius:0px 7px 7px 0px;}
+
+#next i, #previous i {line-height:44px;}
+
+#next i{transform: rotate(-90deg);}
+#previous i{transform: rotate(90deg);}
+
+#counter{
+	top: 30px;
+	right:35px;
+	width:auto;
+	position:absolute;
+}
+
+.carousel-wrap.active #next{right:0px;}
+.carousel-wrap.active #previous{left:0px;}
+
+
+/*bar*/
+#pagination-wrap{
+	min-width:20px;
+	bottom: 15px;
+	right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	height:15px;
+	position: absolute;
+	text-align:center;
+}
+
+#pagination-wrap ul {
+	width:100%;
+}
+
+#pagination-wrap ul li{
+	margin: 0 2px;
+	display: inline-block;
+	width:8px;
+	height:8px;
+	border-radius:50%;
+  border: 1px solid #FFF;
+	/* opacity:0.5; */
+	position:relative;
+  top:0;
+}
+
+#pagination-wrap ul li.active{
+  background:#fff;
+  /* top:3px; */
+	opacity:1;
+	box-shadow:rgba(0,0,0,0.1) 1px 1px 0px;
+}
+
+/*ANIMATION*/
+.carousel-wrap ul, #pagination-wrap ul li{
+	-webkit-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	-moz-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	-o-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	-ms-transition: all 0.3s cubic-bezier(1,.01,.32,1);
+	transition: all 0.3s cubic-bezier(1,.01,.32,1);
+}

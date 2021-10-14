@@ -7,530 +7,243 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/slider.css">
+  <link rel="stylesheet" href="css/carousel.css">
   <link rel="stylesheet" href="css/range.css">
+  <link rel="stylesheet" href="css/datepicker.css">
   <title>Main</title>
 </head>
 <body>
-<header>
-  <div class="logo">
-    <a href="index.html">
-      <img src="svg/logo.svg"  width="106" height="40">
-    </a>
-  </div>
-  <nav>
-    <div class="about"><a href="#">О нас</a></div>
-    <div class="services"><a href="#">Услуги</a></div>
-    <div class="vacancies"><a href="#">Вакансии</a></div>
-    <div class="news"><a href="#">Новости</a></div>
-    <div class="agreements"><a href="#">Соглашения</a></div>
-      <a href="#" class="btn alt-btn">Войти</a>
-      <a href="registration.html" class="btn">Зарегистрироваться</a>
-  </nav>
-</header>
-<section class="main">
-  <aside class="filters">
-    <div class="dates">
-      <h3>Даты пребывания в отеле</h3>
-      <input type="text" id="input1_1" class="rangepicker filter-dp" style="display: none">
-      <input type="text" id="input1" onclick="$('.rangepicker').datepicker('show');" style="display: none">
-      <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');" style="display: none">
-      <input type="text" id="input" onclick="$('.rangepicker').datepicker('show');">
-      <!-- <div type="text" id="datepicker" name="datepicker"></div>
-      <p>
-        <label><b>Checkin:</b></label> <label id="checkinDate"></label>
-        <label><b>Checkout:</b></label> <label id="checkoutDate"></label>
-      </p> -->
-      <!-- <input type="text" id="from" name="from">
-      <input type="text" id="to" name="to"> -->
-      <!-- <input type="date" name="" value=""> -->
-      <!-- <select name="">
-        <option value="placeholder">19 авг - 23 авг</option>
-      </select> -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="svg/logo.svg"  width="106" height="40">
+      </a>
     </div>
-    <div class="guests">
-      <h3>Гости</h3>
-      <select name="">
-        <option value="placeholder">3 гостя, 1 младенец</option>
-      </select>
-    </div>
-    <div id="cost">
-      <div>
-        <h3>Диапазон цены</h3>
-        <i><span id="value-left">2000</span>₽ - <span id="value-right">20000</span>₽</i>
+    <nav>
+      <div class="about"><a href="#">О нас</a></div>
+      <div class="services"><a href="#">Услуги</a></div>
+      <div class="vacancies"><a href="#">Вакансии</a></div>
+      <div class="news"><a href="#">Новости</a></div>
+      <div class="agreements"><a href="#">Соглашения</a></div>
+        <a href="#" class="btn alt-btn">Войти</a>
+        <a href="registration.html" class="btn">Зарегистрироваться</a>
+    </nav>
+  </header>
+  <section class="main">
+    <aside class="filters">
+      <div class="dates">
+        <h3>Даты пребывания в отеле</h3>
+        <input type="text" id="input1_1" class="rangepicker filter-dp" style="display: none">
+        <input type="text" id="input1" onclick="$('.rangepicker').datepicker('show');" style="display: none">
+        <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');" style="display: none">
+        <input type="text" id="input" onclick="$('.rangepicker').datepicker('show');">
+        <!-- <div type="text" id="datepicker" name="datepicker"></div>
+        <p>
+          <label><b>Checkin:</b></label> <label id="checkinDate"></label>
+          <label><b>Checkout:</b></label> <label id="checkoutDate"></label>
+        </p> -->
+        <!-- <input type="text" id="from" name="from">
+        <input type="text" id="to" name="to"> -->
+        <!-- <input type="date" name="" value=""> -->
+        <!-- <select name="">
+          <option value="placeholder">19 авг - 23 авг</option>
+        </select> -->
       </div>
-      <div slider id="slider-distance">
+      <div class="guests">
+        <h3>Гости</h3>
+        <select name="">
+          <option value="placeholder">3 гостя, 1 младенец</option>
+        </select>
+      </div>
+      <div id="cost">
         <div>
-          <div inverse-left style="width:0%;"></div>
-          <div inverse-right style="width:0%;"></div>
-          <div range style="left:0%;right:0%;"></div>
-          <span thumb style="left:0%;"></span>
-          <span thumb style="left:100%;"></span>
-          <!-- <div sign style="left:0%;">
-            <span id="value">2000</span>
+          <h3>Диапазон цены</h3>
+          <i><span id="value-left">2000</span>₽ - <span id="value-right">20000</span>₽</i>
+        </div>
+        <div slider id="slider-distance">
+          <div>
+            <div inverse-left style="width:0%;"></div>
+            <div inverse-right style="width:0%;"></div>
+            <div range style="left:0%;right:0%;"></div>
+            <span thumb style="left:0%;"></span>
+            <span thumb style="left:100%;"></span>
+            <!-- <div sign style="left:0%;">
+              <span id="value">2000</span>
+            </div>
+            <div sign style="left:100%;">
+              <span id="value">20000</span>
+            </div> -->
           </div>
-          <div sign style="left:100%;">
-            <span id="value">20000</span>
-          </div> -->
+          <input id="range-left" type="range" value="4" min="4" max="40" step="1"/>
+
+          <input id="range-right" type="range" value="40" min="4" max="40" step="1"/>
         </div>
-        <input id="range-left" type="range" value="4" min="4" max="40" step="1"/>
-
-        <input id="range-right" type="range" value="40" min="4" max="40" step="1"/>
+        <i>Стоимость за сутки пребывания в номере</i>
       </div>
-      <i>Стоимость за сутки пребывания в номере</i>
-    </div>
-    <div class="guests">
-      <h3>Правила дома</h3>
-        <input type="checkbox" name="canSmoking" value="" id="canSmoking" class="checkbox">
-        <label for="canSmoking">Можно курить</label>
-        <input type="checkbox" name="canPets" value="" id="canPets" class="checkbox">
-        <label for="canPets">Можно с питомцами</label>
-        <input type="checkbox" name="canGuests" value="" id="canGuests" class="checkbox">
-        <label for="canGuests">Можно пригласить гостей (до 10 человек)</label>
-    </div>
-    <div class="accessibility">
-      <h3>Доступность</h3>
-        <div>
-          <input type="checkbox" name="hasWideCorridor" value="" id="hasWideCorridor" class="checkbox">
-          <label for="hasWideCorridor">Широкий коридор</label>
-          <i>Ширина коридоров в номере не менее 91 см.</i>
+      <div class="guests">
+        <h3>Правила дома</h3>
+          <input type="checkbox" name="canSmoking" value="" id="canSmoking" class="checkbox">
+          <label for="canSmoking">Можно курить</label>
+          <input type="checkbox" name="canPets" value="" id="canPets" class="checkbox">
+          <label for="canPets">Можно с питомцами</label>
+          <input type="checkbox" name="canGuests" value="" id="canGuests" class="checkbox">
+          <label for="canGuests">Можно пригласить гостей (до 10 человек)</label>
+      </div>
+      <div class="accessibility">
+        <h3>Доступность</h3>
+          <div>
+            <input type="checkbox" name="hasWideCorridor" value="" id="hasWideCorridor" class="checkbox">
+            <label for="hasWideCorridor">Широкий коридор</label>
+            <i>Ширина коридоров в номере не менее 91 см.</i>
+          </div>
+          <div>
+            <input type="checkbox" name="hasAssistant" value="" id="hasAssistant" class="checkbox">
+            <label for="hasAssistant">Помощник для инвалидов</label>
+            <i>На 1 этаже вас встретит специалист  и проводит до номера.</i>
+          </div>
+      </div>
+      <div class="guests">
+        <h3>Гости</h3>
+        <select name="">
+          <option value="placeholder">3 гостя, 1 младенец</option>
+        </select>
+      </div>
+      <div class="guests">
+        <h3>Доступность</h3>
+          <input type="checkbox" name="hasBreakfast" value="" id="hasBreakfast" class="checkbox">
+          <label for="hasBreakfast">Завтрак</label>
+          <input type="checkbox" name="hasDesk" value="" id="hasDesk" class="checkbox">
+          <label for="hasDesk">Письменный стол</label>
+          <input type="checkbox" name="hasChair" value="" id="hasChair" class="checkbox">
+          <label for="hasChair">Стул для кормления</label>
+          <input type="checkbox" name="hasCrib" value="" id="hasCrib" class="checkbox">
+          <label for="hasCrib">Кроватка</label>
+          <input type="checkbox" name="hasTV" value="" id="hasTV" class="checkbox">
+          <label for="hasTV">Телевизор</label>
+          <input type="checkbox" name="hasShampoo" value="" id="hasShampoo" class="checkbox">
+          <label for="hasShampoo">Шампунь</label>
+      </div>
+    </aside>
+    <section class="catalog">
+    <article>
+      <div class="carousel-wrap">
+        <a href="" class="card-link">
+          <ul class="carousel">
+            <li>
+              <img src="images/catalog/catalog1.png" alt="">
+            </li>
+
+            <li>
+              <img src="images/catalog/catalog2.png" alt="">
+            </li>
+
+            <li>
+              <img src="images/catalog/catalog3.png" alt="">
+            </li>
+
+            <li>
+              <img src="images/catalog/catalog4.png" alt="">
+            </li>
+          </ul>
+        </a>
+        <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
+        <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
+        <div id="counter"></div>
+
+        <div id="pagination-wrap">
+          <ul>
+          </ul>
         </div>
-        <div>
-          <input type="checkbox" name="hasAssistant" value="" id="hasAssistant" class="checkbox">
-          <label for="hasAssistant">Помощник для инвалидов</label>
-          <i>На 1 этаже вас встретит специалист  и проводит до номера.</i>
+      </div>
+      <a href="" class="card-link">
+        <div class="info">
+          <span class="room-number"><h2><span>№</span> 777</h2><h3>люкс</h3></span>
+          <span class="room-price"><b>8 990₽</b> в сутки</span>
+          <div class="line"></div>
+          <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
+          <span class="room-comments"><b>128</b> Отзывов</span>
         </div>
-    </div>
-    <div class="guests">
-      <h3>Гости</h3>
-      <select name="">
-        <option value="placeholder">3 гостя, 1 младенец</option>
-      </select>
-    </div>
-    <div class="guests">
-      <h3>Доступность</h3>
-        <input type="checkbox" name="hasBreakfast" value="" id="hasBreakfast" class="checkbox">
-        <label for="hasBreakfast">Завтрак</label>
-        <input type="checkbox" name="hasDesk" value="" id="hasDesk" class="checkbox">
-        <label for="hasDesk">Письменный стол</label>
-        <input type="checkbox" name="hasChair" value="" id="hasChair" class="checkbox">
-        <label for="hasChair">Стул для кормления</label>
-        <input type="checkbox" name="hasCrib" value="" id="hasCrib" class="checkbox">
-        <label for="hasCrib">Кроватка</label>
-        <input type="checkbox" name="hasTV" value="" id="hasTV" class="checkbox">
-        <label for="hasTV">Телевизор</label>
-        <input type="checkbox" name="hasShampoo" value="" id="hasShampoo" class="checkbox">
-        <label for="hasShampoo">Шампунь</label>
-    </div>
-  </aside>
-  <section class="catalog">
-  <article>
-    <div class="carousel-wrap">
-      <a href="" class="card-link">
-        <ul class="carousel">
-          <li>
-            <img src="images/catalog/catalog1.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog2.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog3.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog4.png" alt="">
-          </li>
-        </ul>
       </a>
-      <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
-      <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
-      <div id="counter"></div>
+    </article>
+    <article>
+      <div class="carousel-wrap">
+        <a href="" class="card-link">
+          <ul class="carousel">
+            <li>
+              <img src="images/catalog/catalog2.png" alt="">
+            </li>
 
-      <div id="pagination-wrap">
-        <ul>
-        </ul>
+            <li>
+              <img src="images/catalog/catalog3.png" alt="">
+            </li>
+
+            <li>
+              <img src="images/catalog/catalog1.png" alt="">
+            </li>
+
+            <li>
+              <img src="images/catalog/catalog4.png" alt="">
+            </li>
+          </ul>
+        </a>
+        <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
+        <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
+        <div id="counter"></div>
+
+        <div id="pagination-wrap">
+          <ul>
+          </ul>
+        </div>
       </div>
-    </div>
-    <a href="" class="card-link">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <div class="carousel-wrap">
       <a href="" class="card-link">
-        <ul class="carousel">
-          <li>
-            <img src="images/catalog/catalog2.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog3.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog1.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog4.png" alt="">
-          </li>
-        </ul>
+        <div class="info">
+          <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
+          <span class="room-price"><b>9 990₽</b> в сутки</span>
+          <div class="line"></div>
+          <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star_border</span></span>
+          <span class="room-comments"><b>145</b> Отзывов</span>
+        </div>
       </a>
-      <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
-      <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
-      <div id="counter"></div>
-
-      <div id="pagination-wrap">
-        <ul>
-        </ul>
-      </div>
-    </div>
-    <a href="" class="card-link">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star_border</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <div class="carousel-wrap">
-      <a href="" class="card-link">
-        <ul class="carousel">
-          <li>
-            <img src="images/catalog/catalog3.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog4.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog1.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog6.png" alt="">
-          </li>
-        </ul>
-      </a>
-      <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
-      <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
-      <div id="counter"></div>
-
-      <div id="pagination-wrap">
-        <ul>
-        </ul>
-      </div>
-    </div>
-    <a href="" class="card-link">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <div class="carousel-wrap">
-      <a href="" class="card-link">
-        <ul class="carousel">
-          <li>
-            <img src="images/catalog/catalog4.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog1.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog3.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog7.png" alt="">
-          </li>
-        </ul>
-      </a>
-      <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
-      <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
-      <div id="counter"></div>
-
-      <div id="pagination-wrap">
-        <ul>
-        </ul>
-      </div>
-    </div>
-    <a href="" class="card-link">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <div class="carousel-wrap">
-      <a href="" class="card-link">
-        <ul class="carousel">
-          <li>
-            <img src="images/catalog/catalog5.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog3.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog1.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog4.png" alt="">
-          </li>
-        </ul>
-      </a>
-      <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
-      <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
-      <div id="counter"></div>
-
-      <div id="pagination-wrap">
-        <ul>
-        </ul>
-      </div>
-    </div>
-    <a href="" class="card-link">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <div class="carousel-wrap">
-      <a href="" class="card-link">
-        <ul class="carousel">
-          <li>
-            <img src="images/catalog/catalog6.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog3.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog5.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog2.png" alt="">
-          </li>
-        </ul>
-      </a>
-      <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
-      <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
-      <div id="counter"></div>
-
-      <div id="pagination-wrap">
-        <ul>
-        </ul>
-      </div>
-    </div>
-    <a href="" class="card-link">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <div class="carousel-wrap">
-      <a href="" class="card-link">
-        <ul class="carousel">
-          <li>
-            <img src="images/catalog/catalog7.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog5.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog3.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog1.png" alt="">
-          </li>
-        </ul>
-      </a>
-      <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
-      <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
-      <div id="counter"></div>
-
-      <div id="pagination-wrap">
-        <ul>
-        </ul>
-      </div>
-    </div>
-    <a href="" class="card-link">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <div class="carousel-wrap">
-      <a href="" class="card-link">
-        <ul class="carousel">
-          <li>
-            <img src="images/catalog/catalog8.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog2.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog3.png" alt="">
-          </li>
-
-          <li>
-            <img src="images/catalog/catalog4.png" alt="">
-          </li>
-        </ul>
-      </a>
-      <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
-      <div class="btns" id="previous"><i class="material-icons">expand_more</i></div>
-      <div id="counter"></div>
-
-      <div id="pagination-wrap">
-        <ul>
-        </ul>
-      </div>
-    </div>
-    <a href="" class="card-link">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <a href="" class="card-link">
-      <img src="images/catalog/catalog9.png" alt="">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <a href="" class="card-link">
-      <img src="images/catalog/catalog10.png" alt="">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <a href="" class="card-link">
-      <img src="images/catalog/catalog11.png" alt="">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
-  <article>
-    <a href="" class="card-link">
-      <img src="images/catalog/catalog12.png" alt="">
-      <div class="info">
-        <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
-        <span class="room-price"><b>9 990₽</b> в сутки</span>
-        <div class="line"></div>
-        <span class="room-rating material-icons"><span>star</span><span>star</span><span>star</span><span>star</span><span>star</span></span>
-        <span class="room-comments"><b>145</b> Отзывов</span>
-      </div>
-    </a>
-  </article>
+    </article>
+    </section>
   </section>
-</section>
-<footer>
-  <div class="col col-lg">
-    <img src="svg/logo.svg">
-    <p>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
-  </div>
-  <div class="col">
-    <h3>Навигация</h3>
-    <span><a href="#">О нас</a></span>
-    <span><a href="#">Новости</a></span>
-    <span><a href="#">Служба поддержки</a></span>
-    <span><a href="#">Услуги</a></span>
-  </div>
-  <div class="col">
-    <h3>О нас</h3>
-    <span><a href="#">О сервисе</a></span>
-    <span><a href="#">Наша команда</a></span>
-    <span><a href="#">Вакансии</a></span>
-    <span><a href="#">Инвесторы</a></span>
-  </div>
-  <div class="col">
-    <h3>Служба поддержки</h3>
-    <span><a href="#">Соглашения</a></span>
-    <span><a href="#">Сообщества</a></span>
-    <span><a href="#">Связь с нами</a></span>
-  </div>
-  <div class="col col-lg">
-    <h3>Подписка</h3>
-    <p>Получайте специальные предложения и новости сервиса</p>
-    <input type="text" name="" value="" placeholder="Email">
-  </div>
-</footer>
-<div class="copyright"><span>Copyright © 2018 Toxin отель. Все права защищены.</span></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <footer>
+    <div class="col col-lg">
+      <img src="svg/logo.svg">
+      <p>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
+    </div>
+    <div class="col">
+      <h3>Навигация</h3>
+      <span><a href="#">О нас</a></span>
+      <span><a href="#">Новости</a></span>
+      <span><a href="#">Служба поддержки</a></span>
+      <span><a href="#">Услуги</a></span>
+    </div>
+    <div class="col">
+      <h3>О нас</h3>
+      <span><a href="#">О сервисе</a></span>
+      <span><a href="#">Наша команда</a></span>
+      <span><a href="#">Вакансии</a></span>
+      <span><a href="#">Инвесторы</a></span>
+    </div>
+    <div class="col">
+      <h3>Служба поддержки</h3>
+      <span><a href="#">Соглашения</a></span>
+      <span><a href="#">Сообщества</a></span>
+      <span><a href="#">Связь с нами</a></span>
+    </div>
+    <div class="col col-lg">
+      <h3>Подписка</h3>
+      <p>Получайте специальные предложения и новости сервиса</p>
+      <input type="text" name="" value="" placeholder="Email">
+    </div>
+  </footer>
+  <div class="copyright"><span>Copyright © 2018 Toxin отель. Все права защищены.</span></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script type="text/javascript" src="js/carousel.js"></script>
   <script type="text/javascript" src="js/range_slider.js"></script>
   <script type="text/javascript" src="js/datepicker.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/carousel.js"></script>
 </body>
 </html>

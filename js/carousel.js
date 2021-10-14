@@ -1,31 +1,34 @@
 const allCarousels = $('.carousel-wrap');
 
-for (carousel of allCarousels) {
-	//current position
-	var pos = 0;
+	$(document).ready(function(){
+for (let carousel of allCarousels) {
 	//number of slides
-	var totalSlides = $('.carousel-wrap ul li').length;
+	const totalSlides = $('ul li', carousel).length;
 	//get the slide width
-	var sliderWidth = $('.carousel-wrap').width();
+	const sliderWidth = $(carousel).width();
+	//current position
+	let pos = 0;
+
+	console.log(totalSlides);
+	console.log($(carousel).width());
 
 	// Carousel
 
-	$(document).ready(function(){
 
 
 		/*****************
 		 BUILD THE SLIDER
 		*****************/
 		//set width to be 'x' times the number of slides
-		$('.carousel-wrap ul.carousel').width(sliderWidth*totalSlides);
+		$('ul.carousel', carousel).width(sliderWidth*totalSlides);
 
 			//next slide
-		$('#next').click(function(){
+		$('#next', carousel).click(function(){
 			slideRight();
 		});
 
 		//previous slide
-		$('#previous').click(function(){
+		$('#previous', carousel).click(function(){
 			slideLeft();
 		});
 
@@ -38,14 +41,14 @@ for (carousel of allCarousels) {
 		// var autoSlider = setInterval(slideRight, 3000);
 
 		//for each slide
-		$.each($('.carousel-wrap ul li'), function() {
+		$.each($('ul li', carousel), function() {
 			//set its color
 			// var c = $(this).attr("data-color");
 			// $(this).css("background",c);
 
 			//create a pagination
 			var li = document.createElement('li');
-			$('#pagination-wrap ul').append(li);
+			$('#pagination-wrap ul', carousel).append(li);
 		});
 
 		//counter
@@ -56,19 +59,18 @@ for (carousel of allCarousels) {
 
 		//hide/show controls/btns when hover
 		//pause automatic slide when hover
-		// $('.carousel-wrap').hover(
+		// $(carousel).hover(
 		//   function(){ $(this).addClass('active'); clearInterval(autoSlider); },
 		//   function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
 		// );
 
-		$('.carousel-wrap').hover(
+		$(carousel).hover(
 			function(){ $(this).addClass('active'); },
 			function(){ $(this).removeClass('active'); }
 		);
 
 
 
-	});//DOCUMENT READY
 
 
 
@@ -78,7 +80,7 @@ for (carousel of allCarousels) {
 	function slideLeft(){
 		pos--;
 		if(pos==-1){ pos = totalSlides-1; }
-		$('.carousel-wrap ul.carousel').css('left', -(sliderWidth*pos));
+		$('ul.carousel', carousel).css('left', -(sliderWidth*pos));
 
 		//*> optional
 		// countSlides();
@@ -92,7 +94,7 @@ for (carousel of allCarousels) {
 	function slideRight(){
 		pos++;
 		if(pos==totalSlides){ pos = 0; }
-		$('.carousel-wrap ul.carousel').css('left', -(sliderWidth*pos));
+		$('ul.carousel', carousel).css('left', -(sliderWidth*pos));
 
 		//*> optional
 		// countSlides();
@@ -110,7 +112,8 @@ for (carousel of allCarousels) {
 	// }
 
 	function pagination(){
-		$('#pagination-wrap ul li').removeClass('active');
-		$('#pagination-wrap ul li:eq('+pos+')').addClass('active');
+		$('#pagination-wrap ul li', carousel).removeClass('active');
+		$('#pagination-wrap ul li:eq('+pos+')', carousel).addClass('active');
 	}
 }
+});//DOCUMENT READY
