@@ -1,16 +1,26 @@
-const dropdowns = filters.querySelectorAll(".dropdown");
+const dropdownContainers = filters.querySelectorAll(".dd-container");
+const dropdownMenus = filters.querySelectorAll(".dd-menu");
 
-for (let dropdown of dropdowns) {
-  const button = dropdown.querySelector("button");
-
+for (let dropdown of dropdownContainers) {
+  const header = dropdown.querySelector("h3");
   const content = dropdown.querySelector(".dropdown-content");
+
+  header.onclick = () => dropdown.classList.toggle("active");
+}
+
+for (let dropdown of dropdownMenus) {
+  const button = dropdown.querySelector("button");
+  const content = dropdown.querySelector(".dropdown-content");
+
+  button.onclick = () => dropdown.classList.toggle("active");
+
+  // if (!dropdown.classList.contains("dd-menu")) continue;
+
   const options = content.querySelector(".options");
   const controls = content.querySelector(".controls");
 
   const counters = [];
-
-  button.onclick = () => dropdown.classList.toggle("active");
-
+  
   for (let i = 0; i < options.children.length; i++) {
     const option = options.children[i];
 

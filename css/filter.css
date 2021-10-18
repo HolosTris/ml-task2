@@ -1,4 +1,34 @@
-.dropdown > button{
+.dd-menu.active .dropdown-content {
+  display: inherit;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dd-container h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dd-container h3::after {
+  position: relative;
+  margin-top: -3px;
+  content: "expand_more";
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-size: 24px;
+  text-transform: none;
+  color: var(--color50);
+  transform: rotate(-180deg);
+
+}
+
+.dd-container.active h3::after { transform: none; }
+
+.dd-menu > button{
   width: 266px;
   height: 44px;
   font-size: 14px;
@@ -10,13 +40,13 @@
   padding: 15px;
 }
 
-.dropdown > button, .options button {
+.dd-menu > button, .options button {
   font-style: normal;
   font-weight: normal;
   text-transform: none;
 }
 
-.dropdown > button::after {
+.dd-menu > button::after {
   position: relative;
   content: "expand_more";
   font-family: 'Material Icons';
@@ -25,17 +55,13 @@
   text-transform: none;
 }
 
-.dropdown.active > button {
+.dd-menu.active > button {
   border: 1px solid var(--color50);
   border-radius: 4px 4px 0 0;
   border-bottom: 1px solid transparent;
 }
 
-.dropdown.active .dropdown-content {
-  display: block;
-}
-
-.dropdown-content {
+.dd-menu .dropdown-content {
   display: none;
   position: absolute;
   margin-top: -1px;

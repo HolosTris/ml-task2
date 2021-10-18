@@ -47,9 +47,9 @@
     <aside class="filters">
       <div class="dates">
         <h3>Даты пребывания в отеле</h3>
-        <input type="text" id="input1_1" class="rangepicker filter-dp" style="display: none">
-        <input type="text" id="input1" onclick="$('.rangepicker').datepicker('show');" style="display: none">
-        <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');" style="display: none">
+        <input type="hidden" id="input1_1" class="rangepicker filter-dp">
+        <input type="hidden" id="input1" onclick="$('.rangepicker').datepicker('show');">
+        <input type="hidden" id="input2" onclick="$('.rangepicker').datepicker('show');">
         <input type="text" id="input" onclick="$('.rangepicker').datepicker('show');">
         <!-- <div type="text" id="datepicker" name="datepicker"></div>
         <p>
@@ -65,7 +65,7 @@
       </div>
       <div class="guests">
         <h3>Гости</h3>
-        <div class="dropdown">
+        <div class="dropdown dd-menu">
           <button>Сколько гостей</button>
           <div class="dropdown-content">
             <div class="options">
@@ -150,7 +150,7 @@
       </div>
       <div class="facilities">
         <h3>Удобства номера</h3>
-        <div class="dropdown">
+        <div class="dropdown dd-menu">
           <button>1 спальня, 1 кровать</button>
           <div class="dropdown-content">
             <div class="options">
@@ -182,20 +182,24 @@
           </div>
         </div>
       </div>
-      <div class="guests">
-        <h3>Доступность</h3>
-          <input type="checkbox" name="hasBreakfast" value="" id="hasBreakfast" class="checkbox">
-          <label for="hasBreakfast">Завтрак</label>
-          <input type="checkbox" name="hasDesk" value="" id="hasDesk" class="checkbox">
-          <label for="hasDesk">Письменный стол</label>
-          <input type="checkbox" name="hasChair" value="" id="hasChair" class="checkbox">
-          <label for="hasChair">Стул для кормления</label>
-          <input type="checkbox" name="hasCrib" value="" id="hasCrib" class="checkbox">
-          <label for="hasCrib">Кроватка</label>
-          <input type="checkbox" name="hasTV" value="" id="hasTV" class="checkbox">
-          <label for="hasTV">Телевизор</label>
-          <input type="checkbox" name="hasShampoo" value="" id="hasShampoo" class="checkbox">
-          <label for="hasShampoo">Шампунь</label>
+      <div class="extra-facilities">
+        <div class="dropdown dd-container">
+          <h3>Дополнительные удобства</h3>
+          <div class="dropdown-content">
+            <input type="checkbox" name="hasBreakfast" value="" id="hasBreakfast" class="checkbox">
+            <label for="hasBreakfast">Завтрак</label>
+            <input type="checkbox" name="hasDesk" value="" id="hasDesk" class="checkbox">
+            <label for="hasDesk">Письменный стол</label>
+            <input type="checkbox" name="hasChair" value="" id="hasChair" class="checkbox">
+            <label for="hasChair">Стул для кормления</label>
+            <input type="checkbox" name="hasCrib" value="" id="hasCrib" class="checkbox">
+            <label for="hasCrib">Кроватка</label>
+            <input type="checkbox" name="hasTV" value="" id="hasTV" class="checkbox">
+            <label for="hasTV">Телевизор</label>
+            <input type="checkbox" name="hasShampoo" value="" id="hasShampoo" class="checkbox">
+            <label for="hasShampoo">Шампунь</label>
+          </div>
+        </div>
       </div>
     </aside>
     <section class="catalog">

@@ -285,7 +285,7 @@ section {
   /* align-items: stretch; */
 }
 
-.filters > div {
+.filters > div, .dd-container.active .dropdown-content {
   display: flex;
   flex-direction: column;
   grid-gap: 10px;
