@@ -40,7 +40,7 @@
   position: absolute;
   margin-top: -1px;
   width: 266px;
-  padding: 7px 7px 15px 15px;
+  padding: 7px 7px 7px 15px;
   background-color: white;
   height: auto;
   z-index: 2;
@@ -80,7 +80,6 @@
   border-radius: 50%;
   font-size: 18px;
   color: var(--purple);
-  cursor: pointer;
 }
 
 .options button:hover {
@@ -91,14 +90,16 @@
 
 /* .options span *:not(:last-child) { margin-right: 10px; } */
 
-.dropdown-content .controls { margin-top: 20px; }
+.dropdown-content .controls { margin-top: 12px; }
 
 .dropdown-content .controls button {
   background: none;
   border: none;
   color: var(--purple);
-  padding: 0;
+  padding: 8px 0;
 }
+
+.dropdown-content .controls button:hover { opacity: 0.5; }
 
 .link-dropdown-content a {
   display: block;

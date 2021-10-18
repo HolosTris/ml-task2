@@ -129,6 +129,7 @@ input[type="radio" i] + label::before {
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
+  cursor: pointer;
 }
 
 input[type="radio" i]:checked + label {
@@ -169,6 +170,7 @@ input[type="radio" i]:checked + label::before {
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .checkbox:checked + label {
@@ -209,6 +211,7 @@ input[type="radio" i]:checked + label::before {
   background-position: center;
   overflow: hidden;
   transition: .3s ease-in-out;
+  cursor: pointer;
 }
 
 .toggle:checked + label::before {
@@ -244,6 +247,7 @@ button, .btn {
   text-transform: uppercase;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .alt-btn {

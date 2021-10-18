@@ -71,7 +71,7 @@ function createRandomCard() {
     "number": Math.ceil(Math.random() * 999),
     "price": Math.round(Math.random() * 99) * 100 + 90,
     "rating": Math.ceil(Math.random() * 3 + 2),
-    "comments": Math.round(Math.random() * 200 + 50),
+    "comments": Math.round(Math.random() * 150 + 10),
     "isSuite": (Math.random() < 0.5)? true : false,
     "images": []
   }

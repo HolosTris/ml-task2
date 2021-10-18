@@ -41,7 +41,7 @@
     "number": 1,
     "price": 2090,
     "rating": 4,
-    "comments": 315,
+    "comments": 115,
     "isSuite": false,
     "images": [
       "images/catalog/catalog4.png",
@@ -58,7 +58,7 @@
     "number": 204,
     "price": 5590,
     "rating": 4,
-    "comments": 211,
+    "comments": 111,
     "isSuite": true,
     "images": [
       "images/catalog/catalog5.png",
@@ -71,7 +71,7 @@
     "number": 404,
     "price": 4090,
     "rating": 3,
-    "comments": 196,
+    "comments": 200,
     "isSuite": false,
     "images": [
       "images/catalog/catalog6.png",
