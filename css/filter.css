@@ -1,0 +1,115 @@
+.dropdown > button{
+  width: 266px;
+  height: 44px;
+  font-size: 14px;
+  color: var(--color75);
+  background: white;
+  border: 1px solid var(--color25);
+  border-radius: 4px;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.dropdown > button, .options button {
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.dropdown > button::after {
+  position: relative;
+  content: "expand_more";
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-size: 24px;
+  text-transform: none;
+}
+
+.dropdown.active > button {
+  border: 1px solid var(--color50);
+  border-radius: 4px 4px 0 0;
+  border-bottom: 1px solid transparent;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: -1px;
+  width: 266px;
+  padding: 7px 7px 15px 15px;
+  background-color: white;
+  height: auto;
+  z-index: 2;
+  border: 1px solid var(--color50);
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px var(--color5);
+  color: var(--color100);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* .options {display: flex; grid-gap: 7px;} */
+
+.options div, .dropdown-content .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.options div:not(:last-child) { margin-bottom: 7px; }
+
+.options span b {
+  display: inline-block;
+  width: 30px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.options button {
+  /* display: inline-block; */
+  background: none;
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  border: 1px solid var(--color25);
+  border-radius: 50%;
+  font-size: 18px;
+  color: var(--purple);
+  cursor: pointer;
+}
+
+.options button:hover {
+  background: #CCC8;
+}
+
+.options button.deactivated { visibility: hidden; }
+
+/* .options span *:not(:last-child) { margin-right: 10px; } */
+
+.dropdown-content .controls { margin-top: 20px; }
+
+.dropdown-content .controls button {
+  background: none;
+  border: none;
+  color: var(--purple);
+  padding: 0;
+}
+
+.link-dropdown-content a {
+  display: block;
+  border-bottom: 1px solid var(--color25);
+  padding: 5px 0px;
+}
+
+.link-dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+header .link-dropdown:hover .link-dropdown-content {
+  display: block;
+}

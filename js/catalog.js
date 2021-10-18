@@ -1,5 +1,3 @@
-const catalog = document.querySelector(".catalog");
-
 // document.onmousemove = () => false;
 // document.onkeydown = () => false;
 

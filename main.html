@@ -7,6 +7,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/filter.css">
   <link rel="stylesheet" href="css/carousel.css">
   <link rel="stylesheet" href="css/range.css">
   <link rel="stylesheet" href="css/datepicker.css">
@@ -21,10 +23,22 @@
     </div>
     <nav>
       <div class="about"><a href="#">О нас</a></div>
-      <div class="services"><a href="#">Услуги</a></div>
+      <div class="services link-dropdown">
+        <span>Услуги</span>
+        <div class="link-dropdown-content">
+          <a href="#">Такси до аэропорта</a>
+          <a href="#">Другое</a>
+        </div>
+      </div>
       <div class="vacancies"><a href="#">Вакансии</a></div>
       <div class="news"><a href="#">Новости</a></div>
-      <div class="agreements"><a href="#">Соглашения</a></div>
+      <div class="agreements link-dropdown">
+        <span>Соглашения</span>
+        <div class="link-dropdown-content">
+          <a href="#">Соглашение о конфиденциальности</a>
+          <a href="#">Пользовательское соглашение</a>
+          <a href="#">Разное</a>
+        </div></div>
         <a href="#" class="btn alt-btn">Войти</a>
         <a href="registration.html" class="btn">Зарегистрироваться</a>
     </nav>
@@ -51,9 +65,38 @@
       </div>
       <div class="guests">
         <h3>Гости</h3>
-        <select name="">
-          <option value="placeholder">3 гостя, 1 младенец</option>
-        </select>
+        <div class="dropdown">
+          <button>Сколько гостей</button>
+          <div class="dropdown-content">
+            <div class="options">
+              <div class="adults">
+                <b>Взрослые</b>
+                <span>
+                  <button class="decrease">-</button>
+                  <b class="counter">0</b>
+                  <button class="increase">+</button>
+                </span>
+              </div>
+              <div class="children">
+                <b>Дети</b>
+                <span>
+                  <button class="decrease">-</button>
+                  <b class="counter">0</b>
+                  <button class="increase">+</button>
+                </span>
+              </div>
+              <div class="babies">
+                <b>Младенцы</b>
+                <span>
+                  <button class="decrease">-</button>
+                  <b class="counter">0</b>
+                  <button class="increase">+</button>
+                </span>
+              </div>
+            </div>
+            <div class="controls"><button>Очистить</button><button>Применить</button></div>
+          </div>
+        </div>
       </div>
       <div id="cost">
         <div>
@@ -201,6 +244,8 @@
   <div class="copyright"><span>Copyright © 2018 Toxin отель. Все права защищены.</span></div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/dropdown.js"></script>
   <script type="text/javascript" src="js/range_slider.js"></script>
   <script type="text/javascript" src="js/datepicker.js"></script>
   <script type="text/javascript" src="js/catalog.js"></script>

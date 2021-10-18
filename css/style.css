@@ -33,7 +33,7 @@
    box-sizing: border-box;
    padding: 0;
    margin: 0;
-   transition: .2s ease-in-out;
+   /* transition: .2s ease-in-out; */
    /* добавим плавность переходов для всех элементов страницы*/
 }
 *::after, *::before {
@@ -218,79 +218,19 @@ input[type="radio" i]:checked + label::before {
 
 /* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
 header:after, .search:after, footer:after, .widget-posts-list li:after, #subscribe:after {
-   content: "";
-   display: table;
-   clear: both;
+  content: "";
+  display: table;
+  clear: both;
 }
 /* стилевой класс, который управляет шириной контейнера сетки*/
 .search {
-   margin: 0 auto;
-   width: 100%;
-   max-width: 960px;
-   padding: 0 15px;
-}
-
-header {
-  /* display: grid;
-  grid-auto-flow: column; */
+  margin: 0 auto;
   width: 100%;
-  background: white;
-  box-shadow: 0px 10px 20px var(--color5);
-  padding: 20px calc((100% - 1160px) / 2);
-  position: relative;
-  height: 70px;
+  max-width: 960px;
+  padding: 0 15px;
 }
 
-header a, footer a {
-  color: var(--color50);
-}
-
-header a:hover {
-  color: var(--color75);
-  text-decoration: underline;
-}
-
-nav {
-  /* width: 80%; */
-  /* position: relative; */
-  display: flex;
-  grid-gap: 20px;
-  float: right;
-  justify-content: center;
-}
-
-.services::after, .agreements::after {
-  position: relative;
-  content: "expand_more";
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-size: 24px;
-  text-transform: none;
-}
-
-header div {
-  /* position: absolute; */
-  display: inline-flex;
-  align-items: center;
-  height: 30px;
-  /* margin-right: 20px; */
-  /* width: 10%; */
-  /* padding: 10px; */
-}
-
-header div:last-child {
-  /* margin-right: 0; */
-}
-
-.logo {
-  float: left;
-}
-
-.logo a {
-  display: inline-flex;
-}
-
-.btn {
+button, .btn {
   display: inline-flex;
   color: white;
   background: var(--gradient);
@@ -306,23 +246,12 @@ header div:last-child {
   justify-content: center;
 }
 
-header .btn {
-  height: 34px;
-}
-
 .alt-btn {
   border: 2px solid;
   /* Временно */
   /* border-image-source: var(--gradient); */
   color: var(--purple);
   background: white;
-}
-
-.log {
-  /* display: grid;
-  grid-auto-flow: column;
-  height: 30px; */
-  float: right;
 }
 
 section {
@@ -356,16 +285,6 @@ section {
   display: flex;
   flex-direction: column;
   grid-gap: 10px;
-}
-
-/* datepicker */
-
-.ui-datepicker-prev {
-  background-image: url(/images/svg/arrow_back.svg);
-}
-
-.ui-datepicker-next {
-  background-image: url(/images/svg/arrow_forward.svg);
 }
 
 #cost i {
