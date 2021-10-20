@@ -1,0 +1,71 @@
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 270px);
+  justify-content: space-around;
+  grid-row-gap: 40px;
+  grid-column-gap: 12px;
+  overflow-y: auto;
+}
+
+.catalog article {
+  box-shadow: 0px 10px 20px var(--color5);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card-link {
+  display: block;
+}
+
+.card-link:hover {
+  opacity: 0.9;
+}
+
+.catalog article img {
+  /* border-radius: 4px; */
+}
+
+.catalog article .info {
+  display: grid;
+  /* grid-gap: 20px; */
+  padding: 20px;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  grid-row-gap: 10px;
+}
+
+.catalog article .info .room-number {
+  display: flex;
+  align-items: flex-end;
+  grid-gap: 8px;
+  /* justify-content: flex-end; */
+}
+
+.catalog article .info .room-number span {
+  font-size: 12px;
+}
+
+.catalog article .info .room-number h3 {
+  color: var(--purple);
+}
+
+.catalog article .info .room-rating {
+  color: var(--purple);
+}
+
+.catalog article .info .room-rating span {
+  display: inline-block;
+  margin-right: -1px;
+}
+
+.catalog article .info .room-price, .catalog article .info .room-comments {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  white-space: pre;
+}
+
+.catalog article .line {
+  grid-row: 2;
+  grid-column: 1 / 3;
+}

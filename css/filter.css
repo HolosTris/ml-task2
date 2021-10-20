@@ -1,10 +1,8 @@
-.dd-menu.active .dropdown-content {
-  display: inherit;
-}
+div.dropdown { display: block;}
 
-.dropdown-content {
-  display: none;
-}
+.dd-menu.active .dropdown-content { display: block;}
+
+.dropdown-content { display: none;}
 
 .dd-container h3 {
   display: flex;
@@ -29,7 +27,7 @@
 .dd-container.active h3::after { transform: none; }
 
 .dd-menu > button{
-  width: 266px;
+  width: 100%;
   height: 44px;
   font-size: 14px;
   color: var(--color75);
@@ -65,7 +63,6 @@
   display: none;
   position: absolute;
   margin-top: -1px;
-  width: 266px;
   padding: 7px 7px 7px 15px;
   background-color: white;
   height: auto;
@@ -83,6 +80,7 @@
 
 .options div, .dropdown-content .controls {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }

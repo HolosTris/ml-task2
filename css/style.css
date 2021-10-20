@@ -220,17 +220,22 @@ input[type="radio" i]:checked + label::before {
 }
 
 /* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
-header:after, .search:after, footer:after, .widget-posts-list li:after, #subscribe:after {
+header:after, .con-search:after, footer:after, .widget-posts-list li:after, #subscribe:after {
   content: "";
   display: table;
   clear: both;
 }
 /* стилевой класс, который управляет шириной контейнера сетки*/
-.search {
+.con-search {
+  position: relative;
+  top: 70px;
   margin: 0 auto;
   width: 100%;
   max-width: 960px;
   padding: 0 15px;
+  float: left;
+  left: 140px;
+  /* grid-column: 50% 50%; */
 }
 
 button, .btn {
@@ -250,6 +255,12 @@ button, .btn {
   cursor: pointer;
 }
 
+button:hover, .btn:hover {
+  color: var(--color75);
+  border-color: var(--color75);
+  text-decoration: none;
+}
+
 .alt-btn {
   border: 2px solid;
   /* Временно */
@@ -258,10 +269,17 @@ button, .btn {
   background: white;
 }
 
-section {
+main {
   background: #FFF;
   width: 100%;
   min-height: 830px;
+}
+
+.line {
+  content: "";
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
 }
 
 .bg-image {
@@ -270,7 +288,7 @@ section {
   background-position: 0 -69px;
 }
 
-.main {
+.search {
   padding: 30px calc((100% - 1160px) / 2) 70px calc((100% - 1160px) / 2);
   display: grid;
   grid-template-columns: 266px 1fr;
@@ -305,117 +323,36 @@ section {
   margin: 0px 0 0 30px;
 }
 
-.catalog {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 270px);
-  justify-content: space-around;
-  grid-row-gap: 40px;
-  grid-column-gap: 12px;
-  overflow-y: auto;
-}
-
-article {
-  box-shadow: 0px 10px 20px var(--color5);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.card-link {
-  display: block;
-}
-
-.card-link:hover {
-  opacity: 0.9;
-}
-
-article img {
-  /* border-radius: 4px; */
-}
-
-.catalog article .info {
-  display: grid;
-  /* grid-gap: 20px; */
-  padding: 20px;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-  grid-row-gap: 10px;
-}
-
-.catalog article .info .room-number {
-  display: flex;
-  align-items: flex-end;
-  grid-gap: 8px;
-  /* justify-content: flex-end; */
-}
-
-.catalog article .info .room-number span {
-  font-size: 12px;
-}
-
-.catalog article .info .room-number h3 {
-  color: var(--purple);
-}
-
-.catalog article .info .room-rating {
-  color: var(--purple);
-}
-
-.catalog article .info .room-rating span {
-  display: inline-block;
-  margin-right: -1px;
-}
-
-.catalog article .info .room-price, .catalog article .info .room-comments {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  white-space: pre;
-}
-
-.line {
-  content: "";
-  width: 100%;
-  grid-row: 2;
-  grid-column: 1 / 3;
-  height: 1px;
-  background: rgba(31, 32, 65, 0.1);
-}
-
 .container {
   display: grid;
   grid-gap: 20px;
-  position: relative;
-  top: 70px;
   background: white;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  width: 380px;
+  width: 382px;
   /* height: 374px; */
   padding: 40px 30px 30px 30px;
 }
 
-.search {
-  float: left;
-  left: 140px;
-  /* grid-column: 50% 50%; */
-}
-
-.registration {
+.con-registration {
+  position: relative;
+  top: 70px;
   margin: 0 auto;
 }
 
-.registration span {
+.con-registration span {
   color: black;
 }
 
 .container div {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-gap: 10px;
 }
 
-div .arrive-departure {
-  grid-template-columns: 1fr 1fr;
+div.arrive-departure {
+  flex-direction: row;
   grid-gap: 20px;
 }
 
@@ -423,21 +360,6 @@ div .arrive-departure {
   grid-auto-flow: column;
   /* justify-content: center; */
   align-items: center;
-}
-
-.search h1 {
-
-}
-
-.search div {
-  /* display: grid; */
-  /* width: 150px; */
-  /* height: 64px; */
-  /* margin-top: 20px; */
-}
-
-.departure {
-  /* margin-left: 12px; */
 }
 
 .arrive input, .departure input {

@@ -1,12 +1,12 @@
-const dropdownContainers = filters.querySelectorAll(".dd-container");
-const dropdownMenus = filters.querySelectorAll(".dd-menu");
+const dropdownContainers = document.querySelectorAll(".dd-container");
 
 for (let dropdown of dropdownContainers) {
   const header = dropdown.querySelector("h3");
-  const content = dropdown.querySelector(".dropdown-content");
 
   header.onclick = () => dropdown.classList.toggle("active");
 }
+
+const dropdownMenus = document.querySelectorAll(".dd-menu");
 
 for (let dropdown of dropdownMenus) {
   const button = dropdown.querySelector("button");
@@ -14,7 +14,7 @@ for (let dropdown of dropdownMenus) {
 
   button.onclick = () => dropdown.classList.toggle("active");
 
-  // if (!dropdown.classList.contains("dd-menu")) continue;
+  content.style.width = button.offsetWidth + "px";
 
   const options = content.querySelector(".options");
   const controls = content.querySelector(".controls");
@@ -161,6 +161,7 @@ for (let dropdown of dropdownMenus) {
             counter.num = counter.min;
             counter.update();
             updateLabel();
+            this.apply();
           })
         }
       }

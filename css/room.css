@@ -1,0 +1,130 @@
+#preview {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: 1fr 382px;
+  padding: 70px 140px;
+  grid-gap: 70px;
+  align-items: start;
+}
+
+#info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px 70px;
+}
+
+#info div h2 { margin-bottom: 20px; }
+
+.data div, .data hr { margin-top: 20px; }
+.data div:first-of-type { margin-top: 0; }
+
+.data div {
+  display: inline-flex;
+  grid-gap: 10px;
+}
+
+.data span.material-icons {
+  font-size: 48px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.data p {
+}
+
+hr {
+  /* border-color: #1F20411A; */
+  height: 1px;
+  background-color: #1F20411A;
+  border: none;
+}
+
+.reviews {
+  grid-column: 1 / -1;
+}
+
+.reviews > div {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  grid-template-rows: 44px 1fr;
+  grid-gap: 10px;
+  margin-top: 20px;
+}
+.reviews > div:first-of-type { margin-top: 0; }
+
+.reviews > div img{
+  /* width: auto; */
+}
+
+.reviews > div > div {
+  justify-self: center;
+}
+
+button .material-icons {
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+.like-btn {
+  border-width: 1px;
+  padding: 5px 10px 5px 5px;
+  color: var(--color25);
+  border-color: var(--color25);
+}
+
+.liked {
+  color: var(--purple);
+  border-color: var(--purple);
+}
+
+.rules {
+  padding-left: 10px;
+}
+
+.rules ul li {
+  margin-top: 10px;
+  line-height: 24px;
+  /* padding-inline-start: 1ch; */
+}
+.rules ul li:first-of-type { margin-top: 0; }
+
+.rules ul li::marker { content: ""; }
+
+.rules ul li::before {
+  content: "●";
+  font-size: 24px;
+  color: var(--color25);
+  line-height: inherit;
+  margin-top: -1px;
+  margin-left: -20px;
+}
+
+.con-reservation .room-info, .subtotal div, div.total {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.con-reservation .room-info {
+  align-items: flex-end;
+  font-size: 12px;
+  color: var(--color50);
+}
+
+.room-info h2 {
+  font-size: 24px;
+  margin-right: 8px;
+}
+.room-info h2 span { font-size: 14px; }
+
+.room-info h3 { color: var(--purple) }
+.room-info b { font-size: 14px; }
+
+div.total { grid-gap: 0;  white-space: nowrap;}
+.total .line { height: 100%; border-color: var(--color25); border-bottom-style: dotted;}

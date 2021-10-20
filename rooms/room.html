@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/room.css">
+  <link rel="stylesheet" href="/css/filter.css">
+  <link rel="stylesheet" href="/css/datepicker.css">
+  <title>Room №888</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="/svg/logo.svg"  width="106" height="40">
+      </a>
+    </div>
+    <nav>
+      <div class="about"><a href="#">О нас</a></div>
+      <div class="services link-dropdown">
+        <span>Услуги</span>
+        <div class="link-dropdown-content">
+          <a href="#">Такси до аэропорта</a>
+          <a href="#">Другое</a>
+        </div>
+      </div>
+      <div class="vacancies"><a href="#">Вакансии</a></div>
+      <div class="news"><a href="#">Новости</a></div>
+      <div class="agreements link-dropdown">
+        <span>Соглашения</span>
+        <div class="link-dropdown-content">
+          <a href="#">Соглашение о конфиденциальности</a>
+          <a href="#">Пользовательское соглашение</a>
+          <a href="#">Разное</a>
+        </div></div>
+        <a href="#" class="btn alt-btn">Войти</a>
+        <a href="registration.html" class="btn">Зарегистрироваться</a>
+    </nav>
+  </header>
+  <main>
+    <section id="preview">
+      <img src="/images/catalog/catalog1.png" alt="">
+      <div id="image-col">
+        <img src="/images/catalog/catalog2.png" alt="">
+        <img src="/images/catalog/catalog13.png" alt="">
+      </div>
+    </section>
+    <section id="content">
+      <section id="info">
+        <div class="data">
+          <h2>Сведения о номере</h2>
+          <div>
+            <span class="material-icons">insert_emoticon</span>
+            <p>
+              <b>Комфорт</b><br>
+              Шумопоглощающие стены
+            </p>
+          </div>
+          <hr>
+          <div>
+            <span class="material-icons">location_city</span>
+            <p>
+              <b>Удобство</b><br>
+              Окно в каждой из спален
+            </p>
+          </div>
+          <hr>
+          <div>
+            <span class="material-icons">whatshot</span>
+            <p>
+              <b>Уют</b><br>
+              Номер оснащён камином
+            </p>
+          </div>
+        </div>
+        <div class="impressions">
+          <h2>Впечатления от номера</h2>
+        </div>
+        <div class="reviews">
+          <h2>Отзывы посетителей номера</h2>
+          <div>
+            <img src="/images/avatars/user1.png" alt="">
+            <p>
+              <b>Мурад Сарафанов</b><br>
+              5 дней назад
+            </p>
+            <div><button class="alt-btn like-btn liked"><span class="material-icons">favorite</span>12</button></div>
+            <p>Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
+              И стены, действительно, шумоподавляющие.
+              Выкрикивал комплименты повару — никто не жаловался из соседей.
+            </p>
+          </div>
+          <div>
+            <img src="/images/avatars/user2.png" alt="">
+            <p>
+              <b>Патрисия Стёклышкова</b><br>
+              Неделю назад
+            </p>
+            <div><button class="alt-btn like-btn"><span class="material-icons">favorite</span>2</button></div>
+            <p>Обслуживание на высоте! Всё аккуратно, чисто.
+              Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент</p>
+          </div>
+        </div>
+        <div class="rules">
+          <h2>Правила</h2>
+          <ul>
+            <li>Нельзя с питомцами</li>
+            <li>Без вечеринок и мероприятий</li>
+            <li>Время прибытия — после 13:00,
+              а выезд до 12:00</li>
+          </ul>
+        </div>
+        <div class="cancel">
+          <h2>Отмена</h2>
+          <p>
+            Бесплатная отмена в течение 48 ч.
+            После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+          </p>
+        </div>
+      </section>
+      <aside class="container con-reservation">
+        <div class="room-info">
+          <span class="room-number"><h2><span>№</span> 888</h2><h3>люкс</h3></span>
+          <span class="room-price"><b>9 990₽</b> в сутки</span>
+        </div>
+        <div class="arrive-departure">
+          <input type="hidden" id="input1_1" class="rangepicker search-dp">
+          <div class="arrive">
+            <h3>Прибытие</h3>
+            <input type="text" id="input1" onclick="$('.rangepicker').datepicker('show');">
+          </div>
+          <div class="departure">
+            <h3>Выезд</h3>
+            <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');">
+          </div>
+        </div>
+        <div class="guests">
+          <h3>Гости</h3>
+          <div class="dropdown dd-menu">
+            <button>Сколько гостей</button>
+            <div class="dropdown-content">
+              <div class="options">
+                <div class="adults">
+                  <b>Взрослые</b>
+                  <span>
+                    <button class="decrease">-</button>
+                    <b class="counter" data-min="0" data-max="10">0</b>
+                    <button class="increase">+</button>
+                  </span>
+                </div>
+                <div class="children">
+                  <b>Дети</b>
+                  <span>
+                    <button class="decrease">-</button>
+                    <b class="counter" data-min="0" data-max="10">0</b>
+                    <button class="increase">+</button>
+                  </span>
+                </div>
+                <div class="babies">
+                  <b>Младенцы</b>
+                  <span>
+                    <button class="decrease">-</button>
+                    <b class="counter" data-min="0" data-max="10">0</b>
+                    <button class="increase">+</button>
+                  </span>
+                </div>
+              </div>
+              <div class="controls">
+                <button data-action="clear">Очистить</button>
+                <button data-action="apply">Применить</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subtotal">
+          <div>9 990₽ х 4 суток<span></span><span>39 960₽</span></div>
+          <div class="service-fee"><span>Сбор за услуги: скидка 2 179₽</span><span>0₽</span></div>
+          <div class="service-fee"><span>Сбор за дополнительные услуги</span><span>300₽</span></div>
+        </div>
+        <div class="total"><h2>Итого</h2><div class="line"></div><h2>38 081₽</h2></div>
+        <button type="button" name="chooseRoom" class="btn main-btn">Забронировать</button>
+      </aside>
+    </section>
+  </main>
+  <footer>
+    <div class="col col-lg">
+      <img src="/svg/logo.svg">
+      <p>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
+    </div>
+    <div class="col">
+      <h3>Навигация</h3>
+      <span><a href="#">О нас</a></span>
+      <span><a href="#">Новости</a></span>
+      <span><a href="#">Служба поддержки</a></span>
+      <span><a href="#">Услуги</a></span>
+    </div>
+    <div class="col">
+      <h3>О нас</h3>
+      <span><a href="#">О сервисе</a></span>
+      <span><a href="#">Наша команда</a></span>
+      <span><a href="#">Вакансии</a></span>
+      <span><a href="#">Инвесторы</a></span>
+    </div>
+    <div class="col">
+      <h3>Служба поддержки</h3>
+      <span><a href="#">Соглашения</a></span>
+      <span><a href="#">Сообщества</a></span>
+      <span><a href="#">Связь с нами</a></span>
+    </div>
+    <div class="col col-lg">
+      <h3>Подписка</h3>
+      <p>Получайте специальные предложения и новости сервиса</p>
+      <input type="text" name="" value="" placeholder="Email">
+    </div>
+  </footer>
+  <div class="copyright"><span>Copyright © 2018 Toxin отель. Все права защищены.</span></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/dropdown.js"></script>
+  <script type="text/javascript" src="/js/datepicker.js"></script>
+</body>
+</html>

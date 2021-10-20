@@ -26,9 +26,6 @@ loadedCatalog.finally(() => {
 			slideLeft();
 		};
 
-
-
-
 		//for each slide
 		carousel.querySelectorAll("ul li").forEach(() => {
 			//create a pagination
