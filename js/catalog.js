@@ -22,10 +22,13 @@ const loadedCatalog = fetch("/json/hotel_rooms.json")
   });
 
 function createCard(info) {
+  const roomURL = new URL("/room.html", location.origin);
+  roomURL.searchParams.set("number", info.number);
+
   catalog.insertAdjacentHTML("beforeend", `
     <article>
       <div class="carousel-wrap">
-        <a href="/rooms/${info.number}.html" class="card-link">
+        <a href="${roomURL}" class="card-link">
           <ul class="carousel">
           <--images-->
           </ul>
@@ -39,7 +42,7 @@ function createCard(info) {
           </ul>
         </div>
       </div>
-      <a href="/rooms/${info.number}.html" class="card-link">
+      <a href="${roomURL}" class="card-link">
         <div class="info">
           <span class="room-number"><h2><span>№</span> ${info.number}</h2><h3>${(info.isSuite)? "люкс" : ""}</h3></span>
           <span class="room-price"><b>${beutifyNumber(info.price)}₽</b> в сутки</span>
@@ -85,23 +88,6 @@ function createRandomCard() {
 
 function createRandomCatalog(amount = 1) {
   for (let i = 0; i < amount; i++) createRandomCard();
-}
-
-function beutifyNumber(number = 1, separator = " ") {
-  let numStr = String(number);
-  let fractionalPart = "";
-
-  if (typeof number === "number" && !Number.isInteger(number)) {
-    const dotI = numStr.indexOf(".");
-    fractionalPart = numStr.slice(dotI);
-    numStr = numStr.slice(0, dotI);
-  }
-
-  // console.log(number);
-  
-  if (numStr.length > 3)
-    return numStr = beutifyNumber(numStr.slice(0, -3)) + separator + numStr.slice(-3) + fractionalPart;
-  else return numStr;
 }
 
 // console.log(beutifyNumber(21349123.4324));

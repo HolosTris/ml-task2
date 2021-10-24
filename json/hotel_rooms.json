@@ -6,11 +6,21 @@
     "comments": 145,
     "isSuite": true,
     "images": [
-      "images/catalog/catalog1.png",
-      "images/catalog/catalog2.png",
-      "images/catalog/catalog3.png",
-      "images/catalog/catalog4.png"
-    ]
+      "/images/catalog/catalog1.png",
+      "/images/catalog/catalog2.png",
+      "/images/catalog/catalog3.png",
+      "/images/catalog/catalog4.png"
+    ],
+    "rules": {
+      "pets": false,
+      "party": false,
+      "arriveTime": "13:00",
+      "deportationTime": "12:00"
+    },
+    "cancel": {
+      "cooldownHours": 48,
+      "untilArriveDays": 5
+    }
   },
   {
     "number": 777,
@@ -19,23 +29,43 @@
     "comments": 128,
     "isSuite": true,
     "images": [
-      "images/catalog/catalog2.png",
-      "images/catalog/catalog3.png",
-      "images/catalog/catalog4.png"
-    ]
+      "/images/catalog/catalog2.png",
+      "/images/catalog/catalog3.png",
+      "/images/catalog/catalog4.png"
+    ],
+    "rules": {
+      "pets": false,
+      "party": true,
+      "arriveTime": "13:00",
+      "deportationTime": "12:00"
+    },
+    "cancel": {
+      "cooldownHours": 48,
+      "untilArriveDays": 5
+    }
   },
   {
     "number": 333,
-    "price": 3330,
+    "price": 3290,
     "rating": 3,
     "comments": 101,
     "isSuite": false,
     "images": [
-      "images/catalog/catalog3.png",
-      "images/catalog/catalog6.png",
-      "images/catalog/catalog9.png",
-      "images/catalog/catalog12.png"
-    ]
+      "/images/catalog/catalog3.png",
+      "/images/catalog/catalog6.png",
+      "/images/catalog/catalog9.png",
+      "/images/catalog/catalog12.png"
+    ],
+    "rules": {
+      "pets": false,
+      "party": false,
+      "arriveTime": "14:00",
+      "deportationTime": "13:00"
+    },
+    "cancel": {
+      "cooldownHours": 48,
+      "untilArriveDays": 3
+    }
   },
   {
     "number": 1,
@@ -44,15 +74,25 @@
     "comments": 115,
     "isSuite": false,
     "images": [
-      "images/catalog/catalog4.png",
-      "images/catalog/catalog5.png",
-      "images/catalog/catalog6.png",
-      "images/catalog/catalog7.png",
-      "images/catalog/catalog8.png",
-      "images/catalog/catalog9.png",
-      "images/catalog/catalog10.png",
-      "images/catalog/catalog11.png"
-    ]
+      "/images/catalog/catalog4.png",
+      "/images/catalog/catalog5.png",
+      "/images/catalog/catalog6.png",
+      "/images/catalog/catalog7.png",
+      "/images/catalog/catalog8.png",
+      "/images/catalog/catalog9.png",
+      "/images/catalog/catalog10.png",
+      "/images/catalog/catalog11.png"
+    ],
+    "rules": {
+      "pets": false,
+      "party": false,
+      "arriveTime": "13:00",
+      "deportationTime": "12:00"
+    },
+    "cancel": {
+      "cooldownHours": 72,
+      "untilArriveDays": 5
+    }
   },
   {
     "number": 204,
@@ -61,11 +101,21 @@
     "comments": 111,
     "isSuite": true,
     "images": [
-      "images/catalog/catalog5.png",
-      "images/catalog/catalog9.png",
-      "images/catalog/catalog6.png",
-      "images/catalog/catalog7.png"
-    ]
+      "/images/catalog/catalog5.png",
+      "/images/catalog/catalog9.png",
+      "/images/catalog/catalog6.png",
+      "/images/catalog/catalog7.png"
+    ],
+    "rules": {
+      "pets": true,
+      "party": false,
+      "arriveTime": "13:00",
+      "deportationTime": "12:00"
+    },
+    "cancel": {
+      "cooldownHours": 48,
+      "untilArriveDays": 5
+    }
   },
   {
     "number": 404,
@@ -74,11 +124,21 @@
     "comments": 200,
     "isSuite": false,
     "images": [
-      "images/catalog/catalog6.png",
-      "images/catalog/catalog5.png",
-      "images/catalog/catalog1.png",
-      "images/catalog/catalog3.png",
-      "images/catalog/catalog8.png"
-    ]
+      "/images/catalog/catalog6.png",
+      "/images/catalog/catalog5.png",
+      "/images/catalog/catalog1.png",
+      "/images/catalog/catalog3.png",
+      "/images/catalog/catalog8.png"
+    ],
+    "rules": {
+      "pets": true,
+      "party": true,
+      "arriveTime": "13:00",
+      "deportationTime": "12:00"
+    },
+    "cancel": {
+      "cooldownHours": 24,
+      "untilArriveDays": 7
+    }
   }
 ]

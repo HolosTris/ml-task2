@@ -1,11 +1,13 @@
 $(function() {
-  const dateFormat = "dd M";
+  let dateFormat = "dd.mm.yy";
   const options = {
     shortYearCutoff: 20,
     dayNamesMin: [ "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" ],
     monthNames: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
     monthNamesShort: [ "янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек" ],
   }
+
+  if(location.pathname == "/main.html") dateFormat = "dd M";
 
   $(".rangepicker").datepicker({
     minDate: 0,

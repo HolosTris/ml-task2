@@ -1,4 +1,6 @@
-.catalog {
+.catalog h1 {margin-bottom: 20px;}
+
+.catalog-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, 270px);
   justify-content: space-around;
@@ -7,7 +9,7 @@
   overflow-y: auto;
 }
 
-.catalog article {
+.catalog-content article {
   box-shadow: 0px 10px 20px var(--color5);
   border-radius: 4px;
   overflow: hidden;
@@ -21,11 +23,11 @@
   opacity: 0.9;
 }
 
-.catalog article img {
+.catalog-content article img {
   /* border-radius: 4px; */
 }
 
-.catalog article .info {
+.catalog-content article .info {
   display: grid;
   /* grid-gap: 20px; */
   padding: 20px;
@@ -34,38 +36,38 @@
   grid-row-gap: 10px;
 }
 
-.catalog article .info .room-number {
+.catalog-content article .info .room-number {
   display: flex;
   align-items: flex-end;
   grid-gap: 8px;
   /* justify-content: flex-end; */
 }
 
-.catalog article .info .room-number span {
+.catalog-content article .info .room-number span {
   font-size: 12px;
 }
 
-.catalog article .info .room-number h3 {
+.catalog-content article .info .room-number h3 {
   color: var(--purple);
 }
 
-.catalog article .info .room-rating {
+.catalog-content article .info .room-rating {
   color: var(--purple);
 }
 
-.catalog article .info .room-rating span {
+.catalog-content article .info .room-rating span {
   display: inline-block;
   margin-right: -1px;
 }
 
-.catalog article .info .room-price, .catalog article .info .room-comments {
+.catalog-content article .info .room-price, .catalog-content article .info .room-comments {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   white-space: pre;
 }
 
-.catalog article .line {
+.catalog-content article .line {
   grid-row: 2;
   grid-column: 1 / 3;
 }
