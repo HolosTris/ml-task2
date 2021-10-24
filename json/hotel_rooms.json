@@ -11,15 +11,26 @@
       "/images/catalog/catalog3.png",
       "/images/catalog/catalog4.png"
     ],
+    "largeImages": [
+      "/images/catalog/large1.png",
+      "/images/catalog/large2.png",
+      "/images/catalog/large3.png"
+    ],
     "rules": {
       "pets": false,
       "party": false,
       "arriveTime": "13:00",
-      "deportationTime": "12:00"
+      "departureTime": "12:00"
     },
     "cancel": {
       "cooldownHours": 48,
       "untilArriveDays": 5
+    },
+    "votes": {
+      "great": 130,
+      "good": 65,
+      "alright": 65,
+      "disappoint": 0
     }
   },
   {
@@ -37,11 +48,17 @@
       "pets": false,
       "party": true,
       "arriveTime": "13:00",
-      "deportationTime": "12:00"
+      "departureTime": "12:00"
     },
     "cancel": {
       "cooldownHours": 48,
       "untilArriveDays": 5
+    },
+    "votes": {
+      "great": 144,
+      "good": 81,
+      "alright": 65,
+      "disappoint": 40
     }
   },
   {
@@ -56,15 +73,26 @@
       "/images/catalog/catalog9.png",
       "/images/catalog/catalog12.png"
     ],
+    "largeImages": [
+      "/images/catalog/large3.png",
+      "/images/catalog/catalog3.png",
+      "/images/catalog/catalog9.png"
+    ],
     "rules": {
       "pets": false,
       "party": false,
       "arriveTime": "14:00",
-      "deportationTime": "13:00"
+      "departureTime": "13:00"
     },
     "cancel": {
       "cooldownHours": 48,
       "untilArriveDays": 3
+    },
+    "votes": {
+      "great": 44,
+      "good": 33,
+      "alright": 22,
+      "disappoint": 11
     }
   },
   {
@@ -83,15 +111,26 @@
       "/images/catalog/catalog10.png",
       "/images/catalog/catalog11.png"
     ],
+    "largeImages": [
+      "/images/catalog/large2.png",
+      "/images/catalog/catalog4.png",
+      "/images/catalog/catalog7.png"
+    ],
     "rules": {
       "pets": false,
       "party": false,
       "arriveTime": "13:00",
-      "deportationTime": "12:00"
+      "departureTime": "12:00"
     },
     "cancel": {
       "cooldownHours": 72,
       "untilArriveDays": 5
+    },
+    "votes": {
+      "great": 100,
+      "good": 50,
+      "alright": 25,
+      "disappoint": 0
     }
   },
   {
@@ -110,11 +149,17 @@
       "pets": true,
       "party": false,
       "arriveTime": "13:00",
-      "deportationTime": "12:00"
+      "departureTime": "12:00"
     },
     "cancel": {
       "cooldownHours": 48,
       "untilArriveDays": 5
+    },
+    "votes": {
+      "great": 30,
+      "good": 111,
+      "alright": 15,
+      "disappoint": 0
     }
   },
   {
@@ -130,15 +175,26 @@
       "/images/catalog/catalog3.png",
       "/images/catalog/catalog8.png"
     ],
+    "largeImages": [
+      "/images/catalog/large2.png",
+      "/images/catalog/catalog6.png",
+      "/images/catalog/catalog5.png"
+    ],
     "rules": {
       "pets": true,
       "party": true,
       "arriveTime": "13:00",
-      "deportationTime": "12:00"
+      "departureTime": "12:00"
     },
     "cancel": {
       "cooldownHours": 24,
       "untilArriveDays": 7
+    },
+    "votes": {
+      "great": 42,
+      "good": 65,
+      "alright": 71,
+      "disappoint": 10
     }
   }
 ]

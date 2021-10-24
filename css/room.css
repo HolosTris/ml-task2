@@ -67,6 +67,7 @@ hr {
 .unit {
   fill: none;
   stroke-width: 1;
+  /* transform: rotate(90deg 60px 60px); */
 }
 
 .unit:nth-of-type(1) {
