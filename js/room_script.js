@@ -84,7 +84,6 @@ fetch("/json/hotel_rooms.json")
     const units = document.querySelectorAll("svg .unit");
     const votes = Object.values(room.votes);
     const totalVotes = votes.reduce((prev, cur) => cur + prev);
-    console.log(votes, totalVotes);
 
     document.querySelector(".total-chart").innerHTML = `
       <span>${totalVotes}</span><br>
@@ -121,13 +120,13 @@ fetch("/json/hotel_rooms.json")
 
     async function showReviews() {
       const reviews = await fetch("/json/reviews.json")
-      .then(response => response.json())
-      .then(allReviews => allReviews.find(reviews => reviews.room == room.number).reviews);
+        .then(response => response.json())
+        .then(allReviews => allReviews.find(reviews => reviews.room == room.number).reviews);
       const users = await fetch("/json/users.json").then(response => response.json());
       
       for (let review of reviews) {
         const user = users.find(user => user.id == review.user);
-        console.log(user);
+        
         reviewsDiv.insertAdjacentHTML("beforeend",
           `<div>
             <img src="${user.avatar}" alt="">
@@ -136,10 +135,7 @@ fetch("/json/hotel_rooms.json")
               ${showRelativeDate(review.date)}
             </p>
             <div><button class="alt-btn like-btn"><span class="material-icons">favorite</span>${review.likes}</button></div>
-            <p>Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
-              И стены, действительно, шумоподавляющие.
-              Выкрикивал комплименты повару — никто не жаловался из соседей.
-            </p>
+            <p>${review.text}</p>
           </div>`);
       }
     }

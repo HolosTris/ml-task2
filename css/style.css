@@ -90,16 +90,14 @@ button {
 select, input {
   font: 400 14px Montserrat;
   letter-spacing: 1px;
-  color: var(--color75);
   border: 1px solid var(--color25);
   border-radius: 4px;
   /* height: 44px; */
   padding: 12px 15px;
 }
-
-input::placeholder {
-  color: var(--color25);
-}
+select::placeholder, input::placeholder {color: var(--color25);}
+select.invalid, input.invalid {border-color: rgba(256, 0, 0, 0.25);}
+select.invalid::placeholder, input.invalid::placeholder {color: rgba(256, 0, 0, 0.25);}
 
 input[type="radio" i] {
   position: absolute;
@@ -284,10 +282,11 @@ main {
 }
 
 .bg-image {
-  background: url("/images/image 3.png");
+  background: url("/images/bg1.png");
   background-size: cover;
   background-position: 0 -69px;
 }
+.bg-image#registration, .bg-image#login {background: url("/images/bg2.png");}
 
 .search {
   padding: 30px calc((100% - 1160px) / 2) 70px calc((100% - 1160px) / 2);
@@ -394,59 +393,4 @@ div.arrive-departure {
   float: right;
   text-align: right;
   /* text-shadow: 1px 1px 3px var(--color75); */
-}
-
-footer {
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  /* height: 442px; */
-  width: 100%;
-  background: white;
-  box-shadow: 0px 0px 0px 1px rgba(31, 32, 65, 0.1);
-  padding: 100px calc((100% - 1160px) / 2);
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-  width: 160px;
-  /* padding: 0 20px; */
-  text-align: left;
-}
-
-.col img {
-  display: inline;
-  width: 106px;
-  margin: 0;
-}
-
-.col:first-child {
-  /* padding: 0 20px 0 0; */
-}
-
-.col:last-child {
-  /* padding: 0 0 0 20px; */
-}
-
-.col-lg {
-  width: 260px;
-}
-
-.col h3 {
-  margin-top: 5px;
-}
-
-.col span, .col p, .col input {
-  margin-top: 20px;
-}
-
-.copyright {
-  display: flex;
-  bottom: 0;
-  width: 100%;
-  height: 70px;
-  border-top: 1px solid var(--color5);
-  padding: 0 140px;
-  align-items: center;
 }

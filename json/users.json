@@ -3,12 +3,18 @@
     "id": 1,
     "name": "Мурад",
     "surname": "Сарафанов",
-    "avatar": "/images/avatars/user1.png"
+    "avatar": "/images/avatars/user1.png",
+    "sex": 0,
+    "birthDate": "1991.09.11",
+    "mail": "murad.sarafanov@mymail.com"
   },
   {
     "id": 2,
     "name": "Патрисия",
     "surname": "Стёклышкова",
-    "avatar": "/images/avatars/user2.png"
+    "avatar": "/images/avatars/user2.png",
+    "sex": 1,
+    "birthDate": "1993.01.01",
+    "mail": "patristeclo@mymail.com"
   }
 ]
