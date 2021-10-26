@@ -95,12 +95,9 @@ header .btn {
   height: 34px;
 }
 
-.log {
-  /* display: grid;
-  grid-auto-flow: column;
-  height: 30px; */
-  float: right;
-}
+.log, .user {float: right;}
+
+.username{margin-left: 20px;}
 
 /*Footer*/
 

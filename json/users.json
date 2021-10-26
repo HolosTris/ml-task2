@@ -5,7 +5,7 @@
     "surname": "Сарафанов",
     "avatar": "/images/avatars/user1.png",
     "sex": 0,
-    "birthDate": "1991.09.11",
+    "birthDate": "1991-09-11T20:00:00.000Z",
     "mail": "murad.sarafanov@mymail.com"
   },
   {
@@ -14,7 +14,7 @@
     "surname": "Стёклышкова",
     "avatar": "/images/avatars/user2.png",
     "sex": 1,
-    "birthDate": "1993.01.01",
+    "birthDate": "1993-01-01T20:00:00.000Z",
     "mail": "patristeclo@mymail.com"
   }
 ]

@@ -1,6 +1,9 @@
 const catalog = document.querySelector(".catalog-content");
 const filters = document.querySelector(".filters");
 
+// let users;
+// document.querySelector("script[src='js/script.js']").onload = () => window.stop();
+
 (async () => {
   const templates = await Promise.all([
     fetch("/templates/header.html").then(response => response.text()),
@@ -8,18 +11,73 @@ const filters = document.querySelector(".filters");
   ]);
   // const header = await fetch("/templates/header.html").then(response => response.text());
 
+  for (let i = 0; i < templates.length; i++) {
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = templates[i];
+    templates[i] = tempDiv.firstElementChild;
+    tempDiv.remove();
+  }console.log(templates[0]);
+
   //Header
-  if (document.querySelector("header")) document.querySelector("header").outerHTML = templates[0];
-  else document.body.insertAdjacentHTML("afterbegin", templates[0]);
+  // const header = (localStorage.getItem("currentUser"))?
+  //   templates[0].querySelector("template#login header") : templates[0].querySelector("template header");
+  
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  currentUser.__proto__ = User.prototype;
+  let header = templates[0].content.querySelector("header");
+  if (currentUser) {
+    header = templates[0].content.querySelector("header#login");
+    header.querySelector(".username a").innerHTML = currentUser.fullName;
+  }
+
+  if (document.querySelector("header")) document.querySelector("header").outerHTML = header.outerHTML;
+  else document.body.insertAdjacentElement("afterbegin", header);
 
   //Footer
-  if (document.querySelector("footer")) document.querySelector("footer").outerHTML = templates[1];
-  else document.body.insertAdjacentHTML("beforeend", templates[1]);
+  const footer = templates[1].content.firstElementChild;
+  if (document.querySelector("footer")) document.querySelector("footer").outerHTML = footer.outerHTML;
+  else document.body.insertAdjacentElement("beforeend", footer);
 
   //Header and footer styles
   if (!document.head.querySelector("link[href='/css/header_footer.css']"))
     document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="/css/header_footer.css">');
+
+  // users = await fetch("/json/users.json").then(response => response.json())
+  //   .then(() => document.dispatchEvent(new CustomEvent("users-loaded")));
 })()
+
+class User {
+  // static _lastId;
+
+  constructor(name, surname, sex, birthDate, mail, avatar = null) {
+    this.id = 0;
+    this.name = name;
+    this.surname = surname;
+    this.sex = sex;
+    this.birthDate = birthDate;
+    this.mail = mail;
+    this.avatar = avatar;
+  }
+
+  get fullName() {
+    return this.name + " " + this.surname;
+  }
+
+  // static get lastId() {
+  //   if (this._lastId) return this._lastId;
+
+  //   // while (!this._lastId)
+  //   //   if (users) this._lastId = users.reduce((prev, cur) => (cur.id > prev.id)? cur : prev);
+      
+  //   return this._lastId;
+  //   (async () => {
+  //     return this._lastId = await fetch("/json/users.json")
+  //       .then(response => response.json())
+  //       .then( users => users.reduce((prev, cur) => (cur.id > prev.id)? cur : prev) )
+  //       .then(lastUser => lastUser.id);
+  //   })();
+  // }
+}
 
 function beutifyNumber(number = 1, separator = " ") {
   let numStr = String(number);

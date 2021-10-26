@@ -286,7 +286,7 @@ main {
   background-size: cover;
   background-position: 0 -69px;
 }
-.bg-image#registration, .bg-image#login {background: url("/images/bg2.png");}
+.bg-image#registration, .bg-image#login {background-image: url("/images/bg2.png"); background-position: 0;}
 
 .search {
   padding: 30px calc((100% - 1160px) / 2) 70px calc((100% - 1160px) / 2);
