@@ -80,15 +80,10 @@
   grid-gap: 7px;
 }
 
-div.arrive-departure {
+div.con-div-row {
   flex-direction: row;
-  grid-gap: 20px;
-}
-
-.else-login {
-  grid-auto-flow: column;
-  /* justify-content: center; */
   align-items: center;
+  grid-gap: 20px;
 }
 
 .arrive-departure button {
@@ -122,10 +117,9 @@ div.arrive-departure {
   margin-top: 5px; */
 }
 
-.container .main-btn {
-  margin-top: 10px;
-  height: 44px;
-}
+.container .main-btn, div.else-login {margin-top: 10px;}
+
+div.else-login {justify-content: space-between;}
 
 .main-btn::after {
   content: "arrow_forward";

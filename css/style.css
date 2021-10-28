@@ -21,12 +21,14 @@
 :root {
   --green: #6fcf97;
   --purple: #bc9cff;
+  --purple50: rgba(188, 156, 255, 0.5);
   --color100: #1f2041;
   --color75: rgba(31, 32, 65, .75);
   --color50: rgba(31, 32, 65, .5);
   --color25: rgba(31, 32, 65, .25);
   --color5: rgba(31, 32, 65, .05);
   --gradient: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  --gradient50: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 }
 
 *, *::after, *::before {
@@ -88,10 +90,10 @@ button, .btn {
   display: inline-flex;
   position: relative;
   color: white;
-  background: var(--gradient);
+  background-image: var(--gradient);
   /* background-color: var(--purple); */
   /* height: 34px; */
-  padding: 10px 20px;
+  padding: 15px 20px;
   border-width: 0;
   border-radius: 25px;
   font-size: 12px;
@@ -102,21 +104,24 @@ button, .btn {
   justify-content: center;
   cursor: pointer;
 }
-
 button:hover, .btn:hover {
-  color: var(--color75);
-  border-color: var(--color75);
+  background-image: var(--gradient50);
   text-decoration: none;
+  color: white;
 }
+button:disabled, .btn:disabled {opacity: 0.5;}
 
 .alt-btn {
-  border: 2px solid;
-  padding: 8px 18px;
+  border: 2px solid var(--purple);
+  padding: 13px 18px;
   /* Временно */
-  /* border-image-source: var(--gradient); */
+  /* border-image-source: var(--gradient);
+  border-image:  linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) 2 100%; */
+  /* box-shadow: 0 0 0 2px var(--gradient); */
   color: var(--purple);
   background: white;
 }
+.alt-btn:hover {border-color: var(--purple50); background-image: none; color: var(--purple);}
 
 select, input {
   font: 400 14px Montserrat;

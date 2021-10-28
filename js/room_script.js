@@ -148,7 +148,7 @@ fetch("/json/hotel_rooms.json")
       
       if (diffMin > 7 * 24 * 60) {
         time = Math.floor(diffMin / 7 / 24 / 60);
-        string = (time > 4)? time + " недель" : (time > 1)? time + " недели" : "Неделя";
+        string = (time > 4)? time + " недель" : (time > 1)? time + " недели" : "Неделю";
       }
       else if (diffMin > 24 * 60) {
         time = Math.floor(diffMin / 24 / 60);

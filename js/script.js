@@ -4,6 +4,12 @@ const filters = document.querySelector(".filters");
 // let users;
 // document.querySelector("script[src='js/script.js']").onload = () => window.stop();
 
+for (let button of document.querySelectorAll("button, .btn")) button.disabled = true;
+document.onreadystatechange = () => {
+  if (document.readyState == "complete")
+    for (let button of document.querySelectorAll("button, .btn")) button.disabled = false;
+}
+
 (async () => {
   const templates = await Promise.all([
     fetch("/templates/header.html").then(response => response.text()),

@@ -21,7 +21,7 @@
 
 #info div h2 { margin-bottom: 20px; }
 
-.data div, .data hr { margin-top: 20px; }
+.data div, .data hr { margin-top: 18px; }
 .data div:first-of-type { margin-top: 0; }
 
 .data div {
@@ -157,32 +157,31 @@ hr {
 
 .reviews > div {
   display: grid;
-  grid-template-columns: 44px 1fr;
-  grid-template-rows: 44px 1fr;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: 48px 1fr;
   grid-gap: 10px;
-  margin-top: 20px;
+  margin-top: 24px;
 }
 .reviews > div:first-of-type { margin-top: 0; }
 
 .reviews > div img{
   /* width: auto; */
+  border: 2px solid #FFF;
+  border-radius: 50%;
 }
 
 .reviews > div > div {
   justify-self: center;
 }
 
-button .material-icons {
-  font-size: 10px;
-  margin-right: 5px;
-}
-
 .like-btn {
   border-width: 1px;
-  padding: 5px 10px 5px 5px;
+  padding: 2px 9px 2px 3px;
   color: var(--color25);
   border-color: var(--color25);
+  font-size: 10px;
 }
+.like-btn .material-icons {margin-right: 5px; font-size: 10px;}
 
 .liked {
   color: var(--purple);
@@ -211,6 +210,7 @@ button .material-icons {
   margin-left: -20px;
 }
 
+
 .con-reservation .room-info, .subtotal div, div.total {
   flex-direction: row;
   justify-content: space-between;
@@ -231,5 +231,23 @@ button .material-icons {
 .room-info h3 { color: var(--purple) }
 .room-info b { font-size: 14px; }
 
-div.total { grid-gap: 0;  white-space: nowrap;}
+div.subtotal{grid-gap: 17px;}
+
+.service-fee span:first-child, .extra-service-fee span:first-child {display: flex; width: 220px; justify-content: space-between;}
+.service-fee span:first-child::after, .extra-service-fee span:first-child::after {
+  content: "i";
+  position:static;
+  min-height: 20px;  max-height: 20px;
+  min-width: 20px;
+  border: 1px solid var(--color25);
+  border-radius: 50%;
+  color: var(--color25);
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+div.total { grid-gap: 0;  white-space: nowrap; margin-top: 10px;}
 .total .line { height: 100%; border-color: var(--color25); border-bottom-style: dotted;}
+
+.con-reservation .main-btn {margin-top: 0;}
