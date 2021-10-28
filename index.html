@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/rest.css">
+  <link rel="stylesheet" href="/css/datepicker.css">
+  <link rel="stylesheet" href="/css/filter.css">
   <title>Task 2</title>
 </head>
 <body>
@@ -29,7 +31,7 @@
   </nav>
 </header>
 <main class="bg-image">
-  <div class="container con-search">
+  <div class="container con-landing">
     <h1>Найдём номера под ваши пожелания</h1>
     <div class="arrive-departure">
       <input type="hidden" id="input1_1" class="rangepicker search-dp">
@@ -38,12 +40,13 @@
         <!-- <select name="" id="input1" onclick="$('.rangepicker').datepicker('show');">
           <option value="placeholder">ДД.ММ.ГГГГ</option>
         </select> -->
-        <input type="text" id="input1" onclick="$('.rangepicker').datepicker('show');">
+        <button id="input1" onclick="$('.rangepicker').datepicker('show');">ДД.ММ.ГГГГ</button>
         <!-- <input type="text" id="datepicker"> -->
       </div>
       <div class="departure">
         <h3>Выезд</h3>
-        <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');">
+        <button id="input2" onclick="$('.rangepicker').datepicker('show');">ДД.ММ.ГГГГ</button>
+        <!-- <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');" placeholder="ДД.ММ.ГГГГ"> -->
         <!-- <select name="" id="input2" onclick="$('.rangepicker').datepicker('show');">
           <option value="placeholder">ДД.ММ.ГГГГ</option>
         </select> -->
@@ -51,9 +54,41 @@
     </div>
     <div class="guests">
       <h3>Гости</h3>
-      <select name="">
-        <option value="placeholder">Сколько гостей</option>
-      </select>
+      <div class="dropdown dd-menu">
+        <button>Сколько гостей</button>
+        <div class="dropdown-content">
+          <div class="options">
+            <div class="adults">
+              <b>Взрослые</b>
+              <span>
+                <button class="decrease">-</button>
+                <b class="counter" data-min="0" data-max="10">1</b>
+                <button class="increase">+</button>
+              </span>
+            </div>
+            <div class="children">
+              <b>Дети</b>
+              <span>
+                <button class="decrease">-</button>
+                <b class="counter" data-min="0" data-max="10">0</b>
+                <button class="increase">+</button>
+              </span>
+            </div>
+            <div class="babies">
+              <b>Младенцы</b>
+              <span>
+                <button class="decrease">-</button>
+                <b class="counter" data-min="0" data-max="10">0</b>
+                <button class="increase">+</button>
+              </span>
+            </div>
+          </div>
+          <div class="controls">
+            <button data-action="clear">Очистить</button>
+            <button data-action="apply">Применить</button>
+          </div>
+        </div>
+      </div>
     </div>
     <button type="button" name="chooseRoom" class="btn main-btn">Подобрать номер</button>
   </div>
@@ -95,7 +130,8 @@
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript" src="js/datepicker.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
+<script type="text/javascript" src="/js/dropdown.js"></script>
+<script type="text/javascript" src="/js/datepicker.js"></script>
 </body>
 </html>

@@ -4,32 +4,56 @@ const form = document.forms[0];
 console.log(document.querySelector(".username"))
 
 //Валидация формы
+const textInputs = form.querySelectorAll("input:not([type=checkbox], [type=radio])");
+
+for (let input of textInputs) {
+  input.tabIndex = 1;
+  input.onchange = function() {
+    this.value = this.value.trim();
+    // console.log(this.value.split(" "));
+
+    if (!this.value) this.classList.add("invalid");
+    // else if (this.onblur) this.onblur();
+    else this.classList.remove("invalid");
+  }
+}
+
 form.onsubmit = function() {
-  const textInputs = this.querySelectorAll("input:not([type=checkbox], [type=radio])");
 
-  for (let elem of form.elements) if (typeof elem.value == "string") elem.value = elem.value.trim();
+  // for (let elem of form.elements) if (typeof elem.value == "string") elem.value = elem.value.trim();
+  // for (let input of textInputs) input.value = input.value.trim();
 
-  if (Array.from(textInputs).includes(document.activeElement)) {
-    textInputs[Array.from(textInputs).indexOf(document.activeElement) + 1].focus();
+  const activeInputI = [...textInputs].indexOf(document.activeElement);
+  if (~activeInputI && activeInputI != textInputs.length - 1) {
+    textInputs[activeInputI + 1].focus();
     return false;
   }
 
-  for (let el of textInputs)
-    if (!el.value && !el.onblur) el.classList.add("invalid");
-    else if (el.onblur) el.onblur();
-    else el.classList.remove("invalid");
+  for (let el of textInputs) el.onchange();
 
   if( !Array.from(this.elements).find(el => el.classList.contains("invalid")) ) submitForm(this);
 
   return false;
 }
 
+let prevValLength;
 form.birthDate.oninput = function() {
-  const lastSym = this.value[this.value.length - 1];
   
-  if (lastSym.charCodeAt() < 0x30 || lastSym.charCodeAt() > 0x39) this.value = this.value.slice(0, -1);
+  for (let i = 0; i < this.value.length; i++) {
+    if ( (this.value[i].charCodeAt() < 0x30 || this.value[i].charCodeAt() > 0x39)
+      && !(this.value[i] == "." && (i == 2 || i == 5)) ) {
+      this.value = this.value.replace(this.value[i], "");
+      i--;
+    }
+    if (this.value[i] != "." && (i == 2 || i == 5)) {
+      this.value = this.value.slice(0, i) + "." + this.value.slice(i, this.value.length);
+      i++
+    }
+  }
 
-  if (this.value.length == 2 || this.value.length == 5) this.value += ".";
+  // if (this.value.length == 2 && prevValLength != 3 || this.value.length == 5 && prevValLength != 6) this.value += ".";
+
+  prevValLength = this.value.length;
 }
 
 form.birthDate.onblur = checkDate;

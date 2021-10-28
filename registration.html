@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/rest.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title>Registration</title>
 </head>
@@ -30,7 +31,7 @@
     </nav>
   </header>
   <main id="registration" class="bg-image">
-    <form name="registration" class="container con-registration">
+    <form name="registration" class="container con-center">
       <h1>Регистрация аккаунта</h1>
       <div class="personal-data">
         <input type="text" name="username" value="" placeholder="Имя" autofocus>
@@ -44,7 +45,7 @@
       </div>
       <div class="birth-date">
         <h3>Дата рождения</h3>
-        <input type="text" name="birthDate" value="" placeholder="ДД.ММ.ГГГГ">
+        <input type="text" name="birthDate" maxlength=10 value="" placeholder="ДД.ММ.ГГГГ">
       </div>
       <div class="log-data">
         <h3>Данные для входа в сервис</h3>
@@ -97,6 +98,6 @@
     <div class="copyright"><span>Copyright © 2018 Toxin отель. Все права защищены.</span></div>
   </footer>
   <script src="/js/script.js"></script>
-  <script src="js/registration.js" defer></script>
+  <script src="/js/registration.js" defer></script>
 </body>
 </html>

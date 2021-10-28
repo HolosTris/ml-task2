@@ -142,9 +142,25 @@ footer .content {
   margin-top: 5px;
 }
 
-.col span, .col p, .col input {
+.col > * {
   margin-top: 20px;
 }
+
+#subscription + label {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24px;
+}
+#subscription + label:before {
+  content: "arrow_forward";
+  font-family: 'Material Icons';
+  position: absolute;
+  left: -1.2em;
+  color: var(--purple);
+}
+#subscription:hover + label:before, #subscription:focus + label:before {color: var(--color100);}
+/* #subscription:not(:focus):valid + label:before {content: "\2714"; color: var(--purple);} */
 
 .copyright {
   display: flex;

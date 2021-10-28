@@ -12,6 +12,15 @@ $(function() {
   $(".rangepicker").datepicker({
     minDate: 0,
     maxDate: "+1y",
+    beforeShow: (location.pathname == "/main.html")? null : function (input, inst ) {
+      const text1 = $("#input1").text().split(".");
+      const text2 = $("#input2").text().split(".");
+      if (!Date.parse([text1[2], text1[1], text1[0]].join("."))
+        || !Date.parse([text2[2], text2[1], text2[0]].join("."))) {
+        $("#input1").text("");
+        $("#input2").text("");
+      }
+    },
     beforeShowDay: showHighlites,
     dateFormat: dateFormat,
     defaultDate: "+1d",
@@ -30,23 +39,21 @@ $(function() {
     prevText: "",
     nextText: "",
     onSelect: function(dateText, inst) {
-
-      const date1 = $.datepicker.parseDate(dateFormat, $("#input1").val(), options);
-      const date2 = $.datepicker.parseDate(dateFormat, $("#input2").val(), options);
+      const date1 = $.datepicker.parseDate(dateFormat, $("#input1").text(), options);
+      const date2 = $.datepicker.parseDate(dateFormat, $("#input2").text(), options);
       const selectedDate = $.datepicker.parseDate(dateFormat, dateText, options);
-
       if (!date1 || date2) {
-        $("#input1").val(dateText);
-        $("#input2").val("");
+        $("#input1").text(dateText);
+        $("#input2").text("");
       } else if (selectedDate < date1) {
-          $("#input2").val($("#input1").val());
-          $("#input1").val(dateText);
+          $("#input2").text($("#input1").text());
+          $("#input1").text(dateText);
       } else {
-          $("#input2").val(dateText);
+          $("#input2").text(dateText);
       }
 
       if ($("#input") != null) {
-        $("#input").val($("#input1").val() + " - " + $("#input2").val());
+        $("#input").val($("#input1").text() + " - " + $("#input2").text());
       }
 
       $(this).data('datepicker').inline = true;
@@ -64,8 +71,8 @@ $(function() {
   $("#ui-datepicker-div").css("display", "none");
 
   function showHighlites(date) {
-      var date1 = $.datepicker.parseDate(dateFormat, $("#input1").val(), options);
-      var date2 = $.datepicker.parseDate(dateFormat, $("#input2").val(), options);
+      var date1 = $.datepicker.parseDate(dateFormat, $("#input1").text(), options);
+      var date2 = $.datepicker.parseDate(dateFormat, $("#input2").text(), options);
       var isHighlight = date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2));
       var isFirst = (date1 && (date.getTime() == date1.getTime())) || (date2 && (date.getTime() == date2.getTime()));
       // var classes = isHighlight ? "dp-highlight" : "";

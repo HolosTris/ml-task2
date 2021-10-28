@@ -83,8 +83,39 @@ i {
   font-style: normal;
   font-size: 12px;
 }
-button {
-  font: bold 12px Montserrat;
+
+button, .btn {
+  display: inline-flex;
+  position: relative;
+  color: white;
+  background: var(--gradient);
+  /* background-color: var(--purple); */
+  /* height: 34px; */
+  padding: 10px 20px;
+  border-width: 0;
+  border-radius: 25px;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+button:hover, .btn:hover {
+  color: var(--color75);
+  border-color: var(--color75);
+  text-decoration: none;
+}
+
+.alt-btn {
+  border: 2px solid;
+  padding: 8px 18px;
+  /* Временно */
+  /* border-image-source: var(--gradient); */
+  color: var(--purple);
+  background: white;
 }
 
 select, input {
@@ -96,21 +127,24 @@ select, input {
   padding: 12px 15px;
 }
 select::placeholder, input::placeholder {color: var(--color25);}
+
 select.invalid, input.invalid {border-color: rgba(256, 0, 0, 0.25);}
 select.invalid::placeholder, input.invalid::placeholder {color: rgba(256, 0, 0, 0.25);}
+
+select:hover, select:focus, input:hover, input:focus {border-color: var(--color50);}
+select:hover::placeholder, select:focus::placeholder,
+input:hover::placeholder, input:focus::placeholder {color: var(--color75);}
 
 input[type="radio" i] {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
-
 input[type="radio" i] + label {
   display: inline-flex;
   align-items: center;
   color: var(--color50);
 }
-
 input[type="radio" i] + label::before {
   position: static;
   content: "";
@@ -129,11 +163,9 @@ input[type="radio" i] + label::before {
   overflow: hidden;
   cursor: pointer;
 }
-
 input[type="radio" i]:checked + label {
   color: var(--color75);
 }
-
 input[type="radio" i]:checked + label::before {
   box-shadow: 0 0 0 1px var(--purple);
   background-image: var(--gradient);
@@ -145,13 +177,11 @@ input[type="radio" i]:checked + label::before {
   z-index: -1;
   opacity: 0;
 }
-
 .checkbox + label {
   display: inline-flex;
   align-items: flex-start;
   color: var(--color50);
 }
-
 .checkbox + label::before {
   position: static;
   content: "";
@@ -170,11 +200,9 @@ input[type="radio" i]:checked + label::before {
   overflow: hidden;
   cursor: pointer;
 }
-
 .checkbox:checked + label {
   color: var(--color75);
 }
-
 .checkbox:checked + label::before {
   box-shadow: 0 0 0 1px var(--purple);
   background-image: url("/images/svg/check.svg");
@@ -186,12 +214,10 @@ input[type="radio" i]:checked + label::before {
   z-index: -1;
   opacity: 0;
 }
-
 .toggle + label {
   display: inline-flex;
   align-items: center;
 }
-
 .toggle + label::before {
   position: static;
   content: "";
@@ -211,61 +237,16 @@ input[type="radio" i]:checked + label::before {
   transition: .3s ease-in-out;
   cursor: pointer;
 }
-
 .toggle:checked + label::before {
   box-shadow: inset 0 0 0 1px var(--purple), inset 20px 0 0 4px #FFF, inset 0px 0 0 4px #FFF;
   background-image: var(--gradient);
 }
 
 /* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
-header:after, .con-search:after, footer:after, .widget-posts-list li:after, #subscribe:after {
+header:after, .con-landing:after, footer:after, .widget-posts-list li:after, #subscribe:after {
   content: "";
   display: table;
   clear: both;
-}
-/* стилевой класс, который управляет шириной контейнера сетки*/
-.con-search {
-  position: relative;
-  top: 70px;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 960px;
-  padding: 0 15px;
-  float: left;
-  left: 140px;
-  /* grid-column: 50% 50%; */
-}
-
-button, .btn {
-  display: inline-flex;
-  position: relative;
-  color: white;
-  background: var(--gradient);
-  /* background-color: var(--purple); */
-  /* height: 34px; */
-  padding: 10px 20px;
-  border-width: 0;
-  border-radius: 25px;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-button:hover, .btn:hover {
-  color: var(--color75);
-  border-color: var(--color75);
-  text-decoration: none;
-}
-
-.alt-btn {
-  border: 2px solid;
-  /* Временно */
-  /* border-image-source: var(--gradient); */
-  color: var(--purple);
-  background: white;
 }
 
 main {
@@ -279,118 +260,4 @@ main {
   width: 100%;
   height: 1px;
   border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-}
-
-.bg-image {
-  background: url("/images/bg1.png");
-  background-size: cover;
-  background-position: 0 -69px;
-}
-.bg-image#registration, .bg-image#login {background-image: url("/images/bg2.png"); background-position: 0;}
-
-.search {
-  padding: 30px calc((100% - 1160px) / 2) 70px calc((100% - 1160px) / 2);
-  display: grid;
-  grid-template-columns: 266px 1fr;
-  grid-gap: 60px;
-}
-
-.filters {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 20px;
-  /* justify-content: space-around; */
-  /* align-items: stretch; */
-}
-
-.filters > div, .dd-container.active .dropdown-content {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 10px;
-}
-
-#cost i {
-  float: right;
-}
-
-.accessibility label {
-  color: var(--color75);
-  font-weight: bold;
-}
-
-.accessibility i {
-  display: inline-block;
-  margin: 0px 0 0 30px;
-}
-
-.container {
-  display: grid;
-  grid-gap: 20px;
-  background: white;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  width: 382px;
-  /* height: 374px; */
-  padding: 40px 30px 30px 30px;
-}
-
-.con-registration {
-  position: relative;
-  top: 70px;
-  margin: 0 auto;
-}
-
-.con-registration span {
-  color: black;
-}
-
-.container div {
-  display: flex;
-  flex-direction: column;
-  grid-gap: 10px;
-}
-
-div.arrive-departure {
-  flex-direction: row;
-  grid-gap: 20px;
-}
-
-.else-login {
-  grid-auto-flow: column;
-  /* justify-content: center; */
-  align-items: center;
-}
-
-.arrive input, .departure input {
-  width: 150px;
-  /* margin-top: 5px; */
-}
-
-.guests select {
-  /* width: 320px;
-  margin-top: 5px; */
-}
-
-.container .main-btn {
-  /* width: 320px; */
-  height: 44px;
-}
-
-.main-btn::after {
-  content: "arrow_forward";
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-size: 24px;
-  text-transform: none;
-  right: 10px;
-}
-
-.caption {
-  position: relative;
-  right: 134px;
-  top: 761px;
-  float: right;
-  text-align: right;
-  /* text-shadow: 1px 1px 3px var(--color75); */
 }

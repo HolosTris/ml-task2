@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/rest.css">
   <link rel="stylesheet" href="/css/room.css">
   <link rel="stylesheet" href="/css/filter.css">
   <link rel="stylesheet" href="/css/datepicker.css">
@@ -142,11 +143,11 @@
           <input type="hidden" id="input1_1" class="rangepicker search-dp">
           <div class="arrive">
             <h3>Прибытие</h3>
-            <input type="text" id="input1" onclick="$('.rangepicker').datepicker('show');" value="">
+            <button id="input1" onclick="$('.rangepicker').datepicker('show');">ДД.ММ.ГГГГ</button>
           </div>
           <div class="departure">
             <h3>Выезд</h3>
-            <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');" value="">
+            <button id="input2" onclick="$('.rangepicker').datepicker('show');">ДД.ММ.ГГГГ</button>
           </div>
         </div>
         <div class="guests">

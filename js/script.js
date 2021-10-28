@@ -23,9 +23,11 @@ const filters = document.querySelector(".filters");
   //   templates[0].querySelector("template#login header") : templates[0].querySelector("template header");
   
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  currentUser.__proto__ = User.prototype;
   let header = templates[0].content.querySelector("header");
+
   if (currentUser) {
+    currentUser.__proto__ = User.prototype;
+
     header = templates[0].content.querySelector("header#login");
     header.querySelector(".username a").innerHTML = currentUser.fullName;
   }
@@ -61,6 +63,10 @@ class User {
 
   get fullName() {
     return this.name + " " + this.surname;
+  }
+
+  static func() {
+    return this.length;
   }
 
   // static get lastId() {

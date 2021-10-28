@@ -1,0 +1,146 @@
+.con-landing {
+  position: relative;
+  top: 70px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+  padding: 0 15px;
+  float: left;
+  left: 140px;
+  /* grid-column: 50% 50%; */
+}
+
+.bg-image {
+  background: url("/images/bg1.png");
+  background-size: cover;
+  background-position: 0 -69px;
+}
+.bg-image#registration, .bg-image#login {background-image: url("/images/bg2.png"); background-position: 0;}
+
+.search {
+  padding: 30px calc((100% - 1160px) / 2) 70px calc((100% - 1160px) / 2);
+  display: grid;
+  grid-template-columns: 266px 1fr;
+  grid-gap: 60px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  /* justify-content: space-around; */
+  /* align-items: stretch; */
+}
+
+.filters > div, .dd-container.active .dropdown-content {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+}
+
+#cost i {
+  float: right;
+}
+
+.accessibility label {
+  color: var(--color75);
+  font-weight: bold;
+}
+
+.accessibility i {
+  display: inline-block;
+  margin: 0px 0 0 30px;
+}
+
+.container {
+  display: grid;
+  grid-gap: 20px;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  width: 382px;
+  /* height: 374px; */
+  padding: 40px 30px 30px 30px;
+}
+
+.con-center {
+  position: relative;
+  top: 70px;
+  margin: 0 auto;
+}
+
+.con-center span {
+  color: black;
+}
+
+.container div {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 7px;
+}
+
+div.arrive-departure {
+  flex-direction: row;
+  grid-gap: 20px;
+}
+
+.else-login {
+  grid-auto-flow: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.arrive-departure button {
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  width: 150px;
+  height: 44px;
+  font-size: 14px;
+  color: var(--color75);
+  background: white;
+  border: 1px solid var(--color25);
+  border-radius: 4px;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.dd-menu > button::after, .arrive-departure button::after {
+  position: relative;
+  margin-left: auto;
+  content: "expand_more";
+  font-family: 'Material Icons';
+  font-weight: normal;
+  color: var(--color50);
+  font-size: 24px;
+  text-transform: none;
+}
+
+.guests select {
+  /* width: 320px;
+  margin-top: 5px; */
+}
+
+.container .main-btn {
+  margin-top: 10px;
+  height: 44px;
+}
+
+.main-btn::after {
+  content: "arrow_forward";
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-size: 24px;
+  text-transform: none;
+  right: 10px;
+}
+
+.caption {
+  position: relative;
+  right: 134px;
+  top: 761px;
+  float: right;
+  text-align: right;
+  /* text-shadow: 1px 1px 3px var(--color75); */
+}
