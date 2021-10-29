@@ -210,7 +210,7 @@ input[type="radio" i]:checked + label::before {
 }
 .checkbox:checked + label::before {
   box-shadow: 0 0 0 1px var(--purple);
-  background-image: url("/images/svg/check.svg");
+  background-image: url("./svg/icons/check.svg");
   color: var(--color75);
 }
 
