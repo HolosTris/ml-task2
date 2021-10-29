@@ -22,7 +22,7 @@ const loadedCatalog = fetch("./json/hotel_rooms.json")
   });
 
 function createCard(info) {
-  const roomURL = new URL("./room.html", location.origin);
+  const roomURL = new URL("../room.html", location.href);
   roomURL.searchParams.set("number", info.number);
 
   catalog.insertAdjacentHTML("beforeend", `
