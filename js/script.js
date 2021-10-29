@@ -12,10 +12,10 @@ document.onreadystatechange = () => {
 
 (async () => {
   const templates = await Promise.all([
-    fetch("/templates/header.html").then(response => response.text()),
-    fetch("/templates/footer.html").then(response => response.text())
+    fetch("./templates/header.html").then(response => response.text()),
+    fetch("./templates/footer.html").then(response => response.text())
   ]);
-  // const header = await fetch("/templates/header.html").then(response => response.text());
+  // const header = await fetch("./templates/header.html").then(response => response.text());
 
   for (let i = 0; i < templates.length; i++) {
     const tempDiv = document.createElement("div");
@@ -48,9 +48,9 @@ document.onreadystatechange = () => {
 
   //Header and footer styles
   if (!document.head.querySelector("link[href='/css/header_footer.css']"))
-    document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="/css/header_footer.css">');
+    document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="./css/header_footer.css">');
 
-  // users = await fetch("/json/users.json").then(response => response.json())
+  // users = await fetch("./json/users.json").then(response => response.json())
   //   .then(() => document.dispatchEvent(new CustomEvent("users-loaded")));
 })()
 
@@ -83,7 +83,7 @@ class User {
       
   //   return this._lastId;
   //   (async () => {
-  //     return this._lastId = await fetch("/json/users.json")
+  //     return this._lastId = await fetch("./json/users.json")
   //       .then(response => response.json())
   //       .then( users => users.reduce((prev, cur) => (cur.id > prev.id)? cur : prev) )
   //       .then(lastUser => lastUser.id);

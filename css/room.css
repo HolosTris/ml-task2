@@ -181,6 +181,7 @@ hr {
   border-color: var(--color25);
   font-size: 10px;
 }
+.like-btn:hover {border-color: var(--purple);}
 .like-btn .material-icons {margin-right: 5px; font-size: 10px;}
 
 .liked {

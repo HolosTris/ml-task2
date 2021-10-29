@@ -6,7 +6,7 @@ const departureDate = (new URL(location).searchParams.get("departure"))?
 const guests = (new URL(location).searchParams.get("guests"))?
   new URL(location).searchParams.get("guests").split(",") : [1, 0, 0];
 
-fetch("/json/hotel_rooms.json")
+fetch("./json/hotel_rooms.json")
   .then(response => response.json())
   .catch(error => alert(error))
   .then(rooms => {
@@ -26,18 +26,21 @@ fetch("/json/hotel_rooms.json")
     //Позиционирование фотографий номера
     const preview = document.getElementById("preview");
     const images = room.largeImages || room.images;
+    
+    preview.addEventListener("load", formatingPreview, true);
 
     preview.children[0].src = images[0];
-    preview.children[0].onload = formatingPreview;
 
     preview.children[1].innerHTML = "";
     for (i = 1; i < images.length; i++) {
       preview.children[1].insertAdjacentHTML("beforeend", `<img src="${images[i]}" alt="">`);
-      preview.children[1].children[i-1].onload = formatingPreview;
+      // preview.children[1].children[i-1].onload = formatingPreview;
     }
     
     let numImgLoaded = 0;
-    function formatingPreview() {
+    function formatingPreview(ev) {
+      if (![...preview.querySelectorAll("img")].includes(ev.target)) return;
+
       numImgLoaded++;
       if (numImgLoaded >= images.length)
         preview.style.gridTemplateColumns = preview.children[1].offsetHeight / preview.children[0].offsetHeight + "fr 1fr";
@@ -119,10 +122,18 @@ fetch("/json/hotel_rooms.json")
     showReviews();
 
     async function showReviews() {
-      const reviews = await fetch("/json/reviews.json")
+      const reviews = await fetch("./json/reviews.json")
         .then(response => response.json())
-        .then(allReviews => allReviews.find(reviews => reviews.room == room.number).reviews);
-      const users = await fetch("/json/users.json").then(response => response.json());
+        .then(allReviews => allReviews.find(reviews => reviews.room == room.number).reviews)
+        .catch(() => console.log("Уведомляю, что отзывов на этот номер нет"));
+        
+      if (!reviews) {
+        reviewsDiv.insertAdjacentHTML("beforeend",
+          "<p>На данный момент отзывов нет. Станьте первым!</p>");
+        return;
+      }
+      
+      const users = await fetch("./json/users.json").then(response => response.json());
       
       for (let review of reviews) {
         const user = users.find(user => user.id == review.user);

@@ -1,7 +1,7 @@
 // document.onmousemove = () => false;
 // document.onkeydown = () => false;
 
-const loadedCatalog = fetch("/json/hotel_rooms.json")
+const loadedCatalog = fetch("./json/hotel_rooms.json")
   .then(response => response.json())
   .catch(error => alert(error))
   .then(rooms => {
@@ -22,7 +22,7 @@ const loadedCatalog = fetch("/json/hotel_rooms.json")
   });
 
 function createCard(info) {
-  const roomURL = new URL("/room.html", location.origin);
+  const roomURL = new URL("./room.html", location.origin);
   roomURL.searchParams.set("number", info.number);
 
   catalog.insertAdjacentHTML("beforeend", `

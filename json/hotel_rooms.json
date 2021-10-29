@@ -6,15 +6,15 @@
     "comments": 145,
     "isSuite": true,
     "images": [
-      "/images/catalog/catalog1.png",
-      "/images/catalog/catalog2.png",
-      "/images/catalog/catalog3.png",
-      "/images/catalog/catalog4.png"
+      "./images/catalog/catalog1.png",
+      "./images/catalog/catalog2.png",
+      "./images/catalog/catalog3.png",
+      "./images/catalog/catalog4.png"
     ],
     "largeImages": [
-      "/images/catalog/large1.png",
-      "/images/catalog/large2.png",
-      "/images/catalog/large3.png"
+      "./images/catalog/large1.png",
+      "./images/catalog/large2.png",
+      "./images/catalog/large3.png"
     ],
     "rules": {
       "pets": false,
@@ -40,9 +40,9 @@
     "comments": 128,
     "isSuite": true,
     "images": [
-      "/images/catalog/catalog2.png",
-      "/images/catalog/catalog3.png",
-      "/images/catalog/catalog4.png"
+      "./images/catalog/catalog2.png",
+      "./images/catalog/catalog3.png",
+      "./images/catalog/catalog4.png"
     ],
     "rules": {
       "pets": false,
@@ -68,15 +68,15 @@
     "comments": 101,
     "isSuite": false,
     "images": [
-      "/images/catalog/catalog3.png",
-      "/images/catalog/catalog6.png",
-      "/images/catalog/catalog9.png",
-      "/images/catalog/catalog12.png"
+      "./images/catalog/catalog3.png",
+      "./images/catalog/catalog6.png",
+      "./images/catalog/catalog9.png",
+      "./images/catalog/catalog12.png"
     ],
     "largeImages": [
-      "/images/catalog/large3.png",
-      "/images/catalog/catalog3.png",
-      "/images/catalog/catalog9.png"
+      "./images/catalog/large3.png",
+      "./images/catalog/catalog3.png",
+      "./images/catalog/catalog9.png"
     ],
     "rules": {
       "pets": false,
@@ -102,19 +102,19 @@
     "comments": 115,
     "isSuite": false,
     "images": [
-      "/images/catalog/catalog4.png",
-      "/images/catalog/catalog5.png",
-      "/images/catalog/catalog6.png",
-      "/images/catalog/catalog7.png",
-      "/images/catalog/catalog8.png",
-      "/images/catalog/catalog9.png",
-      "/images/catalog/catalog10.png",
-      "/images/catalog/catalog11.png"
+      "./images/catalog/catalog4.png",
+      "./images/catalog/catalog5.png",
+      "./images/catalog/catalog6.png",
+      "./images/catalog/catalog7.png",
+      "./images/catalog/catalog8.png",
+      "./images/catalog/catalog9.png",
+      "./images/catalog/catalog10.png",
+      "./images/catalog/catalog11.png"
     ],
     "largeImages": [
-      "/images/catalog/large2.png",
-      "/images/catalog/catalog4.png",
-      "/images/catalog/catalog7.png"
+      "./images/catalog/large2.png",
+      "./images/catalog/catalog4.png",
+      "./images/catalog/catalog7.png"
     ],
     "rules": {
       "pets": false,
@@ -140,10 +140,10 @@
     "comments": 111,
     "isSuite": true,
     "images": [
-      "/images/catalog/catalog5.png",
-      "/images/catalog/catalog9.png",
-      "/images/catalog/catalog6.png",
-      "/images/catalog/catalog7.png"
+      "./images/catalog/catalog5.png",
+      "./images/catalog/catalog9.png",
+      "./images/catalog/catalog6.png",
+      "./images/catalog/catalog7.png"
     ],
     "rules": {
       "pets": true,
@@ -169,16 +169,16 @@
     "comments": 200,
     "isSuite": false,
     "images": [
-      "/images/catalog/catalog6.png",
-      "/images/catalog/catalog5.png",
-      "/images/catalog/catalog1.png",
-      "/images/catalog/catalog3.png",
-      "/images/catalog/catalog8.png"
+      "./images/catalog/catalog6.png",
+      "./images/catalog/catalog5.png",
+      "./images/catalog/catalog1.png",
+      "./images/catalog/catalog3.png",
+      "./images/catalog/catalog8.png"
     ],
     "largeImages": [
-      "/images/catalog/large2.png",
-      "/images/catalog/catalog6.png",
-      "/images/catalog/catalog5.png"
+      "./images/catalog/large2.png",
+      "./images/catalog/catalog6.png",
+      "./images/catalog/catalog5.png"
     ],
     "rules": {
       "pets": true,
