@@ -52,11 +52,11 @@
 }
 
 .ui-datepicker-prev {
-  background-image: url(./svg/icons/arrow_back.svg);
+  background-image: url(../svg/icons/arrow_back.svg);
 }
 
 .ui-datepicker-next {
-  background-image: url(./svg/icons/arrow_forward.svg);
+  background-image: url(../svg/icons/arrow_forward.svg);
   order: 2;
 }
 

@@ -1,24 +1,28 @@
 .con-landing {
-  position: relative;
-  top: 70px;
-  margin: 0 auto;
+  /* position: relative; */
+  /* top: 70px; */
   width: 100%;
-  max-width: 960px;
+  /* max-width: 960px; */
   padding: 0 15px;
-  float: left;
-  left: 140px;
+  /* float: left; */
+  /* left: 140px; */
   /* grid-column: 50% 50%; */
 }
 
 .bg-image {
+  position: relative;
+  padding: 70px 0 0 var(--padding-con);
   background: url("../images/bg1.png");
   background-size: cover;
-  background-position: 0 -69px;
+  background-position: bottom;
 }
 .bg-image#registration, .bg-image#login {background-image: url("../images/bg2.png"); background-position: 0;}
+.large-tablet .bg-image, .tablet .bg-image {padding: 70px 0 0 0;}
+/* .mobile .bg-image {padding: 0; min-height: 0;} */
+.large-tablet .bg-image .con-landing, .tablet .bg-image .con-landing {margin: 0 auto;}
 
 .search {
-  padding: 30px calc((100% - 1160px) / 2) 70px calc((100% - 1160px) / 2);
+  padding: 30px var(--padding-con) 70px var(--padding-con);
   display: grid;
   grid-template-columns: 266px 1fr;
   grid-gap: 60px;
@@ -63,10 +67,9 @@
   /* height: 374px; */
   padding: 40px 30px 30px 30px;
 }
+.mobile .container {width: 100%;}
 
 .con-center {
-  position: relative;
-  top: 70px;
   margin: 0 auto;
 }
 
@@ -131,9 +134,11 @@ div.else-login {justify-content: space-between;}
 }
 
 .caption {
-  position: relative;
-  right: 134px;
-  top: 761px;
+  position: absolute;
+  /* margin: 761px 134px 0 0; */
+  right: 0;
+  padding-right: calc((100% - 1440px) / 2 + 134px);
+  top: calc(100% - 66px);
   float: right;
   text-align: right;
   /* text-shadow: 1px 1px 3px var(--color75); */

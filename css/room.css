@@ -8,7 +8,7 @@
 #content {
   display: grid;
   grid-template-columns: 1fr 382px;
-  padding: 70px 140px;
+  padding: 70px var(--padding-con);
   grid-gap: 70px;
   align-items: start;
 }

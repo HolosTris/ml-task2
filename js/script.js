@@ -3,6 +3,10 @@ const filters = document.querySelector(".filters");
 
 // let users;
 // document.querySelector("script[src='js/script.js']").onload = () => window.stop();
+const clientWidth = document.documentElement.clientWidth;
+if (clientWidth < 420) document.body.classList.add("mobile")
+else if (clientWidth < 872) document.body.classList.add("tablet")
+else if (clientWidth < 1160) document.body.classList.add("large-tablet")
 
 for (let button of document.querySelectorAll("button, .btn")) button.disabled = true;
 document.onreadystatechange = () => {
@@ -47,11 +51,21 @@ document.onreadystatechange = () => {
   else document.body.insertAdjacentElement("beforeend", footer);
 
   //Header and footer styles
-  if (!document.head.querySelector("link[href='/css/header_footer.css']"))
+  if (!document.head.querySelector("link[href='./css/header_footer.css']"))
     document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="./css/header_footer.css">');
 
   // users = await fetch("./json/users.json").then(response => response.json())
   //   .then(() => document.dispatchEvent(new CustomEvent("users-loaded")));
+
+  // document.head.querySelector("link[href='./css/header_footer.css']").onload = () => {
+  //   const footerCon = document.querySelector("footer").firstElementChild;
+  //   let totalWidth = Number.parseInt(getComputedStyle(footerCon).gridGap) * (footerCon.children.length - 1);
+  //   for (el of footerCon.children) totalWidth += el.offsetWidth;
+
+  //   if (document.documentElement.clientWidth >= totalWidth) return;
+
+  //   document.body.classList.add("mobile");
+  // }
 })()
 
 class User {

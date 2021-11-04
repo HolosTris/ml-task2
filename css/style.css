@@ -19,6 +19,8 @@
 }
 
 :root {
+  --padding-con: calc((100% - 1160px) / 2);
+
   --green: #6fcf97;
   --purple: #bc9cff;
   --purple50: rgba(188, 156, 255, 0.5);
@@ -257,7 +259,7 @@ header:after, .con-landing:after, footer:after, .widget-posts-list li:after, #su
 main {
   background: #FFF;
   width: 100%;
-  min-height: 830px;
+  min-height: calc(100vh - 70px);
 }
 
 .line {
