@@ -25,6 +25,8 @@ div.dropdown { display: block;}
 
 .dd-container.active h3::after { transform: none; }
 
+.dd-container .dropdown-content {margin-top: 10px;}
+
 .dd-menu > button {
   width: 100%;
   height: 44px;
@@ -64,6 +66,7 @@ div.dropdown { display: block;}
   display: none;
   position: absolute;
   margin-top: -1px;
+  width: inherit;
   padding: 7px 7px 7px 15px;
   background-color: white;
   height: auto;
@@ -125,17 +128,3 @@ div.dropdown { display: block;}
 }
 
 .dropdown-content .controls button:hover { opacity: 0.5; }
-
-.link-dropdown-content a {
-  display: block;
-  border-bottom: 1px solid var(--color25);
-  padding: 5px 0px;
-}
-
-.link-dropdown-content a:last-child {
-  border-bottom: none;
-}
-
-header .link-dropdown:hover .link-dropdown-content {
-  display: block;
-}

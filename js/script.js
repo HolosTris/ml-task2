@@ -5,7 +5,7 @@ const filters = document.querySelector(".filters");
 // document.querySelector("script[src='js/script.js']").onload = () => window.stop();
 const clientWidth = document.documentElement.clientWidth;
 if (clientWidth < 420) document.body.classList.add("mobile")
-else if (clientWidth < 872) document.body.classList.add("tablet")
+else if (clientWidth < 878) document.body.classList.add("tablet")
 else if (clientWidth < 1160) document.body.classList.add("large-tablet")
 
 for (let button of document.querySelectorAll("button, .btn")) button.disabled = true;
@@ -54,7 +54,8 @@ document.onreadystatechange = () => {
   if (!document.head.querySelector("link[href='./css/header_footer.css']"))
     document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="./css/header_footer.css">');
   
-  header.querySelector("#nav-btn").onpointerup = () => {
+  //Mobile header
+  document.getElementById("nav-btn").onpointerup = () => {
     const nav = header.querySelector("nav");
     nav.classList.add("active");
 

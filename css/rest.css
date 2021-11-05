@@ -1,3 +1,8 @@
+
+:root {
+  --filters-width: 266px;
+}
+
 .con-landing {
   /* position: relative; */
   /* top: 70px; */
@@ -24,16 +29,28 @@
 .search {
   padding: 30px var(--padding-con) 70px var(--padding-con);
   display: grid;
-  grid-template-columns: 266px 1fr;
+  grid-template-columns: var(--filters-width) 1fr;
   grid-gap: 60px;
 }
+.tablet .search, .mobile .search {grid-template: none; padding: 30px 30px 70px 60px;}
 
 .filters {
   display: flex;
   flex-direction: column;
   grid-gap: 20px;
+  background-color: white;
   /* justify-content: space-around; */
   /* align-items: stretch; */
+}
+.tablet .filters, .mobile .filters {display: none;}
+.tablet .filters.active, .mobile .filters.active {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  height: 100%; width: calc(var(--filters-width) + 40px);
+  top: 0; left: 0;
+  overflow-y: scroll;
+  padding: 20px;
 }
 
 .filters > div, .dd-container.active .dropdown-content {
@@ -55,6 +72,20 @@
   display: inline-block;
   margin: 0px 0 0 30px;
 }
+
+#filter-btn {
+  display: none;
+  position: fixed;
+  top: 50%; left: 0;
+  z-index: 1;
+  border-radius: 0 50% 50% 0;
+  border-left: none;
+}
+#filter-btn.active {left: calc(var(--filters-width) + 40px);}
+.tablet #filter-btn, .mobile #filter-btn {display: inline-flex;}
+
+#filter-btn span {font-size: 32px; transform: rotate(-90deg);}
+#filter-btn.active span {transform: rotate(90deg);}
 
 .container {
   display: grid;

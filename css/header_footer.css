@@ -130,9 +130,8 @@ header .btn {
   height: 34px;
 }
 
-.log, .user {float: right;}
-
-.user{margin-left: 20px;}
+.user {float: right;}
+body:not(.tablet, .mobile) .user{margin-left: 20px;}
 
 /*Footer*/
 footer {

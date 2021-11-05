@@ -20,6 +20,30 @@ loadedCatalog.finally(() => {
 		carousel.querySelector("#next").onclick = () => {
 			slideRight();
 		};
+		
+		let prevX;
+		// document.onpointer
+		carousel.onpointerdown = function(ev) {
+			prevX = ev.clientX;
+			console.log(ev.pointerId);
+			this.setPointerCapture(ev.pointerId);
+			// this.onpointerup = (ev) => {
+			// 	// const curX = ev.clientX;
+			// 	if (ev.clientX - prevX > 0) slideRight();
+			// 	else slideLeft();
+
+			// 	console.log(2);
+			// 	// prevX = curX;
+			// }
+		}
+		carousel.onpointerup = function(ev) {
+			// const curX = ev.clientX;
+			if (ev.clientX - prevX > 0) slideRight();
+			else slideLeft();
+
+			console.log(2);
+			// prevX = curX;
+		}
 
 		//previous slide
 		carousel.querySelector("#previous").onclick = () => {

@@ -15,9 +15,10 @@ function initAllDropdowns() {
     const button = dropdown.querySelector("button");
     const content = dropdown.querySelector(".dropdown-content");
 
-    button.onclick = () => dropdown.classList.toggle("active");
-
-    content.style.width = button.offsetWidth + "px";
+    button.onclick = () => {
+      dropdown.classList.toggle("active");
+      content.style.width = button.offsetWidth + "px";
+    }
 
     const options = content.querySelector(".options");
     const controls = content.querySelector(".controls");

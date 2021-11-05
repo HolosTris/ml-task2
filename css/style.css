@@ -125,7 +125,7 @@ button:disabled, .btn:disabled {opacity: 0.5;}
 }
 .alt-btn:hover {border-color: var(--purple50); background-image: none; color: var(--purple);}
 
-.icon-btn {padding: 3px;}
+.icon-btn {padding: 3px; border-radius: 50%;}
 
 select, input {
   font: 400 14px Montserrat;

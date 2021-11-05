@@ -1,6 +1,12 @@
 // document.onmousemove = () => false;
 // document.onkeydown = () => false;
 
+//Filters mobile
+document.getElementById("filter-btn").onclick = function() {
+  this.classList.toggle("active");
+  filters.classList.toggle("active");
+}
+
 const loadedCatalog = fetch("./json/hotel_rooms.json")
   .then(response => response.json())
   .catch(error => alert(error))
