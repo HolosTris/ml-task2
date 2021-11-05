@@ -9,24 +9,50 @@ header {
   height: 70px;
 }
 
+header > *:not(:first-child) {float: right;}
+
 nav {
   /* width: 80%; */
   /* position: relative; */
   display: flex;
   grid-gap: 20px;
-  float: right;
-  justify-content: center;
+  /* float: right; */
+  /* justify-content: center; */
 }
+.tablet nav, .mobile nav {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: calc(100% - 40px); max-width: calc(100% - 40px);
+  z-index: 10;
+  flex-direction: column;
+  top: 0; right: 0;
+  background: white;
+  padding: 15px;
+  grid-gap: 10px;
+  border-left: 1px solid var(--color25);
+  box-shadow: 0px 10px 20px var(--color5);
+}
+.tablet nav.active, .mobile nav.active {display: flex;}
+
+#nav-btn {display: none; margin-right: 20px;}
+.tablet #nav-btn, .mobile #nav-btn {display: block;}
 
 header div {
   position: relative;
   display: inline-flex;
   align-items: center;
+  justify-content: start;
   height: 30px;
   /* margin-right: 20px; */
   /* width: 10%; */
   /* padding: 10px; */
 }
+.tablet header div, .mobile header div {height: 20px; align-items: flex-start;}
+
+.log-reg {grid-gap: inherit; justify-content: space-evenly;}
+
+.tablet .link-dropdown:hover, .mobile .link-dropdown:hover {height: auto; flex-direction: inherit;}
 
 header div.link-dropdown-content {
   display: none;
@@ -42,12 +68,19 @@ header div.link-dropdown-content {
   overflow: hidden;
   box-shadow: 0px 0px 5px 0px var(--color5);
 }
+.tablet header div.link-dropdown-content, .mobile header div.link-dropdown-content {
+  position: static;
+  border: none;
+  box-shadow: none;
+  padding: 0 0 0 15px;
+}
 
 .link-dropdown-content a {
   display: block;
   border-bottom: 1px solid var(--color25);
   padding: 5px 0px;
 }
+.tablet .link-dropdown-content a, .mobile .link-dropdown-content a {border-bottom: none;}
 
 .link-dropdown-content a:last-child {
   border-bottom: none;
@@ -57,13 +90,15 @@ header .link-dropdown:hover .link-dropdown-content {
   display: block;
 }
 
-.link-dropdown::after {
+.link-dropdown > *:first-child:after {
   position: relative;
   content: "expand_more";
   font-family: 'Material Icons';
   font-weight: normal;
   font-size: 24px;
+  line-height: 0;
   text-transform: none;
+  vertical-align: middle;
 }
 
 header a, footer a, header .link-dropdown span {
@@ -97,7 +132,7 @@ header .btn {
 
 .log, .user {float: right;}
 
-.username{margin-left: 20px;}
+.user{margin-left: 20px;}
 
 /*Footer*/
 footer {
@@ -152,6 +187,7 @@ footer .content {
 .col h3 {margin-top: 5px;}
 
 .col > * {margin-top: 20px;}
+.mobile .col > * {margin-top: 10px;}
 
 #subscription + label {
   position: relative;

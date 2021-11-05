@@ -125,6 +125,8 @@ button:disabled, .btn:disabled {opacity: 0.5;}
 }
 .alt-btn:hover {border-color: var(--purple50); background-image: none; color: var(--purple);}
 
+.icon-btn {padding: 3px;}
+
 select, input {
   font: 400 14px Montserrat;
   letter-spacing: 1px;
@@ -260,6 +262,14 @@ main {
   background: #FFF;
   width: 100%;
   min-height: calc(100vh - 70px);
+}
+
+#blur {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  z-index: 9;
+  background-color: var(--color25);
 }
 
 .line {

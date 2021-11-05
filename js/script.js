@@ -39,20 +39,32 @@ document.onreadystatechange = () => {
     currentUser.__proto__ = User.prototype;
 
     header = templates[0].content.querySelector("header#login");
-    header.querySelector(".username a").innerHTML = currentUser.fullName;
+    header.querySelector(".user a").innerHTML = currentUser.fullName;
   }
 
-  if (document.querySelector("header")) document.querySelector("header").outerHTML = header.outerHTML;
+  if (document.querySelector("header")) document.querySelector("header").replaceWith(header);
   else document.body.insertAdjacentElement("afterbegin", header);
 
   //Footer
   const footer = templates[1].content.firstElementChild;
-  if (document.querySelector("footer")) document.querySelector("footer").outerHTML = footer.outerHTML;
+  if (document.querySelector("footer")) document.querySelector("footer").replaceWith(footer);
   else document.body.insertAdjacentElement("beforeend", footer);
 
   //Header and footer styles
   if (!document.head.querySelector("link[href='./css/header_footer.css']"))
     document.head.insertAdjacentHTML("beforeend", '<link rel="stylesheet" href="./css/header_footer.css">');
+  
+  header.querySelector("#nav-btn").onpointerup = () => {
+    const nav = header.querySelector("nav");
+    nav.classList.add("active");
+
+    const blur = document.createElement("div");
+    blur.id = "blur";
+
+    blur.onpointerup = () => { nav.classList.remove("active"); blur.remove(); }
+
+    document.body.append(blur);
+  }
 
   // users = await fetch("./json/users.json").then(response => response.json())
   //   .then(() => document.dispatchEvent(new CustomEvent("users-loaded")));
@@ -69,7 +81,7 @@ document.onreadystatechange = () => {
 })()
 
 class User {
-  // static _lastId;
+  static _lastId;
 
   constructor(name, surname, sex, birthDate, mail, avatar = null) {
     this.id = 0;
@@ -95,15 +107,17 @@ class User {
   //   // while (!this._lastId)
   //   //   if (users) this._lastId = users.reduce((prev, cur) => (cur.id > prev.id)? cur : prev);
       
-  //   return this._lastId;
-  //   (async () => {
-  //     return this._lastId = await fetch("./json/users.json")
+  //   // return this._lastId;
+  //   // (async () => {
+  //     return this._lastId = fetch("./json/users.json")
   //       .then(response => response.json())
   //       .then( users => users.reduce((prev, cur) => (cur.id > prev.id)? cur : prev) )
   //       .then(lastUser => lastUser.id);
-  //   })();
+  //   // })();
   // }
 }
+
+// console.log(User.lastId);
 
 function beutifyNumber(number = 1, separator = " ") {
   let numStr = String(number);
