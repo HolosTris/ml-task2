@@ -4,6 +4,7 @@ loadedCatalog.finally(() => {
 
 		// $(document).ready(function(){
 	for (let carousel of allCarousels) {
+		const carouselCanvas = carousel.querySelector("ul.carousel");
 		//number of slides
 		const totalSlides = carousel.querySelectorAll("ul li").length;
 		//get the slide width
@@ -13,42 +14,28 @@ loadedCatalog.finally(() => {
 
 		// Carousel
 		//set width to be "x" times the number of slides
-		carousel.querySelector("ul.carousel").style.width = sliderWidth * totalSlides + "px";
-		// console.log(carousel.querySelector("ul.carousel").clientWidth);
+		carouselCanvas.style.width = sliderWidth * totalSlides + "px";
+		// console.log(carouselCanvas.clientWidth);
 
 		//next slide
 		carousel.querySelector("#next").onclick = () => {
 			slideRight();
 		};
-		
-		let prevX;
-		// document.onpointer
-		carousel.onpointerdown = function(ev) {
-			prevX = ev.clientX;
-			console.log(ev.pointerId);
-			this.setPointerCapture(ev.pointerId);
-			// this.onpointerup = (ev) => {
-			// 	// const curX = ev.clientX;
-			// 	if (ev.clientX - prevX > 0) slideRight();
-			// 	else slideLeft();
-
-			// 	console.log(2);
-			// 	// prevX = curX;
-			// }
-		}
-		carousel.onpointerup = function(ev) {
-			// const curX = ev.clientX;
-			if (ev.clientX - prevX > 0) slideRight();
-			else slideLeft();
-
-			console.log(2);
-			// prevX = curX;
-		}
 
 		//previous slide
 		carousel.querySelector("#previous").onclick = () => {
 			slideLeft();
 		};
+
+		let prevX;
+		carousel.onpointerdown = function(ev) {
+			prevX = ev.clientX;
+			this.setPointerCapture(ev.pointerId);
+		}
+		carousel.onpointerup = function(ev) {
+			if (ev.clientX - prevX < 0) slideRight();
+			else if (ev.clientX - prevX > 0) slideLeft();
+		}
 
 		//for each slide
 		carousel.querySelectorAll("ul li").forEach(() => {
@@ -82,7 +69,7 @@ loadedCatalog.finally(() => {
 		function slideLeft(){
 			pos--;
 			if(pos==-1){ pos = totalSlides-1; }
-			carousel.querySelector("ul.carousel").style.left = -(sliderWidth*pos) + "px";
+			carouselCanvas.style.left = -(sliderWidth*pos) + "px";
 
 			//*> optional
 			// countSlides();
@@ -93,7 +80,7 @@ loadedCatalog.finally(() => {
 		function slideRight(){
 			pos++;
 			if(pos==totalSlides){ pos = 0; }
-			carousel.querySelector("ul.carousel").style.left = -(sliderWidth*pos) + "px";
+			carouselCanvas.style.left = -(sliderWidth*pos) + "px";
 
 			//*> optional
 			// countSlides();
