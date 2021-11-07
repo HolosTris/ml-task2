@@ -22,8 +22,8 @@
   background-position: bottom;
 }
 .bg-image#registration, .bg-image#login {background-image: url("../images/bg2.png"); background-position: 0;}
-.large-tablet .bg-image, .tablet .bg-image {padding: 70px 0 0 0;}
-.mobile .bg-image {padding: 70px 20px 70px 20px; min-height: 0;}
+.large-tablet .bg-image, .tablet .bg-image {padding: 70px 0;}
+.mobile .bg-image {padding: 70px 20px; min-height: 0;}
 .large-tablet .bg-image .con-landing, .tablet .bg-image .con-landing {margin: 0 auto;}
 
 .search {

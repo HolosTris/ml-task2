@@ -62,7 +62,7 @@ document.onreadystatechange = () => {
     const blur = document.createElement("div");
     blur.id = "blur";
 
-    blur.onpointerup = () => { nav.classList.remove("active"); blur.remove(); }
+    blur.onclick = () => { nav.classList.remove("active"); blur.remove();}
 
     document.body.append(blur);
   }

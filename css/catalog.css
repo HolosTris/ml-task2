@@ -3,7 +3,7 @@
 .catalog-content {
   display: grid;
   grid-template-columns: repeat(auto-fill, 270px);
-  justify-content: space-around;
+  justify-content: center;
   grid-row-gap: 40px;
   grid-column-gap: 12px;
   overflow-y: auto;
