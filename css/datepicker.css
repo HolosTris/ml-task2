@@ -83,7 +83,6 @@
 }
 
 .ui-datepicker-calendar td {
-  /* display: inline-block; */
   text-align: center;
   min-width: 40px;
   height: 40px;
@@ -148,9 +147,5 @@ td.ui-datepicker-current-day, td.dp-first {
 }
 .ui-datepicker-multi .ui-datepicker-group {
   float:none;
-}
-#datepicker {
-  height: 300px;
-  overflow-x: scroll;
 }
 .ui-widget { font-size: 100% } */

@@ -115,10 +115,6 @@ header a:hover, footer a:hover, header .link-dropdown span:hover {
   cursor: pointer;
 }
 
-header div:last-child {
-  /* margin-right: 0; */
-}
-
 .logo {
   float: left;
 }
@@ -162,7 +158,6 @@ footer .content {
   display: flex;
   flex-direction: column;
   min-width: 160px;
-  /* padding: 0 20px; */
   text-align: left;
 }
 
@@ -170,14 +165,6 @@ footer .content {
   display: inline;
   width: 106px;
   margin: 0;
-}
-
-.col:first-child {
-  /* padding: 0 20px 0 0; */
-}
-
-.col:last-child {
-  /* padding: 0 0 0 20px; */
 }
 
 .col-lg {width: 260px;}
@@ -201,7 +188,6 @@ footer .content {
   color: var(--purple);
 }
 #subscription:hover + label:before, #subscription:focus + label:before {color: var(--color100);}
-/* #subscription:not(:focus):valid + label:before {content: "\2714"; color: var(--purple);} */
 
 .copyright {
   display: flex;

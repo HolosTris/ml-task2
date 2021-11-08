@@ -4,14 +4,8 @@
 }
 
 .con-landing {
-  /* position: relative; */
-  /* top: 70px; */
   width: 100%;
-  /* max-width: 960px; */
   padding: 0 15px;
-  /* float: left; */
-  /* left: 140px; */
-  /* grid-column: 50% 50%; */
 }
 
 .bg-image {
@@ -32,6 +26,7 @@
   grid-template-columns: var(--filters-width) 1fr;
   grid-gap: 60px;
 }
+.large-tablet .search {padding: 30px 30px 70px 30px;}
 .tablet .search, .mobile .search {grid-template: none; padding: 30px 30px 70px 60px;}
 
 .filters {
@@ -39,8 +34,6 @@
   flex-direction: column;
   grid-gap: 20px;
   background-color: white;
-  /* justify-content: space-around; */
-  /* align-items: stretch; */
 }
 .tablet .filters, .mobile .filters {display: none;}
 .tablet .filters.active, .mobile .filters.active {
@@ -95,7 +88,6 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   width: 382px;
-  /* height: 374px; */
   padding: 40px 30px 30px 30px;
 }
 .mobile .container {width: 100%; padding: 20px 15px 15px 15px;}
@@ -125,7 +117,6 @@ div.con-div-row {
   font-style: normal;
   font-weight: normal;
   text-transform: none;
-  /* width: 100%; */
   height: 44px;
   font-size: 14px;
   color: var(--color75);
@@ -147,11 +138,6 @@ div.con-div-row {
   text-transform: none;
 }
 
-.guests select {
-  /* width: 320px;
-  margin-top: 5px; */
-}
-
 .container .main-btn, div.else-login {margin-top: 10px;}
 
 div.else-login {justify-content: space-between;}
@@ -167,12 +153,10 @@ div.else-login {justify-content: space-between;}
 
 .caption {
   position: absolute;
-  /* margin: 761px 134px 0 0; */
   right: 0;
   padding-right: calc((100% - 1440px) / 2 + 134px);
   top: calc(100% - 66px);
   float: right;
   text-align: right;
-  /* text-shadow: 1px 1px 3px var(--color75); */
 }
 .large-tablet .caption, .tablet .caption, .mobile .caption {padding-right: 20px;}

@@ -4,8 +4,9 @@ const filters = document.querySelector(".filters");
 // let users;
 // document.querySelector("script[src='js/script.js']").onload = () => window.stop();
 const clientWidth = document.documentElement.clientWidth;
+
 if (clientWidth < 420) document.body.classList.add("mobile")
-else if (clientWidth < 878) document.body.classList.add("tablet")
+else if (clientWidth < 880) document.body.classList.add("tablet")
 else if (clientWidth < 1160) document.body.classList.add("large-tablet")
 
 for (let button of document.querySelectorAll("button, .btn")) button.disabled = true;
@@ -19,7 +20,6 @@ document.onreadystatechange = () => {
     fetch("./templates/header.html").then(response => response.text()),
     fetch("./templates/footer.html").then(response => response.text())
   ]);
-  // const header = await fetch("./templates/header.html").then(response => response.text());
 
   for (let i = 0; i < templates.length; i++) {
     const tempDiv = document.createElement("div");
@@ -29,9 +29,6 @@ document.onreadystatechange = () => {
   }console.log(templates[0]);
 
   //Header
-  // const header = (localStorage.getItem("currentUser"))?
-  //   templates[0].querySelector("template#login header") : templates[0].querySelector("template header");
-  
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   let header = templates[0].content.querySelector("header");
 
@@ -129,8 +126,6 @@ function beutifyNumber(number = 1, separator = " ") {
     fractionalPart = numStr.slice(dotI);
     numStr = numStr.slice(0, dotI);
   }
-
-  // console.log(number);
   
   if (numStr.length > 3)
     return numStr = beutifyNumber(numStr.slice(0, -3)) + separator + numStr.slice(-3) + fractionalPart;

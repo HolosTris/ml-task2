@@ -1,8 +1,6 @@
-// catalog.onreadystatechange = () => {
 loadedCatalog.finally(() => {
 	const allCarousels = catalog.querySelectorAll(".carousel-wrap");
 
-		// $(document).ready(function(){
 	for (let carousel of allCarousels) {
 		const carouselCanvas = carousel.querySelector("ul.carousel");
 		//number of slides
@@ -13,9 +11,7 @@ loadedCatalog.finally(() => {
 		let pos = 0;
 
 		// Carousel
-		//set width to be "x" times the number of slides
 		carouselCanvas.style.width = sliderWidth * totalSlides + "px";
-		// console.log(carouselCanvas.clientWidth);
 
 		//next slide
 		carousel.querySelector("#next").onclick = () => {
@@ -27,17 +23,17 @@ loadedCatalog.finally(() => {
 			slideLeft();
 		};
 
+		//swiping slides
 		let prevX;
-		carousel.onpointerdown = function(ev) {
+		carouselCanvas.onpointerdown = function(ev) {
 			prevX = ev.clientX;
 			this.setPointerCapture(ev.pointerId);
 		}
-		carousel.onpointerup = function(ev) {
+		carouselCanvas.onpointerup = function(ev) {
 			if (ev.clientX - prevX < 0) slideRight();
 			else if (ev.clientX - prevX > 0) slideLeft();
 		}
 
-		//for each slide
 		carousel.querySelectorAll("ul li").forEach(() => {
 			//create a pagination
 			const li = document.createElement("li");
@@ -71,7 +67,6 @@ loadedCatalog.finally(() => {
 			if(pos==-1){ pos = totalSlides-1; }
 			carouselCanvas.style.left = -(sliderWidth*pos) + "px";
 
-			//*> optional
 			// countSlides();
 			pagination();
 		}

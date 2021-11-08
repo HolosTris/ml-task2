@@ -2,13 +2,7 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: normal;
-  /* Браузер сначала попробует найти шрифт локально */
   src: url("../fonts/Montserrat-Regular.ttf");
-  /* local("Montserrat"), */
-       /* Если не получилось, загрузит woff2 */
-
-       /* Если браузер не поддерживает woff2, загрузит woff */
-       /* url("../fonts/roboto.woff") format("woff"); */
 }
 
 @font-face {
@@ -38,7 +32,6 @@
    padding: 0;
    margin: 0;
    /* transition: .2s ease-in-out; */
-   /* добавим плавность переходов для всех элементов страницы*/
 }
 *::after, *::before {
    position: absolute;
@@ -52,7 +45,6 @@ img {
    width: 100%;
 }
 body {
-  /* font-family: "Montserrat", 'Open Sans', arial, sans-serif; */
   font: 400 14px Montserrat;
   line-height: 1.22;
   /* letter-spacing: 1px; */
@@ -93,8 +85,6 @@ button, .btn {
   position: relative;
   color: white;
   background-image: var(--gradient);
-  /* background-color: var(--purple); */
-  /* height: 34px; */
   padding: 15px 20px;
   border-width: 0;
   border-radius: 25px;
@@ -116,10 +106,6 @@ button:disabled, .btn:disabled {opacity: 0.5;}
 .alt-btn {
   border: 2px solid var(--purple);
   padding: 13px 18px;
-  /* Временно */
-  /* border-image-source: var(--gradient);
-  border-image:  linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) 2 100%; */
-  /* box-shadow: 0 0 0 2px var(--gradient); */
   color: var(--purple);
   background: white;
 }
@@ -132,7 +118,6 @@ select, input {
   letter-spacing: 1px;
   border: 1px solid var(--color25);
   border-radius: 4px;
-  /* height: 44px; */
   padding: 12px 15px;
 }
 select::placeholder, input::placeholder {color: var(--color25);}
@@ -252,7 +237,7 @@ input[type="radio" i]:checked + label::before {
 }
 
 /* добавим очистку потока для всех контейнеров, внутри которых задано обтекание дочерних элементов */
-header:after, .con-landing:after, footer:after, .widget-posts-list li:after, #subscribe:after {
+header:after, .con-landing:after, footer:after{
   content: "";
   display: table;
   clear: both;

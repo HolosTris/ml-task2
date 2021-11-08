@@ -17,24 +17,6 @@
   <title>Toxin Hotel</title>
 </head>
 <body>
-<header>
-  <div class="logo">
-    <a href="./index.html">
-      <img src="./svg/logo.svg"  width="106" height="40">
-      <!-- <object data="/svg/logo.svg" type="image/svg+xml" width="106" height="40"></object> -->
-      <!-- <iframe src="./svg/logo.svg" width="106" height="40" frameborder="0" allowtransparency seamless></iframe> -->
-    </a>
-  </div>
-  <nav>
-    <div class="about"><a href="#">О нас</a></div>
-    <div class="services"><a href="#">Услуги</a></div>
-    <div class="vacancies"><a href="#">Вакансии</a></div>
-    <div class="news"><a href="#">Новости</a></div>
-    <div class="agreements"><a href="#">Соглашения</a></div>
-    <a href="./login.html" class="btn alt-btn">Войти</a>
-    <a href="./registration.html" class="btn">Зарегистрироваться</a>
-  </nav>
-</header>
 <main class="bg-image">
   <div class="container con-landing">
     <h1>Найдём номера под ваши пожелания</h1>
@@ -42,19 +24,11 @@
       <input type="hidden" id="input1_1" class="rangepicker search-dp">
       <div class="arrive">
         <h3>Прибытие</h3>
-        <!-- <select name="" id="input1" onclick="$('.rangepicker').datepicker('show');">
-          <option value="placeholder">ДД.ММ.ГГГГ</option>
-        </select> -->
         <button id="input1" onclick="$('.rangepicker').datepicker('show');">ДД.ММ.ГГГГ</button>
-        <!-- <input type="text" id="datepicker"> -->
       </div>
       <div class="departure">
         <h3>Выезд</h3>
         <button id="input2" onclick="$('.rangepicker').datepicker('show');">ДД.ММ.ГГГГ</button>
-        <!-- <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');" placeholder="ДД.ММ.ГГГГ"> -->
-        <!-- <select name="" id="input2" onclick="$('.rangepicker').datepicker('show');">
-          <option value="placeholder">ДД.ММ.ГГГГ</option>
-        </select> -->
       </div>
     </div>
     <div class="guests">
@@ -99,40 +73,6 @@
   </div>
   <p class="caption">Лучшие номера для вашей работы,<br> отдыха и просто вдохновения</p>
 </main>
-<footer>
-  <div class="content">
-    <div class="col col-lg">
-      <img src="./svg/logo.svg">
-      <p>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
-    </div>
-    <div class="col">
-      <h3>Навигация</h3>
-      <span><a href="#">О нас</a></span>
-      <span><a href="#">Новости</a></span>
-      <span><a href="#">Служба поддержки</a></span>
-      <span><a href="#">Услуги</a></span>
-    </div>
-    <div class="col">
-      <h3>О нас</h3>
-      <span><a href="#">О сервисе</a></span>
-      <span><a href="#">Наша команда</a></span>
-      <span><a href="#">Вакансии</a></span>
-      <span><a href="#">Инвесторы</a></span>
-    </div>
-    <div class="col">
-      <h3>Служба поддержки</h3>
-      <span><a href="#">Соглашения</a></span>
-      <span><a href="#">Сообщества</a></span>
-      <span><a href="#">Связь с нами</a></span>
-    </div>
-    <div class="col col-lg">
-      <h3>Подписка</h3>
-      <p>Получайте специальные предложения и новости сервиса</p>
-      <input type="text" name="" value="" placeholder="Email">
-    </div>
-  </div>
-  <div class="copyright"><span>Copyright © 2018 Toxin отель. Все права защищены.</span></div>
-</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>

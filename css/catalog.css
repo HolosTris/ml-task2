@@ -23,13 +23,8 @@
   opacity: 0.9;
 }
 
-.catalog-content article img {
-  /* border-radius: 4px; */
-}
-
 .catalog-content article .info {
   display: grid;
-  /* grid-gap: 20px; */
   padding: 20px;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
@@ -40,7 +35,6 @@
   display: flex;
   align-items: flex-end;
   grid-gap: 8px;
-  /* justify-content: flex-end; */
 }
 
 .catalog-content article .info .room-number span {

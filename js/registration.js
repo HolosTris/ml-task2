@@ -1,4 +1,3 @@
-// import * as main from "./script.js";
 const form = document.forms[0];
 
 console.log(document.querySelector(".username"))
@@ -10,18 +9,13 @@ for (let input of textInputs) {
   input.tabIndex = 1;
   input.onchange = function() {
     this.value = this.value.trim();
-    // console.log(this.value.split(" "));
 
     if (!this.value) this.classList.add("invalid");
-    // else if (this.onblur) this.onblur();
     else this.classList.remove("invalid");
   }
 }
 
 form.onsubmit = function() {
-
-  // for (let elem of form.elements) if (typeof elem.value == "string") elem.value = elem.value.trim();
-  // for (let input of textInputs) input.value = input.value.trim();
 
   const activeInputI = [...textInputs].indexOf(document.activeElement);
   if (~activeInputI && activeInputI != textInputs.length - 1) {
@@ -50,8 +44,6 @@ form.birthDate.oninput = function() {
       i++
     }
   }
-
-  // if (this.value.length == 2 && prevValLength != 3 || this.value.length == 5 && prevValLength != 6) this.value += ".";
 
   prevValLength = this.value.length;
 }

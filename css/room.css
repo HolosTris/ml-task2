@@ -1,6 +1,5 @@
 #preview {
   display: grid;
-  /* grid-template-columns: 2.2fr 1fr; */
   max-height: 600px;
   overflow: hidden;
 }
@@ -37,15 +36,12 @@
 .data span.material-icons {
   font-size: 48px;
   background: var(--gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.data p {
-}
-
 hr {
-  /* border-color: #1F20411A; */
   height: 1px;
   background-color: #1F20411A;
   border: none;
@@ -53,7 +49,6 @@ hr {
 
 .canvas {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   max-width: 400px;
 }
@@ -61,7 +56,6 @@ hr {
 .total-chart {
   position: absolute;
   width: 120px;
-  /* height: 120px; */
   text-align: center;
   color: var(--purple);
   font-weight: bold;
@@ -102,10 +96,6 @@ hr {
   max-width: 250px;
   margin-left: 30px;
   align-self: flex-end;
-}
-
-.title {  
-  
 }
 
 .caption-list {
@@ -170,7 +160,6 @@ hr {
 .reviews > div:first-of-type { margin-top: 0; }
 
 .reviews > div img{
-  /* width: auto; */
   border: 2px solid #FFF;
   border-radius: 50%;
 }
@@ -201,7 +190,6 @@ hr {
 .rules ul li {
   margin-top: 10px;
   line-height: 24px;
-  /* padding-inline-start: 1ch; */
 }
 .rules ul li:first-of-type { margin-top: 0; }
 

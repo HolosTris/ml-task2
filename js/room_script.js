@@ -27,14 +27,13 @@ fetch("./json/hotel_rooms.json")
     const preview = document.getElementById("preview");
     const images = room.largeImages || room.images;
     
-    preview.addEventListener("load", formatingPreview, true);
+    if (!document.body.classList.contains("mobile")) preview.addEventListener("load", formatingPreview, true);
 
     preview.children[0].src = images[0];
 
     preview.children[1].innerHTML = "";
     for (i = 1; i < images.length; i++) {
       preview.children[1].insertAdjacentHTML("beforeend", `<img src="${images[i]}" alt="">`);
-      // preview.children[1].children[i-1].onload = formatingPreview;
     }
     
     let numImgLoaded = 0;

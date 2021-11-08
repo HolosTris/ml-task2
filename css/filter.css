@@ -80,8 +80,6 @@ div.dropdown { display: block;}
   text-transform: uppercase;
 }
 
-/* .options {display: flex; grid-gap: 7px;} */
-
 .options div, .dropdown-content .controls {
   display: flex;
   flex-direction: row;
@@ -99,7 +97,6 @@ div.dropdown { display: block;}
 }
 
 .options button {
-  /* display: inline-block; */
   background: none;
   height: 30px;
   width: 30px;
@@ -115,8 +112,6 @@ div.dropdown { display: block;}
 }
 
 .options button.deactivated { visibility: hidden; }
-
-/* .options span *:not(:last-child) { margin-right: 10px; } */
 
 .dropdown-content .controls { margin-top: 12px; }
 

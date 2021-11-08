@@ -1,6 +1,3 @@
-// document.onmousemove = () => false;
-// document.onkeydown = () => false;
-
 //Filters mobile
 document.getElementById("filter-btn").onclick = function() {
   this.classList.toggle("active");
@@ -18,13 +15,6 @@ const loadedCatalog = fetch("./json/hotel_rooms.json")
     createRandomCatalog(6);
 
     catalog.dataset.loaded = true;
-
-    // let ev = new MouseEvent("click", {
-    //   clientX: 800,
-    //   clientY: 400
-    // })
-  
-    // document.dispatchEvent(ev);
   });
 
 function createCard(info) {
@@ -36,7 +26,7 @@ function createCard(info) {
       <div class="carousel-wrap">
         <a href="${roomURL}" class="card-link">
           <ul class="carousel">
-          <--images-->
+          <!--images-->
           </ul>
         </a>
         <div class="btns" id="next"><i class="material-icons">expand_more</i></div>
@@ -95,5 +85,3 @@ function createRandomCard() {
 function createRandomCatalog(amount = 1) {
   for (let i = 0; i < amount; i++) createRandomCard();
 }
-
-// console.log(beutifyNumber(21349123.4324));
